@@ -1,6 +1,13 @@
 import { Navbar } from '@/app/(marketing)/_components/navbar'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Car, Check, ScrollText } from 'lucide-react'
+import {
+  ArrowRight,
+  Car,
+  Check, MessageCircle,
+  MessagesSquare,
+  ScrollText,
+  Search
+} from 'lucide-react'
 import Image from 'next/image'
 import smail from '@/public/smail.svg'
 import shape_one from '@/public/shape_one.svg'
@@ -31,10 +38,10 @@ export default function MarketingPage() {
   return (
       <div className={ 'w-full px-20' }>
         <Navbar/>
-        <div className={ 'flex' }>
-          <div className={ 'w-1/2 pt-40 relative' }>
+        <div className={ 'flex py-40' }>
+          <div className={ 'w-1/2 relative' }>
             <Image src={ smail } alt={ 'smail' }
-                   className={ 'absolute top-20 -left-[60px]' }/>
+                   className={ 'absolute -top-20 -left-[60px]' }/>
             <div
                 className="text-sky-500 text-[68px] font-semibold leading-[75px]">
               博泰移民
@@ -85,10 +92,43 @@ export default function MarketingPage() {
             </div>
 
           </div>
-          <div className={ 'w-1/2 bg-sky-700' }>
-            <Image src={ shape_one } alt={ 'shape_one' }/>
-            <Image src={ shape_two } alt={ 'shape_two' }/>
-            <Image src={ vector } alt={ 'shape_three' }/>
+          <div className={ 'w-1/2 relative flex items-center justify-center' }>
+            <Image src={ shape_one }
+                   alt={ 'shape_one' }
+                   className={ 'absolute top-10 left-10' }
+            />
+            <Image src={ shape_one }
+                   alt={ 'shape_one' }
+                   className={ 'absolute -bottom-20 right-40' }
+            />
+            <Image src={ shape_two }
+                   alt={ 'shape_two' }
+                   className={ 'absolute top-10 left-48 z-9' }
+            />
+            <Image src={ vector }
+                   alt={ 'shape_three' }
+                   className={ 'w-[700px] h-[700px] z-20' }
+            />
+            <div className={ 'absolute z-30' }>
+              <div
+                  className={ 'flex items-center bg-white px-3 py-2 border rounded-full mb-8' }>
+                <Check
+                    className={ 'mr-4  p-1  rounded-full bg-rose-500 text-white' }/>
+                <span>微信、会议、短信咨询</span>
+              </div>
+              <div
+                  className={ 'flex items-center bg-white px-3 py-2 border rounded-full mb-12 ml-8' }>
+                <Search
+                    className={ 'mr-4  p-1  rounded-full bg-yellow-400 text-white' }/>
+                <span>微信、会议、短信咨询</span>
+              </div>
+              <div
+                  className={ 'flex items-center bg-white px-3 py-2 border rounded-full' }>
+                <MessageCircle
+                    className={ 'mr-4  p-1  rounded-full bg-sky-500 text-white' }/>
+                <span>微信、会议、短信咨询</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
