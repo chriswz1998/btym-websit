@@ -10,16 +10,13 @@ const font = Poppins({
 
 export const Logo = () => {
   return (
-      <div className="hidden md:flex items-center gap-x-2">
+      <div className="hidden md:flex items-center gap-x-2 mr-2">
         <Image
-            src="/logo.svg"
-            height="40"
-            width="40"
+            src="/logo.png"
+            height="71"
+            width="200"
             alt="Logo"
         />
-        <p className={ cn('font-semibold', font.className) }>
-          博泰移民
-        </p>
       </div>
   )
 }
