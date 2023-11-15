@@ -23,6 +23,13 @@ module.exports = {
           {
             'default-blue': 'rgba(62, 128, 255, 1)',
             'mask-bg': 'rgba(1, 12, 37, .7)',
+            'icon-1': 'rgba(214, 235, 228, 1)',
+            'text-1': 'rgba(32, 191, 169, 1)',
+            'text-2': 'rgba(134, 150, 160, 1)',
+            'icon-2': 'rgba(250, 226, 218, 1)',
+            'text-3': 'rgba(255, 121, 77, 1)',
+            'icon-3': 'rgba(250, 226, 218, 1)',
+            'icon-4': 'rgba(235, 245, 255, 1)',
             border: 'hsl(var(--border))',
             input: 'hsl(var(--input))',
             ring: 'hsl(var(--ring))',
