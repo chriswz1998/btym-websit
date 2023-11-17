@@ -1,21 +1,9 @@
 import { Navbar } from '@/app/(marketing)/_components/navbar'
-import { Button } from '@/components/ui/button'
-import {
-  ArrowRight,
-  Car,
-  Check, MessageCircle,
-  MessagesSquare,
-  ScrollText,
-  Search
-} from 'lucide-react'
-import Image from 'next/image'
-import smail from '@/public/smail.svg'
-import shape_one from '@/public/shape_one.svg'
-import shape_two from '@/public/shape_two.svg'
-import vector from '@/public/Vector.png'
 import ContainerO from '@/app/(marketing)/_components/ContainerO'
 import ContainerT from '@/app/(marketing)/_components/ContainerT'
 import Container3 from '@/app/(marketing)/_components/Container3'
+import Container4 from '@/app/(marketing)/_components/Container4'
+import Container5 from '@/app/(marketing)/_components/Container5'
 
 interface CheckItem {
   icon: string
@@ -52,6 +40,8 @@ export default function MarketingPage() {
         <div className={ 'px-20 min-[1980px]:w-[1980px] mx-auto' }>
           <ContainerT/>
           <Container3/>
+          <Container4/>
+          <Container5/>
         </div>
       </div>
 
