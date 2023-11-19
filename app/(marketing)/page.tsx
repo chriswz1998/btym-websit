@@ -4,6 +4,8 @@ import ContainerT from '@/app/(marketing)/_components/ContainerT'
 import Container3 from '@/app/(marketing)/_components/Container3'
 import Container4 from '@/app/(marketing)/_components/Container4'
 import Container5 from '@/app/(marketing)/_components/Container5'
+import Container6 from '@/app/(marketing)/_components/Container6'
+import Container7 from '@/app/(marketing)/_components/Container7'
 
 interface CheckItem {
   icon: string
@@ -42,6 +44,8 @@ export default function MarketingPage() {
           <Container3/>
           <Container4/>
           <Container5/>
+          <Container6/>
+          <Container7/>
         </div>
       </div>
 

@@ -35,6 +35,7 @@ module.exports = {
             'icon-4': 'rgba(235, 245, 255, 1)',
             'mask-color': 'rgba(42, 130, 228, 0.22)',
             'mask-color1': 'rgba(62, 128, 255, .08)',
+            'mask-color2': 'rgba(235, 245, 255, 1)',
             border: 'hsl(var(--border))',
             input: 'hsl(var(--input))',
             ring: 'hsl(var(--ring))',
