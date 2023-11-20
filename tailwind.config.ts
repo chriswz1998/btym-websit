@@ -25,6 +25,7 @@ module.exports = {
             'default-text-color': 'rgba(16, 36, 52, 1)',
             'description-text-color': 'rgba(134, 150, 160, 1)',
             'description-text-color1': 'rgba(31, 32, 34, 1)',
+            'description-text-color2': 'rgba(169, 177, 198, 1)',
             'mask-bg': 'rgba(1, 12, 37, .7)',
             'icon-1': 'rgba(214, 235, 228, 1)',
             'text-1': 'rgba(32, 191, 169, 1)',

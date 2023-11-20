@@ -23,6 +23,9 @@ const navbarItem: NavbarItem[] = [
     href: '/'
   },
   {
+    label: '打分工具',
+    href: '/'
+  }, {
     label: '关于我们',
     href: '/'
   },
@@ -35,7 +38,7 @@ const navbarItem: NavbarItem[] = [
     href: '/'
   },
   {
-    label: '官方微博',
+    label: '官方小程序',
     href: '/'
   },
   {
@@ -44,39 +47,27 @@ const navbarItem: NavbarItem[] = [
   }
 ]
 
-const navbarSocialMedia: NavbarSocialMedia[] = [
-  {
-    src: './twitter.svg',
-    alt: 'twitter'
-  },
-  {
-    src: './instagram.svg',
-    alt: 'instagram'
-  },
-  {
-    src: './facebook.svg',
-    alt: 'facebook'
-  }
-]
-
 export const Navbar = () => {
   const scrolled = useScrollTop()
   return (
       <div>
         <div className={ 'flex items-center justify-between py-10' }>
-          <div className={'flex items-center text-white'}>
+          <div className={ 'flex items-center text-white' }>
             <Logo/>
             {
               navbarItem.map((item, index) => (
-                  <div className={'text-[18px] px-6 ml-2 cursor-pointer'} key={ index }>
+                  <div className={ 'text-[18px] px-6 ml-2 cursor-pointer' }
+                       key={ index }>
                     { item.label }
                   </div>
               ))
             }
           </div>
           <div className={ 'flex items-center' }>
-            <Button className={'text-[18px] px-12 py-6 text-default-blue bg-white hover:bg-white mr-10 font-light'}>登录</Button>
-            <Button className={'bg-transparent hover:bg-transparent'}><Globe2/></Button>
+            <Button
+                className={ 'text-[18px] px-12 py-6 text-default-blue bg-white hover:bg-white mr-10 font-light' }>登录</Button>
+            <Button
+                className={ 'bg-transparent hover:bg-transparent' }><Globe2/></Button>
           </div>
         </div>
       </div>
