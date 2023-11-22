@@ -15,8 +15,9 @@ import {
   FormMessage
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { toast } from '@/components/ui/use-toast'
 import { Textarea } from '@/components/ui/textarea'
+import axios from 'axios'
+import toast from 'react-hot-toast'
 
 const FormSchema = z.object({
   name: z.string().min(2, {
@@ -25,8 +26,8 @@ const FormSchema = z.object({
   email: z.string().min(8, {
     message: '请完整填写邮箱'
   }),
-  subject: z.string().min(0),
-  detail: z.string().min(0)
+  title: z.string().min(0),
+  content: z.string().min(0)
 })
 
 export function UserForm() {
@@ -35,13 +36,20 @@ export function UserForm() {
     defaultValues: {
       name: '',
       email: '',
-      subject: '',
-      detail: ''
+      title: '',
+      content: ''
     }
   })
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log('🚀 ~ file: UserFrom.tsx ~ line 40 --->', data)
+  const onSubmit = async (data: z.infer<typeof FormSchema>) => {
+    try {
+
+      const response = await axios.post('/api/UserApplicationFrom', data)
+      console.log('🚀 ~ file: UserFrom.tsx ~ line 47 --->', response)
+    } catch (e) {
+      toast.error('提交失败')
+      console.log('🚀 ~ file: UserFrom.tsx ~ line 50 --->', e)
+    }
   }
 
   return (
@@ -80,7 +88,7 @@ export function UserForm() {
               ) }
           />
           <FormField
-              name={ 'subject' }
+              name={ 'title' }
               render={ ({ field }) => (
                   <FormItem>
                     <FormLabel
@@ -94,7 +102,7 @@ export function UserForm() {
               ) }
           />
           <FormField
-              name="detail"
+              name="content"
               render={ ({ field }) => (
                   <FormItem>
                     <FormLabel
