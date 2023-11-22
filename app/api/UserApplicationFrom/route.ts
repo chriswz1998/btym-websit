@@ -15,10 +15,7 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-
     const { name, email, title, content } = await req.json()
-    const data = streamToString(req.body)
-    console.log('🚀 ~ file: route.ts ~ line 27 --->', data)
     const form = await prisma.applicationFromUser.create({
       data: {
         name,
@@ -33,13 +30,5 @@ export async function POST(req: Request) {
     console.error('requestPost', error)
     return new NextResponse('Internal Error', { status: 500 })
   }
-}
-
-async function streamToString(stream: any) {
-  const chunks = []
-  for await (const chunk of stream) {
-    chunks.push(chunk)
-  }
-  return Buffer.concat(chunks).toString('utf8')
 }
 
