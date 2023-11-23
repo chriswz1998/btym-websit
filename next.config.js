@@ -2,6 +2,14 @@
 const nextConfig = {
 	experimental: {
 		outputStandalone: true
+	},
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'i.ibb.co'
+			}
+		]
 	}
 }
 

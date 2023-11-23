@@ -1,12 +1,12 @@
 import { AtSign, MapPinned, PhoneCall } from 'lucide-react'
-import { UserForm } from '@/app/(marketing)/_components/UserFrom'
+import { CustomerApplicationFrom } from '@/components/custoemr.application.from'
 
 const Container8 = () => {
 
   return (
       <div
-          className={ 'bg-default-blue w-full flex px-20 py-36' }>
-        <div className={ 'text-white w-1/2' }>
+          className={ 'w-full flex' }>
+        <div className={ 'w-1/2 p-20 shadow-[0_6px_30px_rgba(0,0,0,0.12)] rounded-md overflow-hidden' }>
           <div>
             <p className={ 'text-[62px]' }>
               我们来谈谈
@@ -47,8 +47,12 @@ const Container8 = () => {
             </div>
           </div>
         </div>
-        <div className={ 'w-1/2 flex justify-center items-center' }>
-            <UserForm/>
+        <div className={'w-[100px]'}/>
+        <div
+            className={ 'w-1/2 flex justify-center items-center shadow-[0_6px_30px_rgba(0,0,0,0.12)] rounded-md overflow-hidden' }>
+          <div className={ 'bg-white w-2/3 p-14 rounded-lg' }>
+            <CustomerApplicationFrom/>
+          </div>
         </div>
       </div>
   )

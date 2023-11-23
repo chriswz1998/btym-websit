@@ -34,7 +34,7 @@ export default function MarketingPage() {
   return (
       <div>
         <div
-            className={ 'bg-[url("/bg1.jpeg")] bg-cover bg-no-repeat ' }>
+            className={ 'bg-[url("https://i.ibb.co/wSSKYng/bg1.jpg")] bg-cover bg-no-repeat' }>
           <div className={ 'bg-mask-bg w-full h-full' }>
             <div className={ 'px-20 min-[1980px]:w-[1980px] mx-auto' }>
               <Navbar/>

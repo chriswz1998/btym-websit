@@ -16,9 +16,6 @@ module.exports = {
       }
     },
     extend: {
-      backgroundImage: {
-        'bg1': 'url(\'/bg1.jpeg\')'
-      },
       colors:
           {
             'default-blue': 'rgba(62, 128, 255, 1)',
@@ -26,6 +23,10 @@ module.exports = {
             'description-text-color': 'rgba(134, 150, 160, 1)',
             'description-text-color1': 'rgba(31, 32, 34, 1)',
             'description-text-color2': 'rgba(169, 177, 198, 1)',
+            'description-text-color3': 'rgba(92, 106, 146, 1)',
+            'description-text-color4': 'rgba(243, 193, 60, 1)',
+            'description-text-color5': '#8c8c8c',
+            'description-text-color6': '#F5F5F5FF',
             'mask-bg': 'rgba(1, 12, 37, .7)',
             'icon-1': 'rgba(214, 235, 228, 1)',
             'text-1': 'rgba(32, 191, 169, 1)',
@@ -36,6 +37,7 @@ module.exports = {
             'icon-4': 'rgba(235, 245, 255, 1)',
             'mask-color': 'rgba(42, 130, 228, 0.22)',
             'mask-color1': 'rgba(62, 128, 255, .08)',
+            'mask-color3': 'rgba(4,34,51,0.4)',
             'mask-color2': 'rgba(235, 245, 255, 1)',
             border: 'hsl(var(--border))',
             input: 'hsl(var(--input))',

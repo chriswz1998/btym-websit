@@ -29,7 +29,7 @@ const FormSchema = z.object({
   content: z.string().min(0)
 })
 
-export function UserForm() {
+export const CustomerApplicationFrom = () => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -42,19 +42,19 @@ export function UserForm() {
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     try {
-
       const response = await axios.post('/api/UserApplicationFrom', data)
-      console.log('🚀 ~ file: UserFrom.tsx ~ line 47 --->', response)
+      if (response.status === 200) {
+        toast.success('提交成功')
+      }
     } catch (e) {
       toast.error('提交失败')
-      console.log('🚀 ~ file: UserFrom.tsx ~ line 50 --->', e)
     }
   }
 
   return (
       <Form { ...form }>
         <form onSubmit={ form.handleSubmit(onSubmit) }
-              className="w-2/3 space-y-12 bg-white p-12 rounded-2xl">
+              className="w-full space-y-12">
           <FormField
               control={ form.control }
               name="name"
@@ -65,7 +65,7 @@ export function UserForm() {
                     <FormControl>
                       <Input
                           placeholder={ '张先生/女士' }
-                          className={ 'h-[65px] bg-mask-color2' } { ...field } />
+                          className={ 'h-[65px]' } { ...field } />
                     </FormControl>
                     <FormMessage/>
                   </FormItem>
@@ -80,7 +80,7 @@ export function UserForm() {
                         className={ 'text-[22px] text-description-text-color1 font-light' }>邮箱</FormLabel>
                     <FormControl>
                       <Input placeholder={ 'botavisa@botavisa.com' }
-                             className={ 'h-[65px] bg-mask-color2' } { ...field } />
+                             className={ 'h-[65px]' } { ...field } />
                     </FormControl>
                     <FormMessage/>
                   </FormItem>
@@ -94,7 +94,7 @@ export function UserForm() {
                         className={ 'text-[22px] text-description-text-color1 font-light' }>主题</FormLabel>
                     <FormControl>
                       <Input placeholder="雇主担保/联邦EE"
-                             className={ 'h-[65px] bg-mask-color2' } { ...field } />
+                             className={ 'h-[65px]' } { ...field } />
                     </FormControl>
                     <FormMessage/>
                   </FormItem>
@@ -109,7 +109,7 @@ export function UserForm() {
                     <FormControl>
                       <Textarea
                           placeholder="告诉我们更多细节"
-                          className={ 'h-[230px] bg-mask-color2' }
+                          className={ 'h-[230px]' }
                           { ...field }
                       />
                     </FormControl>
@@ -118,7 +118,7 @@ export function UserForm() {
               ) }
           />
           <Button
-              className={ 'w-full rounded-full bg-default-blue hover:bg-default-blue' }
+              className={ 'w-full rounded-lg bg-default-blue hover:bg-default-blue' }
               type="submit">
             提交
           </Button>

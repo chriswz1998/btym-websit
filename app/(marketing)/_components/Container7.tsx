@@ -20,7 +20,7 @@ const Container7 = () => {
               <span className={'text-[112px] text-mask-color2 font-bold'}>01</span>
               <span className={'text-[28px] font-bold ml-2'}>登记信息</span>
             </div>
-            <Image src={'/63f85c5094031f9157f67929.png'} width={400} height={400} alt={''}/>
+            <Image src={'/ic1.svg'} width={350} height={350} alt={''}/>
             <div className={'flex items-center'}>
               <div className={'w-[15px] h-[15px] bg-default-blue rounded-full mr-4'} />
               <p className={'w-[400px] text-[20px] text-description-text-color'}>登记您的社交媒体或邮箱我们的持牌顾问会第一时间联系您，了解您的需求</p>
@@ -31,7 +31,7 @@ const Container7 = () => {
               <span className={'text-[112px] text-mask-color2 font-bold'}>02</span>
               <span className={'text-[28px] font-bold ml-2'}>定制方案</span>
             </div>
-            <Image src={'/63f85c5094031f9157f67929.png'} className={'pb-6'} width={400} height={400} alt={''}/>
+            <Image src={'/ic2.svg'} className={'pb-6'} width={350} height={350} alt={''}/>
             <div className={'flex items-center'}>
               <div className={'w-[15px] h-[15px] bg-default-blue rounded-full mr-4'} />
               <p className={'w-[400px] text-[20px] text-description-text-color'}>根据您所在地区的时间安排会议或着消息沟通</p>
@@ -42,7 +42,7 @@ const Container7 = () => {
               <span className={'text-[112px] text-mask-color2 font-bold'}>03</span>
               <span className={'text-[28px] font-bold ml-2'}>方案认可</span>
             </div>
-            <Image src={'/63f85c5094031f9157f67929.png'} width={400} height={400} alt={''}/>
+            <Image src={'/ic3.svg'} width={350} height={350} alt={''}/>
             <div className={'flex items-center'}>
               <div className={'w-[15px] h-[15px] bg-default-blue rounded-full mr-4'} />
               <p className={'w-[400px] text-[20px] text-description-text-color'}>我们的努力只有一个目标，那就是认可我们的方案</p>
