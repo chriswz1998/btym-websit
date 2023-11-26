@@ -36,7 +36,14 @@ const FormSchema = z.object({
   content: z.string().min(0)
 })
 
-export const DialogCoverFrom = () => {
+interface variantType {
+  variant: 'link' | 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | null | undefined
+}
+
+export const DialogCoverFrom = ({ dialog_model, variant }: {
+  dialog_model: string,
+  variant?: variantType['variant']
+}) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -64,7 +71,11 @@ export const DialogCoverFrom = () => {
       <Dialog open={ open } onOpenChange={ setOpen }>
         <DialogTrigger asChild>
           <Button
-              className={ 'text-[28px] px-14 py-8 bg-default-blue  text-white hover:bg-default-blue font-light ' }>
+              className={ `${ dialog_model === 'normal'
+                              ? 'text-[28px] px-14 py-8 bg-default-blue  text-white hover:bg-default-blue font-light'
+                              : 'w-[300px] h-[60px] text-[20px] mb-24' }` }
+              variant={ variant || 'default' }
+          >
             <MessageSquare className={ 'mr-2' }/>
             开始咨询
           </Button>

@@ -39,6 +39,8 @@ module.exports = {
             'mask-color1': 'rgba(62, 128, 255, .08)',
             'mask-color3': 'rgba(4,34,51,0.4)',
             'mask-color2': 'rgba(235, 245, 255, 1)',
+            'mask-color4': '#1f2937',
+            'mask-color5': '#0d4181',
             border: 'hsl(var(--border))',
             input: 'hsl(var(--input))',
             ring: 'hsl(var(--ring))',

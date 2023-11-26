@@ -1,6 +1,6 @@
 import { Building2, Mailbox, PhoneCall } from 'lucide-react'
 
-const Container10 = () => {
+const Footer = () => {
   return (
       <div className={ 'border-t' }>
         <div className={ 'py-20' }>
@@ -41,4 +41,4 @@ const Container10 = () => {
   )
 }
 
-export default Container10
+export default Footer
