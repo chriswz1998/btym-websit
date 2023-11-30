@@ -1,3 +1,14 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/web
+[ec2-user@ip-172-31-0-142 btym-websit]$ cat Dockerfile
 FROM node:18-alpine AS base
 
 # Install dependencies only when needed
@@ -20,7 +31,7 @@ RUN \
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY ../../Downloads/未命名文件夹1 .
+COPY . .
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
