@@ -1,14 +1,3 @@
-version: '3.8'
-services:
-  web:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    volumes:
-      - .:/web
-[ec2-user@ip-172-31-0-142 btym-websit]$ cat Dockerfile
 FROM node:18-alpine AS base
 
 # Install dependencies only when needed
