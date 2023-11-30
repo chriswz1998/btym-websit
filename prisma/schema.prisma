@@ -10,13 +10,27 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum ApplicationState {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
 model ApplicationFromUser {
   // 用户申请, 提交表单
-  id        Int      @id @default(autoincrement())
+  id        Int              @id @default(autoincrement())
   title     String?
   name      String
   email     String
   content   String?
-  state     String?  @default("pending")
+  state     ApplicationState @default(PENDING)
+  createdAt DateTime         @default(now())
+}
+
+model ProvinceBanner {
+  // 省份banner
+  id        Int      @id @default(autoincrement())
+  province  String
+  image     String
   createdAt DateTime @default(now())
 }

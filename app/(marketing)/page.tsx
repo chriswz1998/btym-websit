@@ -1,5 +1,5 @@
 import {
-  AtSign,
+  AtSign, Blocks,
   BookText,
   ChevronsRight,
   Headphones,
@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { CustomerApplicationFrom } from '@/components/custoemr.application.from'
 import Link from 'next/link'
+import { DropdownMenuItemEach } from '@/components/dropDown'
 
 export default function MarketingPage() {
   return (
@@ -21,72 +22,52 @@ export default function MarketingPage() {
           </div>
           <div className={ 'flex justify-between items-center' }>
             <div className={ 'flex justify-center items-center' }>
-              <div
-                  className={ 'bg-icon-1 p-10 rounded-full text-text-1 mr-7' }>
-                <BookText/>
-              </div>
-              <div>
+              <Image src={ '/ic4.svg' } alt={ '' } width={ 200 }
+                     height={ 300 }/>
+              <div className={ 'ml-2' }>
                 <p className={ 'p-4 text-[31.2px]' }>文案工作</p>
                 <p className={ 'p-4 w-[338px] text-[19.5px] text-text-2 word-break: break-all' }>根据多年的咨询和案例经验，我们为每一位客户量身定制了文案顾问，在深入了解情况后书写量身定制的文案</p>
               </div>
             </div>
             <div className={ 'flex justify-center items-center' }>
-              <div
-                  className={ 'bg-icon-2 p-10 rounded-full text-text-3 mr-7' }>
-                <Zap/>
-              </div>
-              <div>
+              <Image src={ '/ic1.svg' } alt={ '' } width={ 200 }
+                     height={ 300 }/>
+              <div className={ 'ml-2' }>
                 <p className={ 'p-4 text-[31.2px]' }>在线聆听你的需求</p>
                 <p className={ 'p-4 w-[338px] text-[19.5px] text-text-2 word-break: break-all' }>问我们在中国、香港、台湾、加拿大均有分公以应对不同时区客户的需求、随时随地、们都能听见你的声音!</p>
               </div>
             </div>
             <div className={ 'flex justify-center items-center' }>
-              <div
-                  className={ 'bg-icon-4 p-10 rounded-full text-default-blue mr-7' }>
-                <Headphones/>
-              </div>
-              <div>
+              <Image src={ '/ic9.svg' } alt={ '' } width={ 200 }
+                     height={ 300 }/>
+              <div className={ 'ml-2' }>
                 <p className={ 'p-4 text-[31.2px]' }>社交媒体</p>
                 <p className={ 'p-4 w-[338px] text-[19.5px] text-text-2 word-break: break-all' }>博泰移民在Youtube、X、Facebook等社交媒体均有官方营销账户，定期更新相关政策的变更和优秀案例</p>
               </div>
             </div>
           </div>
         </div>
-        <div className={ 'border-b pb-10' }>
+        <div
+            className={ `border-b pb-10` }>
           <div className={ 'w-full pt-44 pb-20 flex justify-center' }>
-            <h1 className={ 'text-[60px] font-bold' }>移民分类</h1>
+            <h1 className={ 'text-[60px] font-bold' }>移民省份</h1>
           </div>
-          <div className={ 'flex justify-between items-center' }>
-            <div className={ 'flex justify-center items-center' }>
-              <div
-                  className={ 'bg-icon-1 p-10 rounded-full text-text-1 mr-7' }>
-                <BookText/>
-              </div>
-              <div>
-                <p className={ 'p-4 text-[31.2px]' }>雇主担保</p>
-                <p className={ 'p-4 w-[338px] text-[19.5px] text-text-2 word-break: break-all' }>根据多年的咨询和案例经验，我们为每一位客户量身定制了文案顾问，在深入了解情况后书写量身定制的文案</p>
-              </div>
-            </div>
-            <div className={ 'flex justify-center items-center' }>
-              <div
-                  className={ 'bg-icon-2 p-10 rounded-full text-text-3 mr-7' }>
-                <Zap/>
-              </div>
-              <div>
-                <p className={ 'p-4 text-[31.2px]' }>省提名</p>
-                <p className={ 'p-4 w-[338px] text-[19.5px] text-text-2 word-break: break-all' }>问我们在中国、香港、台湾、加拿大均有分公以应对不同时区客户的需求、随时随地、们都能听见你的声音!</p>
-              </div>
-            </div>
-            <div className={ 'flex justify-center items-center' }>
-              <div
-                  className={ 'bg-icon-4 p-10 rounded-full text-default-blue mr-7' }>
-                <Headphones/>
-              </div>
-              <div>
-                <p className={ 'p-4 text-[31.2px]' }>联邦提名</p>
-                <p className={ 'p-4 w-[338px] text-[19.5px] text-text-2 word-break: break-all' }>博泰移民在Youtube、X、Facebook等社交媒体均有官方营销账户，定期更新相关政策的变更和优秀案例</p>
-              </div>
-            </div>
+          <div className={ 'flex flex-col justify-center items-center' }>
+            { DropdownMenuItemEach.map((item, index) => {
+              return (
+                  <Link href={ `province/${ item.href }` } key={ index }>
+                    <div
+                        className={ 'w-[500px] flex justify-center items-center text-[26px] p-4 rounded-lg overflow-hidden group transition hover:text-white hover:bg-default-blue hover:shadow-[0_6.42px_33px_rgba(61,53,255,0.4)]' }>
+                      <Blocks
+                          className={ 'text-default-blue mr-3 transition group-hover:text-white' }
+                          size={ 30 }/>
+                      <p>{ item.text }</p>
+                    </div>
+                  </Link>
+              )
+            }) }
+
+
           </div>
           <div className={ 'w-full pt-44 pb-20 flex justify-center' }>
             <h1 className={ 'text-[60px] font-bold' }>我们的案例</h1>
@@ -200,81 +181,86 @@ export default function MarketingPage() {
           <div className={ 'mt-32 w-full flex justify-center' }>
             <h1 className={ 'text-[64px] font-bold' }>我们的持牌顾问</h1>
           </div>
-
-          <div
-              className={ 'flex justify-between p-48 mt-28 shadow-[0_6px_30px_rgba(0,0,0,0.12)] rounded-md overflow-hidden' }>
-            <div className={ 'relative' }>
-              <div
-                  className={ 'absolute -bottom-[45px] -right-[35px] -z-10' }>
-                <Image src={ '/shape_one.svg' } width={ '200' }
-                       height={ '200' }
-                       alt={ '' }/>
-                <Image src={ '/shape_two.svg' } width={ '50' } height={ '50' }
-                       alt={ '' } className={ 'absolute top-0 right-0' }/>
-              </div>
-              <div className={ 'z-50' }>
-                <Image src={ '/vector.png' } width={ '450' } height={ '450' }
-                       alt={ '' }/>
+          <div className={ 'flex flex-wrap justify-between mt-32' }>
+            <div
+                className=" mb-20 w-[48%] flex rounded-xl p-0 shadow-[0_6px_30px_rgba(0,0,0,0.12)] overflow-hidden">
+              <Image
+                  className={ 'w-[280px] h-[360px]' }
+                  src="/de9b3815.jpg" alt="" width={ 350 }
+                  height={ 100 }/>
+              <div className="p-8 text-left space-y-40">
+                <blockquote>
+                  <p className="text-lg font-medium">
+                    Tailwind CSS is the only framework that I seen scale
+                    on large teams. It’s easy to customize, adapts to any
+                    design,
+                    and the build size is tiny.
+                  </p>
+                </blockquote>
+                <figcaption className="font-medium">
+                  <div className="text-sky-500 dark:text-sky-400">
+                    Sarah Dayan
+                  </div>
+                  <div className="text-slate-700 dark:text-slate-500">
+                    Staff Engineer, Algolia
+                  </div>
+                </figcaption>
               </div>
             </div>
-
-            <div>
-              <p
-                  className="w-[597px] text-description-text-color text-2xl font-['Maven Pro'] leading-10">
-                I recently engaged with this global marketing consulting
-                agency,
-                and their expertise is evident. As a top-rated online
-                marketing
-                agency in New York, they offer user-friendly, innovative
-                solutions
-                that have boosted our online presence. They excel at making
-                global
-                marketing accessible. A fantastic partner for expanding your
-                brand!
-              </p>
-              <p className="mt-16 text-[22px] font-bold font-['Maven Pro'] leading-[35px]">顾问1</p>
-              <p className="mt-2 font-normal font-['Maven Pro']">博泰移民资深顾问,
-                CEO</p>
-            </div>
-          </div>
-
-          <div
-              className={ 'flex justify-between p-48 mt-28 shadow-[0_6px_30px_rgba(0,0,0,0.12)] rounded-md overflow-hidden' }>
-            <div>
-              <p
-                  className="w-[597px] text-2xl text-description-text-color font-['Maven Pro'] leading-10">
-                I recently engaged with this global marketing consulting
-                agency,
-                and their expertise is evident. As a top-rated online
-                marketing
-                agency in New York, they offer user-friendly, innovative
-                solutions
-                that have boosted our online presence. They excel at making
-                global
-                marketing accessible. A fantastic partner for expanding your
-                brand!
-              </p>
-              <p className="mt-16 text-[22px] font-bold font-['Maven Pro'] leading-[35px]">顾问1</p>
-              <p className="mt-2 font-normal font-['Maven Pro']">博泰移民资深顾问,
-                CEO</p>
-            </div>
-
-            <div className={ 'relative' }>
-              <div
-                  className={ 'absolute -bottom-[45px] -right-[35px] -z-10' }>
-                <Image src={ '/shape_one.svg' } width={ '200' }
-                       height={ '200' }
-                       alt={ '' }/>
-                <Image src={ '/shape_two.svg' } width={ '50' } height={ '50' }
-                       alt={ '' } className={ 'absolute top-0 right-0' }/>
+            <div
+                className="mb-20 w-[48%] flex rounded-xl p-0 shadow-[0_6px_30px_rgba(0,0,0,0.12)] overflow-hidden">
+              <Image
+                  className={ 'w-[280px] h-[360px]' }
+                  src="/de9b3815.jpg" alt="" width={ 350 }
+                  height={ 100 }/>
+              <div className="p-8 text-left space-y-40">
+                <blockquote>
+                  <p className="text-lg font-medium">
+                    Tailwind CSS is the only framework that I seen scale
+                    on large teams. It’s easy to customize, adapts to any
+                    design,
+                    and the build size is tiny.
+                  </p>
+                </blockquote>
+                <figcaption className="font-medium">
+                  <div className="text-sky-500 dark:text-sky-400">
+                    Sarah Dayan
+                  </div>
+                  <div className="text-slate-700 dark:text-slate-500">
+                    Staff Engineer, Algolia
+                  </div>
+                </figcaption>
               </div>
-              <div className={ 'z-50' }>
-                <Image src={ '/vector1.png' } width={ '450' } height={ '450' }
-                       alt={ '' }/>
+            </div>
+            <div
+                className="mb-20 w-[48%] flex rounded-xl p-0 shadow-[0_6px_30px_rgba(0,0,0,0.12)] overflow-hidden">
+              <Image
+                  className={ 'w-[280px] h-[360px]' }
+                  src="/de9b3815.jpg" alt="" width={ 350 }
+                  height={ 100 }/>
+              <div className="p-8 text-left space-y-40">
+                <blockquote>
+                  <p className="text-lg font-medium">
+                    “Tailwind CSS is the only framework that seen scale
+                    on large teams. It’s easy to customize, adapts to any
+                    design,
+                    and the build size is tiny.”
+                  </p>
+                </blockquote>
+                <figcaption className="font-medium">
+                  <div className="text-sky-500 dark:text-sky-400">
+                    Sarah Dayan
+                  </div>
+                  <div className="text-slate-700 dark:text-slate-500">
+                    Staff Engineer, Algolia
+                  </div>
+                </figcaption>
               </div>
             </div>
           </div>
         </div>
+
+
         <div className={ 'mb-32' }>
           <div className={ 'mt-32 w-full flex justify-center' }>
             <p className={ 'text-[50px] font-bold' }>
@@ -295,7 +281,7 @@ export default function MarketingPage() {
                 <span
                     className={ 'text-[28px] font-bold ml-2' }>登记信息</span>
               </div>
-              <Image src={ '/ic1.svg' } width={ 350 } height={ 350 }
+              <Image src={ '/ic10.svg' } width={ 350 } height={ 350 }
                      alt={ '' }/>
               <div className={ 'flex items-center' }>
                 <div
