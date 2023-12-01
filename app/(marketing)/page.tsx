@@ -55,7 +55,7 @@ export default function MarketingPage() {
           <div className={ 'flex flex-col justify-center items-center' }>
             { DropdownMenuItemEach.map((item, index) => {
               return (
-                  <Link href={ `province/${ item.href }` } key={ index }>
+                  <Link href={ `${ item.href }` } key={ index }>
                     <div
                         className={ 'w-[500px] flex justify-center items-center text-[26px] p-4 rounded-lg overflow-hidden group transition hover:text-white hover:bg-default-blue hover:shadow-[0_6.42px_33px_rgba(61,53,255,0.4)]' }>
                       <Blocks

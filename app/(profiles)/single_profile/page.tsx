@@ -10,7 +10,7 @@ const Single_profile = () => {
           <div className={ 'text-description-text-color5 py-10' }>2023-03-09
             16:10:43
           </div>
-          <Image src={ '/024Mf03EgBN7LFqFFJgtsQCwGnVJHNwdatikrsY7.jpg' }
+          <Image src={ 'https://i.ibb.co/ynFJw3F/024-Mf03-Eg-BN7-LFq-FFJgts-QCw-Gn-VJHNwdatikrs-Y7.jpg' }
                  alt={ '' } width={ 800 } height={ 100 }/>
           <div className={ 'w-[800px] text-[19px] pt-5' }>
             与此同时，正有一个00类LMIA，当时顾问和文案评估认为完美适配H先生，
