@@ -1,9 +1,7 @@
 import React from 'react'
 import { Navbar } from '@/components/navbar'
 import Footer from '@/components/footer'
-import Image from 'next/image'
 import { DialogCoverFrom } from '@/components/dialog'
-import { Province_banner } from '@/components/province_banner'
 
 const MainLayout = async ({ children }: { children: React.ReactNode }) => {
   return (

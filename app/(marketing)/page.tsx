@@ -1,17 +1,14 @@
 import {
   AtSign, Blocks,
-  BookText,
   ChevronsRight,
-  Headphones,
   MapPinned, PhoneCall,
   Star,
-  Zap
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { CustomerApplicationFrom } from '@/components/custoemr.application.from'
 import Link from 'next/link'
-import { DropdownMenuItemEach } from '@/components/dropDown'
+import { DropdownMenuItemEach_province } from '@/lib/publicResuces'
 
 export default function MarketingPage() {
   return (
@@ -53,7 +50,7 @@ export default function MarketingPage() {
             <h1 className={ 'text-[60px] font-bold' }>移民省份</h1>
           </div>
           <div className={ 'flex flex-col justify-center items-center' }>
-            { DropdownMenuItemEach.map((item, index) => {
+            { DropdownMenuItemEach_province.map((item, index) => {
               return (
                   <Link href={ `${ item.href }` } key={ index }>
                     <div

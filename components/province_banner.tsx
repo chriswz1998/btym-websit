@@ -30,10 +30,10 @@ export const Province_banner = ( { province }: { province: string } ) => {
         getBanner()
     }, [ province ] )
     return ( <div className={ 'w-full flex items-center justify-center' }>
-            <Image src={ banner } alt={ '' } width={ 0 }
-                   height={ 0 }
-                   sizes="100vw"
-                   style={ { width: '100%', height: 'auto' } }/>
-        </div> )
+        <Image src={ banner } alt={ '' } width={ 0 }
+               height={ 0 }
+               sizes="100vw"
+               style={ { width: '100%', height: 'auto' } }/>
+    </div> )
 }
 
