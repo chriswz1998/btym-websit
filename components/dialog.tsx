@@ -73,7 +73,7 @@ export const DialogCoverFrom = ({ dialog_model, variant }: {
                 <Button
                     className={ `${ dialog_model === 'normal'
                         ? 'text-[28px] px-14 py-8 bg-default-blue  text-white hover:bg-default-blue font-light'
-                        : 'w-[300px] h-[60px] text-[20px] mb-24' }` }
+                        : 'w-[300px] h-[60px] text-[20px]' }` }
                     variant={ variant || 'default' }
                 >
                     <MessageSquare className={ 'mr-2' }/>
