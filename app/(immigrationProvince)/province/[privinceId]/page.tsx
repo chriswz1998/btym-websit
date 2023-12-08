@@ -4,10 +4,11 @@ import Image from 'next/image'
 import { DialogCoverFrom } from '@/components/dialog'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Province_banner } from '@/components/province_banner'
+import { Banner_item, Province_banner } from '@/components/province_banner'
 import toast from 'react-hot-toast'
 
-const data_url = [ {
+const data_url = [
+    {
     province: 'ontario', url: 'https://api.npoint.io/a265a7aba90f8338908e'
 }, {
     province: 'british-columbia', url: 'https://api.npoint.io/58cc1e846ee51aaf85cb'
@@ -25,6 +26,8 @@ const data_url = [ {
     province: 'newfoundland-and-labrador', url: 'https://api.npoint.io/9a24886e7fb36d498837'
 }, {
     province: 'new-brunswick', url: 'https://api.npoint.io/58ec089dc80dadd04ab4'
+}, {
+    province: 'manitoba', url: 'https://api.npoint.io/294ce4ca21ad2a335f19'
 } ]
 
 interface ResultSubItem {
@@ -72,12 +75,27 @@ const ProvinceIdPage = ( { params }: { params: { privinceId: string } } ) => {
         return data.url
     }
 
+    const [ banner, setBanner ] = React.useState<string>( '' )
+    const getBanner = async() => {
+        const response = await axios.get( `/api/province` )
+        filter_banner( response.data )
+    }
+
+    const filter_banner = ( banner: Banner_item[] ) => {
+        banner.map( ( item ) => {
+            if( item.province === params.privinceId ) {
+                setBanner( item.image )
+            }
+        } )
+    }
+
     useEffect( () => {
         pageData()
+        getBanner()
     }, [ params.privinceId ] )
 
     return ( <div>
-        <Province_banner province={ params.privinceId }/>
+        <Province_banner banner={ banner }/>
         <div className={ 'px-20 min-[1980px]:w-[1980px] mx-auto' }>
             <div className={ 'py-28 flex items-center justify-center' }>
                 <Image src={ image } alt={ '' } width={ 500 }
