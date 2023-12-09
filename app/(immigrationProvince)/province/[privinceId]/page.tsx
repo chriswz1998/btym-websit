@@ -34,7 +34,7 @@ const data_url = [ {
     province: 'manitoba', url: 'https://api.npoint.io/294ce4ca21ad2a335f19'
 } ]
 
-interface ResultSubItem{
+export interface ResultSubItem{
     title: string
     item: string[]
 }
@@ -59,6 +59,8 @@ const ProvinceIdPage = ({ params }: { params: { privinceId: string } }) => {
     const [ title, setTitle ] = useState<string>('')
     const [ title_en, setTitle_en ] = useState<string>('')
     const [ title_description, setTitle_description ] = useState<string>('')
+    const [ banner, setBanner ] = React.useState<string>('')
+
     const pageData = async() => {
         const { status, data: PageData } = await axios.get(filter_url())
         if(status !== 200){
@@ -73,13 +75,13 @@ const ProvinceIdPage = ({ params }: { params: { privinceId: string } }) => {
         setTitle_en(title_en)
         setTitle_description(title_description)
         setPageResult(detail)
+        console.log(detail)
     }
     const filter_url = () => {
         const [ data ] = data_url.filter((item) => item.province === params.privinceId)
         return data.url
     }
 
-    const [ banner, setBanner ] = React.useState<string>('')
     const getBanner = async() => {
         const response = await axios.get(`/api/province`)
         filter_banner(response.data)
@@ -100,6 +102,7 @@ const ProvinceIdPage = ({ params }: { params: { privinceId: string } }) => {
 
     return (<div>
         <Province_banner banner={ banner }/>
+
         <Margin20_box>
             <div className={ 'py-20 flex items-center justify-center space-x-16' }>
                 <Image src={ image } alt={ '' } width={ 500 }
@@ -118,84 +121,20 @@ const ProvinceIdPage = ({ params }: { params: { privinceId: string } }) => {
             </div>
         </Margin20_box>
 
-        <div className={ 'bg-mask-color6' }>
-            <Margin20_box className={ 'pb-24' }>
-                <Title size={ 50 } height={ 24 } title={ '安省提名·雇主担保类别' } bold={ true } center={ true }/>
-                <div className={ 'flex justify-center items-center space-x-16' }>
-                    <PrWayItem/>
-                    <PrWayItem/>
-                    <PrWayItem/>
-                </div>
-            </Margin20_box>
-        </div>
-
-        <Margin20_box className={ 'mb-24' }>
-            <Title size={ 50 } height={ 24 } title={ '安省特快入境' } bold={ true } center={ true }/>
-            <div className={ 'flex justify-center items-center space-x-16' }>
-                <PrWayItem w={ 400 } shadow={ true }/>
-                <PrWayItem w={ 400 } shadow={ true }/>
-            </div>
-        </Margin20_box>
-
-        <div className={ 'w-full bg-[url("/Image-18.png")] bg-cover bg-no-repeat flex' }>
-            <div className={ 'bg-mask-bg h-full text-white w-1/2 flex items-center justify-center' }>
-                <div className={ 'p-20 space-y-14' }>
-                    <Title size={ 50 } title={ '安省企业家创业' }/>
-                    <div className={ 'space-y-10' }>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px]' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
+        { pageResult.map((item, index) => {
+            return (<div className={ `${ index % 2 === 0 ? 'bg-mask-color6' : '' }` } key={ index }>
+                <Margin20_box className={ 'pb-24' }>
+                    <Title size={ 50 } title_en={ item.title_en } en_size={ 24 } height={ 24 } title={ item.title }
+                           bold={ true }
+                           center={ true }/>
+                    <div className={ 'flex justify-center items-center space-x-16' }>
+                        { item.data.map((Item, Index) => {
+                            return (<PrWayItem key={ Index } num={ Index + 1 } item_detail={ Item }/>)
+                        }) }
                     </div>
-                </div>
-            </div>
-
-            <div className={ 'bg-mask-color7 h-full text-white w-1/2 flex items-center justify-center' }>
-                <div className={ 'p-20 space-y-14' }>
-                    <Title size={ 50 } title={ '安省企业家创业' }/>
-                    <div className={ 'space-y-10' }>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px]' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                        <Pr_way_item_des
-                            className={ 'text-white text-xl w-[500px] ' }
-                            des={ '过去60个月内至少拥有36个月的全职商业运营经验，并且在过去12个月中参与公司的行政管理或者参与将计划在安省开创生意类型相关的商业管理' }/>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </Margin20_box>
+            </div>)
+        }) }
     </div>)
 }
 
