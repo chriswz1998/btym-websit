@@ -8,9 +8,7 @@ import { Banner_item, Province_banner } from '@/components/province_banner'
 import toast from 'react-hot-toast'
 import { Margin20_box } from '@/components/margin20_box'
 import { Title } from '@/components/Title'
-import { Blocks, Check } from 'lucide-react'
 import { PrWayItem } from '@/app/(immigrationProvince)/province/_components/pr_way_item'
-import { Pr_way_item_des } from '@/app/(immigrationProvince)/province/_components/pr_way_item_des'
 
 const data_url = [ {
     province: 'ontario', url: 'https://api.npoint.io/a265a7aba90f8338908e'
@@ -102,7 +100,6 @@ const ProvinceIdPage = ({ params }: { params: { privinceId: string } }) => {
 
     return (<div>
         <Province_banner banner={ banner }/>
-
         <Margin20_box>
             <div className={ 'py-20 flex items-center justify-center space-x-16' }>
                 <Image src={ image } alt={ '' } width={ 500 }

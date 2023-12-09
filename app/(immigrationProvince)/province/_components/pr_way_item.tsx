@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 import { Pr_way_item_des } from '@/app/(immigrationProvince)/province/_components/pr_way_item_des'
 import { ResultSubItem } from '@/app/(immigrationProvince)/province/[privinceId]/page'
@@ -13,10 +12,11 @@ export const PrWayItem = ({ item_detail, num, w, shadow }: {
             <p className={ 'text-[#E83328] text-[40px] font-bold' }>{ `0${ num }` }</p>
             <Title size={ 20 } title={ item_detail?.title || '' } bold={ true }/>
         </div>
-        <div className={ 'space-y-5 h-[400px] overflow-auto' }>
+        { item_detail?.item.length ? (<div className={ 'space-y-5 h-[400px] overflow-auto' }>
             { item_detail?.item.map((item, index) => {
                 return (<Pr_way_item_des key={ index } des={ item }/>)
             }) }
-        </div>
+        </div>) : '' }
+
     </div>)
 }
