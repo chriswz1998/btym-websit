@@ -12,7 +12,7 @@ export const EmployerBasic = ({
 }: { pageData: Result }) => {
     return (<div>
         <Margin20_box>
-            <Province_banner round={ true } banner={ '/bcemp1.png' }/>
+            <Province_banner round={ true } banner={ img_url }/>
         </Margin20_box>
         <Center_box col={ true } className={ 'space-y-14 my-24' }>
             <Title size={ 50 } title={ title } center={ true } bold={ true } en_size={ 30 }
@@ -25,7 +25,7 @@ export const EmployerBasic = ({
                 <Title center={ true } height={ 20 } bold={ true } size={ 50 }
                        title={ detail_who_can_apply?.title || '' }
                        className={ 'text-white' }/>
-                <div className={ 'flex flex-wrap items-center justify-between' }>
+                <div className={ 'flex flex-wrap items-center justify-c1' }>
                     { detail_who_can_apply?.des.map((item, index) => {
                         return (<div key={ index } className={ 'bg-white flex m-10 rounded-lg overflow-hidden' }>
                             <span

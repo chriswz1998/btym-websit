@@ -1,87 +1,96 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { Tabs, TabsTrigger, TabsList, TabsContent } from '@/components/ui/tabs'
-import axios from 'axios'
-import toast from 'react-hot-toast'
-import { Result, ResultItem } from '@/app/(immigrationProvince)/province/[privinceId]/page'
 import { DialogCoverFrom } from '@/components/dialog'
-//https://api.npoint.io/58cc1e846ee51aaf85cb
-const Employer = () => {
-    const [ pageResult, setPageResult ] = useState<ResultItem[]>( [] )
-    const [ image, setImage ] = useState<string>( '/ic1.svg' )
-    const [ title, setTitle ] = useState<string>( '' )
-    const [ title_en, setTitle_en ] = useState<string>( '' )
-    const [ title_description, setTitle_description ] = useState<string>( '' )
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { Banner_item, Province_banner } from '@/components/province_banner'
+import toast from 'react-hot-toast'
+import { Margin20_box } from '@/components/margin20_box'
+import { Title } from '@/components/Title'
+import { PrWayItem } from '@/app/(immigrationProvince)/province/_components/pr_way_item'
+
+export interface ResultSubItem{
+    title: string
+    item: string[]
+}
+
+export interface ResultItem{
+    title: string
+    title_en: string
+    data: ResultSubItem[]
+}
+
+export interface Result{
+    title: string
+    img_url: string
+    title_en: string
+    title_description: string
+    detail: ResultItem[]
+}
+
+const FederationPage = () => {
+    const [ pageResult, setPageResult ] = useState<ResultItem[]>([])
+    const [ image, setImage ] = useState<string>('/ic1.svg')
+    const [ title, setTitle ] = useState<string>('')
+    const [ title_en, setTitle_en ] = useState<string>('')
+    const [ title_description, setTitle_description ] = useState<string>('')
+
     const pageData = async() => {
-        const { status, data: PageData } = await axios.get( 'https://api.npoint.io/87b0a15bdbb5173e1e35' )
-        if( status !== 200 ) {
-            return toast.error( '数据获取失败' )
+        const { status, data: PageData } = await axios.get('https://api.npoint.io/e7e19a998e04b3692ecc')
+        if(status !== 200){
+            return toast.error('数据获取失败')
         }
         const {
             title, img_url, title_en, title_description, detail
         }: Result = PageData
-
-        setTitle( title )
-        setImage( img_url )
-        setTitle_en( title_en )
-        setTitle_description( title_description )
-        setPageResult( detail )
-        console.log( detail )
+        setTitle(title)
+        setImage(img_url)
+        setTitle_en(title_en)
+        setTitle_description(title_description)
+        setPageResult(detail)
+        console.log(detail)
     }
 
-    useEffect( () => {
+    useEffect(() => {
         pageData()
-    }, [] )
-    return ( <div className={ 'px-20 min-[1980px]:w-[1980px] mx-auto' }>
-        <div className={ 'py-28 flex items-center justify-center' }>
-            <Image src={ image } alt={ '' } width={ 500 }
-                   height={ 400 }/>
-            <div className={ 'space-y-36 p-10' }>
-                <div>
-                    <p className={ 'text-[30px] font-bold' }>{ title }</p>
-                    <p className={ 'text-[24px] text-default-blue' }>{ title_en }</p>
-                </div>
+    }, [])
 
-                <p className={ 'text-[20px] font-light mt-10 w-[600px]' }>
-                    { title_description }
-                </p>
-                <DialogCoverFrom dialog_model={ 'normal' }/>
+    return (<div>
+        <Province_banner banner={ 'https://i.ibb.co/jz4Svzp/12313123123123.png' }/>
+        <Margin20_box>
+            <div className={ 'py-20 flex items-center justify-center space-x-16' }>
+                <Image src={ image } alt={ '' } width={ 500 }
+                       height={ 400 } className={ 'rounded-lg' }/>
+                <div className={ 'space-y-28' }>
+                    <div>
+                        <Title size={ 50 } bold={ true } title={ title }/>
+                        <p className={ 'text-[40px] font-bold text-[#999999]' }>{ title_en }</p>
+                    </div>
+
+                    <p className={ 'text-[20px] text-[#858A8F] font-light w-[600px]' }>
+                        { title_description }
+                    </p>
+                    <DialogCoverFrom dialog_model={ 'normal' }/>
+                </div>
             </div>
-        </div>
-        { pageResult?.map( ( item, index ) => {
-            return ( <div key={ index }
-                          className={ 'border-b mb-20 last:border-0' }>
-                <div className={ 'w-full text-center' }>
-                    <p className={ 'text-[30px] font-bold' }>{ item.title }</p>
-                    <p className={ 'text-[20px] text-description-text-color3' }>{ item.title_en }</p>
-                </div>
-                <div className={ 'flex justify-around mb-32 mt-20' }>
-                    { item.data.map( ( Item: any, Index: number ) => {
-                        return ( <div key={ Index }>
-                            <div className={ 'flex items-center' }>
-                  <span
-                      className={ 'text-[56px] text-default-blue font-bold' }>0{ Index + 1 }</span>
-                                <span
-                                    className={ 'text-[28px] font-bold ml-2' }>{ Item.title }</span>
-                            </div>
-                            { Item.item.map( ( ITem: string, Indexs: number ) => {
-                                return ( <div
-                                    className={ 'flex items-center mb-3' }
-                                    key={ Indexs }>
-                                    <div
-                                        className={ 'w-[15px] h-[15px] bg-default-blue rounded-full mr-4' }/>
-                                    <p className={ 'w-[450px] text-[20px] text-description-text-color' }>{ ITem }</p>
-                                </div> )
-                            } ) }
-                        </div> )
-                    } ) }
-                </div>
-            </div> )
-        } ) }
+        </Margin20_box>
 
-    </div> )
+        { pageResult.map((item, index) => {
+            return (<div className={ `${ index % 2 === 0 ? 'bg-mask-color6' : '' }` } key={ index }>
+                <Margin20_box className={ 'pb-24' }>
+                    <Title size={ 50 } title_en={ item.title_en } en_size={ 24 } height={ 24 } title={ item.title }
+                           bold={ true }
+                           center={ true }/>
+                    <div className={ 'flex justify-center items-center space-x-16' }>
+                        { item.data.map((Item, Index) => {
+                            return (<PrWayItem key={ Index } num={ Index + 1 } item_detail={ Item }/>)
+                        }) }
+                    </div>
+                </Margin20_box>
+            </div>)
+        }) }
+    </div>)
 }
 
-export default Employer
+export default FederationPage

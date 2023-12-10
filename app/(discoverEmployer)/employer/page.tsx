@@ -5,9 +5,11 @@ import { EmployerBasic } from '@/app/(discoverEmployer)/_components/employer_bas
 import axios from 'axios'
 import { ResultItem } from '@/app/(immigrationProvince)/province/[privinceId]/page'
 
-const employers = [ { name: 'BC雇主担保', url: 'https://api.npoint.io/151d8417254ee3912cc6' }, {
+const employers = [ { name: 'BC雇主担保', url: 'https://api.npoint.io/a5b9d8ad4f7d37c595f4' }, {
     name: '萨省雇主担保', url: 'https://api.npoint.io/44c635256522c7449e96'
-}, { name: '阿省雇主担保', url: '' }, { name: 'NS省雇主担保', url: '' }, { name: '安省雇主担保', url: '' } ]
+}, { name: '阿省雇主担保', url: 'https://api.npoint.io/151d8417254ee3912cc6' }, {
+    name: 'NS省雇主担保', url: 'https://api.npoint.io/e92c09277d996850a2c4'
+}, { name: '安省雇主担保', url: 'https://api.npoint.io/d6b7cf082d7ee3e901ad' } ]
 
 export interface Result{
     title: string
@@ -38,11 +40,8 @@ const Employer = () => {
         }, normal_detail: []
     })
     const select_tab = async(index?: number) => {
-        if( !index){
-            return employers[0].url
-        }
-        setIsTab(index)
-        await getDatas(employers[index].url)
+        setIsTab(index || 0)
+        await getDatas(employers[index || 0].url)
     }
 
     const getDatas = async(url: string) => {
@@ -56,8 +55,10 @@ const Employer = () => {
         <div>
             <ul className={ 'flex items-center justify-center space-x-16 py-6' }>
                 { employers.map((item, index) => {
-                    return (<li onClick={ () => select_tab(index) } key={ index }
-                                className={ ` text-lg font-bold leading-snug px-8 py-2 ${ isTab === index ? ' rounded-full bg-mask-color6 text-[#11437F]' : 'text-gray-400' }` }>{ item.name }</li>)
+                    return (<li onClick={ () => select_tab(index) }
+                                key={ index }
+                                className={ ` text-lg font-bold leading-snug px-8 py-2 ${ isTab === index ? ' rounded-full bg-mask-color6 text-[#11437F]' : 'text-gray-400' }` }
+                    >{ item.name }</li>)
                 }) }
             </ul>
         </div>

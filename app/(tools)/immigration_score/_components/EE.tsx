@@ -366,7 +366,7 @@ export function EE(){
                     </FormControl>
                 </FormItem>) }
             />
-            <Button type="submit" className={ 'w-full rounded-lg bg-default-blue hover:bg-default-blue' }>提交</Button>
+            <Button type="submit" className={ 'w-full rounded-lg bg-[#E83328] hover:bg-default-blue' }>提交</Button>
         </form>
     </Form>)
 }
