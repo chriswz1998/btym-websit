@@ -1,263 +1,231 @@
 'use client'
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { Button } from '@/components/ui/button'
-import * as z from 'zod'
-import axios from 'axios'
-import toast from 'react-hot-toast'
-import { useForm } from 'react-hook-form'
+
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { cn } from '@/lib/utils'
-import { Check, ChevronsUpDown } from 'lucide-react'
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from '@/components/ui/command'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { CheckboxReactHookFormSingle } from '@/components/tect-c'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
 
-const FormSchema = z.object( {
-    name: z.string().min( 2, { message: '请填写姓名' } ),
+import { Button } from '@/components/ui/button'
+import {
+    Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { ChangeEvent, useState } from 'react'
 
-    phone: z.string().min( 11, { message: '请填写电话' } ),
+const edu = [ '高中以下', '高中', '1年大专', '2年大专', '3年以上大专或本科', '双专业（3年以上+1年以上）', '硕士学位或专业学位（如医学博士）', '博士学位' ]
+const pro = [ '子女教育 ', ' 工作/教育', '  TZ置业 ', ' 居住环境' ]
+const lan1 = [ '雅思', '思培(CELPIP)', 'TEF' ]
 
-    age: z.string().min( 1, { message: '请填写年龄' } ),
+const FormSchema = z.object({
+    age: z.string().min(1, { message: '请填写年龄' }),
+    education: z.string().min(0, { message: '请选择教育情况' }),
+    lan1: z.string().min(0, { message: '请选择语言' }),
+    lan2: z.string().min(0, { message: '请选择语言' }),
+    workExp: z.string().min(0, { message: '请填写工作经验' }),
+    jobTitle: z.string().min(0, { message: '请填写工作岗位' }),
+    whyComing: z.string().min(0, { message: '请填写咨询项目' }),
+    phone: z.string().min(11, { message: '请填写电话号码' }),
+    name: z.string().min(1, { message: '请填写称呼' })
+})
 
-    education: z.enum( [ '高中以下', '  高中  ', '大专 ', ' 本科 ', ' 硕士 ', ' 博士' ], { required_error: '您还没有选择.' } ),
+export default function Condition_self_test(){
+    const [ listen, setListen ] = useState('')
+    const [ speak, setSpeak ] = useState('')
+    const [ read, setRead ] = useState('')
+    const [ write, setWrite ] = useState('')
 
-    english: z.enum( [ '完全不会 ', ' 英语4级以下 ', ' 英语4级 ', ' 英语6级 ', ' 英语6级优秀 ', ' 英语8级优秀' ], { required_error: '您还没有选择.' } ),
+    const [ listen1, setListen1 ] = useState('')
+    const [ speak1, setSpeak1 ] = useState('')
+    const [ read1, setRead1 ] = useState('')
+    const [ write1, setWrite1 ] = useState('')
 
-    french: z.enum( [ '不会', '  一般 ', '精通' ], { required_error: '您还没有选择.' } ),
+    const form = useForm<z.infer<typeof FormSchema>>({
+        resolver: zodResolver(FormSchema)
+    })
 
-    industry: z.string().min( 1, { message: '请填写从事的行业' } ),
+    const isListen = (e: ChangeEvent<HTMLInputElement>) => setListen(e.target.value)
+    const isSpeak = (e: ChangeEvent<HTMLInputElement>) => setSpeak(e.target.value)
+    const isRead = (e: ChangeEvent<HTMLInputElement>) => setRead(e.target.value)
+    const isWrite = (e: ChangeEvent<HTMLInputElement>) => setWrite(e.target.value)
 
-    position: z.string().min( 1, { message: '请填写您的职位' } ),
+    const isListen1 = (e: ChangeEvent<HTMLInputElement>) => setListen(e.target.value)
+    const isSpeak1 = (e: ChangeEvent<HTMLInputElement>) => setSpeak(e.target.value)
+    const isRead1 = (e: ChangeEvent<HTMLInputElement>) => setRead(e.target.value)
+    const isWrite1 = (e: ChangeEvent<HTMLInputElement>) => setWrite(e.target.value)
 
-    destinations: z.string().min( 0, { message: '请填写想要咨询的目的地' } ),
-
-    reason: z.array( z.string() ).refine( ( value ) => value.some( ( item ) => item ), { message: '您的选择有误' } )
-} )
-
-const education_items = [ { label: '高中以下' }, { label: '高中' }, { label: '大专' }, { label: '本科' }, { label: '硕士' }, { label: '博士' } ]
-
-const fr = [ '不会', '  一般 ', '精通' ]
-const en = [ '完全不会 ', ' 英语4级以下 ', ' 英语4级 ', ' 英语6级 ', ' 英语6级优秀 ', ' 英语8级优秀' ]
-
-
-const checkbox_items = [ {
-    label: '子女教育', checked: false
-}, {
-    label: '工作/教育', checked: false
-}, {
-    label: 'TZ置业', checked: false
-}, {
-    label: '居住环境', checked: false
-} ]
-const languages = [ { label: 'English', value: 'en' }, { label: 'French', value: 'fr' }, { label: 'German', value: 'de' }, { label: 'Spanish', value: 'es' }, { label: 'Portuguese', value: 'pt' }, { label: 'Russian', value: 'ru' }, { label: 'Japanese', value: 'ja' }, { label: 'Korean', value: 'ko' }, { label: 'Chinese', value: 'zh' } ] as const
-
-
-const Condition_self_test = () => {
-    const form = useForm<z.infer<typeof FormSchema>>( {
-        resolver: zodResolver( FormSchema )
-    } )
-
-    const onSubmit = async( data: z.infer<typeof FormSchema> ) => {
-        try {
-            console.log( data )
-            return
-            const response = await axios.post( '/api/UserApplicationFrom', data )
-            if( response.status === 200 ) {
-                toast.success( '提交成功' )
-            }
-        } catch( e ) {
-            toast.error( '提交失败' )
-        }
+    function onSubmit(data: z.infer<typeof FormSchema>){
+        const { lan1 } = data
+        data.lan1 = `${ lan1 }: 听力-${ listen } 口语-${ speak } 阅读-${ read } 写作-${ write }`
+        data.lan2 = `${ lan1 }: 听力-${ listen } 口语-${ speak } 阅读-${ read } 写作-${ write }`
+        console.log(data)
     }
 
-    return ( <div className={ 'px-20 min-[1980px]:w-[1980px] mx-auto' }>
-        <Form { ...form }>
-            <form onSubmit={ form.handleSubmit( onSubmit ) }
-                  className="w-full py-28 space-y-20">
-                <div className={ 'flex w-full space-x-20' }>
-                    <div className={ 'space-y-12 w-1/2' }>
-                        <FormField
-                            control={ form.control }
-                            name="name"
-                            render={ ( { field } ) => ( <FormItem>
-                                <FormLabel>您的姓名</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        placeholder={ '张先生/女士' }
-                                        { ...field } />
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem> ) }
-                        />
-                        <FormField
-                            control={ form.control }
-                            name="phone"
-                            render={ ( { field } ) => ( <FormItem>
-                                <FormLabel>您的电话</FormLabel>
-                                <FormControl>
-                                    <Input placeholder={ '请输入电话' } { ...field } />
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem> ) }
-                        />
-                        <FormField
-                            control={ form.control }
-                            name="age"
-                            render={ ( { field } ) => ( <FormItem>
-                                <FormLabel>您的年龄</FormLabel>
-                                <FormControl>
-                                    <Input placeholder={ '请输入年龄' }
-                                           { ...field } />
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem> ) }
-                        />
-                        <FormField
-                            control={ form.control }
-                            name="education"
-                            render={ ( { field } ) => ( <FormItem className="space-y-3">
-                                <FormLabel>您的学历</FormLabel>
-                                <FormControl>
-                                    <RadioGroup
-                                        onValueChange={ field.onChange }
-                                        defaultValue={ field.value }
-                                        className="flex  space-x-3"
-                                    >
-                                        { education_items.map( ( item, index ) => (
-                                            <FormItem className="flex items-center space-x-3 space-y-0" key={ index }>
-                                                <FormControl>
-                                                    <RadioGroupItem value={ item.label }/>
-                                                </FormControl>
-                                                <FormLabel className="font-normal">{ item.label }</FormLabel>
-                                            </FormItem> ) ) }
-                                    </RadioGroup>
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem> ) }
-                        />
 
-                    </div>
-                    <div className={ 'space-y-12 w-1/2' }>
-                        <FormField
-                            control={ form.control }
-                            name="industry"
-                            render={ ( { field } ) => ( <FormItem>
-                                <FormLabel>从事的行业</FormLabel>
-                                <FormControl>
-                                    <Input placeholder={ '请输入行业' }
-                                           { ...field } />
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem> ) }
-                        />
-                        <FormField
-                            control={ form.control }
-                            name="position"
-                            render={ ( { field } ) => ( <FormItem>
-                                <FormLabel>您的职位</FormLabel>
-                                <FormControl>
-                                    <Input placeholder={ '请输入您的职位' }
-                                           { ...field } />
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem> ) }
-                        />
-                        <FormField
-                            control={ form.control }
-                            name="destinations"
-                            render={ ( { field } ) => ( <FormItem className="flex flex-col ">
-                                <FormLabel className={'pb-2.5'}>想要咨询的目的地</FormLabel>
-                                <Popover>
-                                    <PopoverTrigger asChild>
-                                        <FormControl>
-                                            <Button
-                                                variant="outline"
-                                                role="combobox"
-                                                className={ cn( 'w-[200px] justify-between', !field.value && 'text-muted-foreground' ) }
-                                            >
-                                                { field.value ? languages.find( ( language ) => language.value === field.value )?.label : 'Select language' }
-                                                <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50"/>
-                                            </Button>
-                                        </FormControl>
-                                    </PopoverTrigger>
-                                    <PopoverContent className="w-[200px] p-0">
-                                        <Command>
-                                            <CommandInput placeholder="Search language..."/>
-                                            <CommandEmpty>No language found.</CommandEmpty>
-                                            <CommandGroup>
-                                                { languages.map( ( language ) => ( <CommandItem
-                                                    value={ language.label }
-                                                    key={ language.value }
-                                                    onSelect={ () => {
-                                                        form.setValue( 'destinations', language.value )
-                                                    } }
-                                                >
-                                                    <Check
-                                                        className={ cn( 'mr-2 h-4 w-4', language.value === field.value ? 'opacity-100' : 'opacity-0' ) }
-                                                    />
-                                                    { language.label }
-                                                </CommandItem> ) ) }
-                                            </CommandGroup>
-                                        </Command>
-                                    </PopoverContent>
-                                </Popover>
-                                <FormMessage/>
-                            </FormItem> ) }
-                        />
-                        <FormField
-                            control={ form.control }
-                            name="english"
-                            render={ ( { field } ) => ( <FormItem className="space-y-3">
-                                <FormLabel>您的英语水平</FormLabel>
-                                <FormControl>
-                                    <RadioGroup
-                                        onValueChange={ field.onChange }
-                                        defaultValue={ field.value }
-                                        className="flex  space-x-3"
-                                    >
-                                        { en.map( ( item, index ) => (
-                                            <FormItem className="flex items-center space-x-3 space-y-0" key={ index }>
-                                                <FormControl>
-                                                    <RadioGroupItem value={ item }/>
-                                                </FormControl>
-                                                <FormLabel className="font-normal">{ item }</FormLabel>
-                                            </FormItem> ) ) }
-                                    </RadioGroup>
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem> ) }
-                        />
-                    </div>
-                </div>
+    return (<Form { ...form }>
+        <form onSubmit={ form.handleSubmit(onSubmit) } className="py-10 w-[460px] mx-auto space-y-14">
+            <FormField
+                control={ form.control }
+                name="age"
+                render={ ({ field }) => (<FormItem>
+                    <FormLabel>年龄</FormLabel>
+                    <FormControl>
+                        <Input placeholder={ '请输入年龄' }
+                               { ...field } />
+                    </FormControl>
+                </FormItem>) }
+            />
 
-                <FormField
-                    name="content"
-                    render={ ( { field } ) => ( <FormItem>
-                        <FormLabel
-                            className={ 'text-[22px] text-description-text-color1 font-light' }>细节描述</FormLabel>
+            <FormField
+                control={ form.control }
+                name="education"
+                render={ ({ field }) => (<FormItem>
+                    <FormLabel>教育情况</FormLabel>
+                    <Select onValueChange={ field.onChange }>
                         <FormControl>
-                            <Textarea
-                                placeholder="告诉我们更多细节"
-                                className={ 'h-[230px]' }
-                                { ...field }
-                            />
+                            <SelectTrigger>
+                                <SelectValue placeholder="请选择学历状况"/>
+                            </SelectTrigger>
                         </FormControl>
-                        <FormMessage/>
-                    </FormItem> ) }
-                />
-                <Button
-                    className={ 'w-full rounded-lg bg-default-blue hover:bg-default-blue' }
-                    type="submit">
-                    提交
-                </Button>
-            </form>
-        </Form>
-        <CheckboxReactHookFormSingle/>
-    </div> )
-}
+                        <SelectContent>
+                            { edu.map((item, index) => {
+                                return (<SelectItem key={ index } value={ item }>{ item }</SelectItem>)
+                            }) }
+                        </SelectContent>
+                    </Select>
+                </FormItem>) }
+            />
 
-export default Condition_self_test
+            <FormField
+                control={ form.control }
+                name="lan1"
+                render={ ({ field }) => (<FormItem>
+                    <FormLabel>第一语言</FormLabel>
+                    <Select onValueChange={ field.onChange }>
+                        <FormControl>
+                            <SelectTrigger>
+                                <SelectValue placeholder="请选择第一语言"/>
+                            </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                            { lan1.map((item, index) => {
+                                return (<SelectItem key={ index } value={ item }>{ item }</SelectItem>)
+                            }) }
+                        </SelectContent>
+                    </Select>
+                    <FormDescription>
+                        如果您第一语言选了英语，第二语言请选择法语
+                    </FormDescription>
+                    <Input placeholder={ '听力' }
+                           onChange={ isListen }/>
+                    <Input placeholder={ '口语' }
+                           onChange={ isSpeak }/>
+                    <Input placeholder={ '阅读' }
+                           onChange={ isRead }/>
+                    <Input placeholder={ '写作' }
+                           onChange={ isWrite }/>
+                </FormItem>) }
+            />
+            <FormField
+                control={ form.control }
+                name="lan2"
+                render={ ({ field }) => (<FormItem>
+                    <FormLabel>第二语言</FormLabel>
+                    <Select onValueChange={ field.onChange }>
+                        <FormControl>
+                            <SelectTrigger>
+                                <SelectValue placeholder="请选择第二语言"/>
+                            </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                            { lan1.map((item, index) => {
+                                return (<SelectItem key={ index } value={ item }>{ item }</SelectItem>)
+                            }) }
+                        </SelectContent>
+
+                    </Select>
+                    <FormDescription>
+                        如果您第一语言选了英语，第二语言请选择法语
+                    </FormDescription>
+                    <Input placeholder={ '听力' }
+                           onChange={ isListen1 }/>
+                    <Input placeholder={ '口语' }
+                           onChange={ isSpeak1 }/>
+                    <Input placeholder={ '阅读' }
+                           onChange={ isRead1 }/>
+                    <Input placeholder={ '写作' }
+                           onChange={ isWrite1 }/>
+                </FormItem>) }
+            />
+
+            <FormField
+                control={ form.control }
+                name="workExp"
+                render={ ({ field }) => (<FormItem>
+                    <FormLabel>工作行业</FormLabel>
+                    <FormControl>
+                        <Input placeholder={ '请输入工作行业' }
+                               { ...field } />
+                    </FormControl>
+                </FormItem>) }
+            />
+
+            <FormField
+                control={ form.control }
+                name="jobTitle"
+                render={ ({ field }) => (<FormItem>
+                    <FormLabel>工作岗位</FormLabel>
+                    <FormControl>
+                        <Input placeholder={ '请输入工作岗位' }
+                               { ...field } />
+                    </FormControl>
+                </FormItem>) }
+            />
+
+            <FormField
+                control={ form.control }
+                name="whyComing"
+                render={ ({ field }) => (<FormItem>
+                    <FormLabel>咨询项目</FormLabel>
+                    <Select onValueChange={ field.onChange }>
+                        <FormControl>
+                            <SelectTrigger>
+                                <SelectValue placeholder="请选择咨询项目"/>
+                            </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                            { pro.map((item, index) => {
+                                return (<SelectItem key={ index } value={ item }>{ item }</SelectItem>)
+                            }) }
+                        </SelectContent>
+                    </Select>
+                </FormItem>) }
+            />
+
+            <FormField
+                control={ form.control }
+                name="phone"
+                render={ ({ field }) => (<FormItem>
+                    <FormLabel>联系方式</FormLabel>
+                    <FormControl>
+                        <Input placeholder={ '请输入联系方式' }
+                               { ...field } />
+                    </FormControl>
+                </FormItem>) }
+            />
+            <FormField
+                control={ form.control }
+                name="name"
+                render={ ({ field }) => (<FormItem>
+                    <FormLabel>称呼</FormLabel>
+                    <FormControl>
+                        <Input placeholder={ '请输入您的称呼' }
+                               { ...field } />
+                    </FormControl>
+                    <FormMessage/>
+                </FormItem>) }
+            />
+
+            <Button type="submit" className={ 'w-full rounded-lg bg-[#E83328] hover:bg-[#E83328]' }>提交</Button>
+        </form>
+    </Form>)
+}

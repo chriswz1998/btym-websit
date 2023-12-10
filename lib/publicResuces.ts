@@ -38,15 +38,13 @@ export const DropdownMenuItemEach_employers: ItemDropdown[] = [ {
 export const DropdownMenuItemEach_tools: ItemDropdown[] = [ {
     text: '申请条件自测', href: '/condition_self_test', description: '1分钟速测，甄选适合你的移民项目'
 }, {
-    text: '技术移民打分', href: '/immigration_score', description: '自己算太麻烦，试试自动打分吧'
-}, {
     text: '快速通道(EE)', href: '/immigration_score/EE', description: '1分钟速测，甄选适合你的移民项目'
 }, {
     text: 'BC省提名(BCPNP)', href: '/immigration_score/BCPNP', description: '1分钟速测，甄选适合你的移民项目'
 }, {
     text: '萨省省提名(SINP)', href: '/immigration_score/SINP', description: '1分钟速测，甄选适合你的移民项目'
 }, {
-    text: 'NB省省提名(NBPNP)', href: '/immigration_score/NBPNP', description: '1分钟速测，甄选适合你的移民项目'
+    text: '曼省提名(MPNP)', href: '/immigration_score/MPNP', description: '1分钟速测，甄选适合你的移民项目'
 }, {
     text: '安省省提名(OINP)', href: '/immigration_score/OINP', description: '1分钟速测，甄选适合你的移民项目'
 } ]

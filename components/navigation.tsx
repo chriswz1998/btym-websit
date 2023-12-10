@@ -12,12 +12,11 @@ import {
     NavigationMenuTrigger
 } from '@/components/ui/navigation-menu'
 import {
-    DropdownMenuItemEach_employers,
-    DropdownMenuItemEach_province, DropdownMenuItemEach_tools
+    DropdownMenuItemEach_employers, DropdownMenuItemEach_province, DropdownMenuItemEach_tools
 } from '@/lib/publicResuces'
 
-export function Navigation() {
-    return ( <NavigationMenu>
+export function Navigation(){
+    return (<NavigationMenu>
         <NavigationMenuList className={ 'space-x-12' }>
             <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
@@ -38,8 +37,8 @@ export function Navigation() {
                     className={ 'bg-transparent text-[16px]' }>移民省份</NavigationMenuTrigger>
                 <NavigationMenuContent>
                     <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                        { DropdownMenuItemEach_province.map( ( item, index ) => {
-                            return ( <li key={ index }>
+                        { DropdownMenuItemEach_province.map((item, index) => {
+                            return (<li key={ index }>
                                 <Link href={ item.href } legacyBehavior passHref>
                                     <NavigationMenuLink asChild>
                                         <div
@@ -53,8 +52,8 @@ export function Navigation() {
                                         </div>
                                     </NavigationMenuLink>
                                 </Link>
-                            </li> )
-                        } ) }
+                            </li>)
+                        }) }
                     </ul>
                 </NavigationMenuContent>
             </NavigationMenuItem>
@@ -63,8 +62,8 @@ export function Navigation() {
                     className={ 'bg-transparent text-[16px]' }>探索移民方式</NavigationMenuTrigger>
                 <NavigationMenuContent>
                     <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                        { DropdownMenuItemEach_employers.map( ( item, index ) => {
-                            return ( <li key={ index }>
+                        { DropdownMenuItemEach_employers.map((item, index) => {
+                            return (<li key={ index }>
                                 <Link href={ item.href } legacyBehavior passHref>
                                     <NavigationMenuLink asChild>
                                         <div
@@ -78,8 +77,8 @@ export function Navigation() {
                                         </div>
                                     </NavigationMenuLink>
                                 </Link>
-                            </li> )
-                        } ) }
+                            </li>)
+                        }) }
                     </ul>
                 </NavigationMenuContent>
             </NavigationMenuItem>
@@ -88,8 +87,8 @@ export function Navigation() {
                     className={ 'bg-transparent text-[16px]' }>打分工具</NavigationMenuTrigger>
                 <NavigationMenuContent>
                     <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                        { DropdownMenuItemEach_tools.map( ( item, index ) => {
-                            return ( <li key={ index }>
+                        { DropdownMenuItemEach_tools.map((item, index) => {
+                            return (<li key={ index }>
                                 <Link href={ item.href } legacyBehavior passHref>
                                     <NavigationMenuLink asChild>
                                         <div
@@ -103,11 +102,11 @@ export function Navigation() {
                                         </div>
                                     </NavigationMenuLink>
                                 </Link>
-                            </li> )
-                        } ) }
+                            </li>)
+                        }) }
                     </ul>
                 </NavigationMenuContent>
             </NavigationMenuItem>
         </NavigationMenuList>
-    </NavigationMenu> )
+    </NavigationMenu>)
 }
