@@ -15,31 +15,133 @@ import { Case_search_item } from '@/app/(marketing)/_components/case_search_item
 import { Business_card } from '@/app/(marketing)/_components/business_card'
 import { Step_item } from '@/app/(marketing)/_components/steps_item'
 import { Media_item } from '@/app/(marketing)/_components/media_item'
+import { Navbar } from '@/components/navbar'
+import { Province_banner } from '@/components/province_banner'
 
 export default function MarketingPage(){
     return (
 
         <div>
-            <Margin20_box border={ true } className={ 'mb-24' }>
-                <div>
-                    <Title size={ 50 } height={ 20 } bold={ true } center={ true }
-                           title={ '为客户提供最佳移民和留学解决方案' }/>
-                    <Center_box>
-                        <Case_item
-                            dec={ '根据多年的咨询和案例经验，我们为每一位客户量身定制了文案顾问，在深入了解情况后书写量身定制的文案' }
-                            url={ '/ic4.svg' } title={ '文案工作' }/>
-                        <Case_item
-                            dec={ '我们在中国、香港、台湾、加拿大均有分公以应对不同时区客户的需求、随时随地、们都能听见你的声音!' }
-                            url={ '/ic1.svg' } title={ '在线聆听你的需求' }/>
-                        <Case_item
-                            dec={ '博泰移民在Youtube、X、Facebook等社交媒体均有官方营销账户，定期更新相关政策的变更和优秀案例' }
-                            url={ '/ic9.svg' } title={ '社交媒体' }/>
-                    </Center_box>
+            <Navbar noBgModel={ true }/>
+            <Province_banner banner={ '/banner.png' }/>
+            <div className={ 'flex justify-around flex-wrap p-10' }>
+                <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
+                    <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
+                    <div>
+                        <Title size={ 10 } bold={ true } title={ '申请条件自测' } en_size={ 8 }
+                               title_en={ '1分钟速测，甄选适合您的移民项目' }/>
+                    </div>
                 </div>
-            </Margin20_box>
+                <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
+                    <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
+                    <div>
+                        <Title size={ 10 } bold={ true } title={ '申请条件自测' } en_size={ 8 }
+                               title_en={ '1分钟速测，甄选适合您的移民项目' }/>
+                    </div>
+                </div>
+                <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
+                    <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
+                    <div>
+                        <Title size={ 10 } bold={ true } title={ '申请条件自测' } en_size={ 8 }
+                               title_en={ '1分钟速测，甄选适合您的移民项目' }/>
+                    </div>
+                </div>
+                <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
+                    <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
+                    <div>
+                        <Title size={ 10 } bold={ true } title={ '申请条件自测' } en_size={ 8 }
+                               title_en={ '1分钟速测，甄选适合您的移民项目' }/>
+                    </div>
+                </div>
+            </div>
+
+            <div className={ 'text-center text-black text-[50px] font-semibold font-[\'Maven Pro\'] space-y-4' }>
+                <span>每年有</span>
+                <span className="text-red-600">2000+</span>
+                <span>选择移民加拿大</span>
+                <div
+                    className="text-stone-500 text-[40px] font-normal font-['Noto Sans HK'] leading-10">
+                    加拿大移民福利——不可拒绝的加拿大移民理由
+                </div>
+            </div>
+
+            <div className={ 'py-16  flex flex-wrap justify-center' }>
+                <div
+                    className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                    <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                    <div
+                        className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
+                    </div>
+                </div>
+                <div
+                    className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                    <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                    <div
+                        className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
+                    </div>
+                </div>
+                <div
+                    className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                    <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                    <div
+                        className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
+                    </div>
+                </div>
+                <div
+                    className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                    <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                    <div
+                        className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
+                    </div>
+                </div>
+                <div
+                    className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                    <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                    <div
+                        className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
+                    </div>
+                </div>
+                <div
+                    className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                    <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                    <div
+                        className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
+                    </div>
+                </div>
+            </div>
+
+            <div className={ 'space-x-20 text-center' }>
+                <Button
+                    className={ 'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>资深顾问全面解答</Button>
+                <Button
+                    className={ 'bg-[#E83328] hover:bg-[#E83328] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>了解更多福利</Button>
+            </div>
+
+            <div
+                className={ 'mt-20 p-20 text-center text-black text-[50px] font-semibold font-[\'Maven Pro\'] space-y-4' }>
+                <span>加拿大提供</span>
+                <span className="text-red-600">80</span>
+                <span>余种移民途径</span>
+                <div
+                    className="text-stone-500 text-[40px] font-normal font-['Noto Sans HK'] leading-10">
+                    不管你是学生还是职场人、企业主，有才或有“财”都可以申请
+                </div>
+            </div>
+
+            <div className={ 'bg-[url("/images121212.png")] bg-cover bg-no-repeat flex' }>
+                <div className={ 'w-1/3 bg-v1-bg1 p-5' }>
+                    <div className="text-white text-[50px] font-semibold font-['Maven Pro']">技术类</div>
+                    <div className="bg-white bg-opacity-50 rounded p-5 mb-5">
+                        <p className={'text-white text-2xl font-normal font-[\'Maven Pro\']'}>省提名雇主担保</p>
+
+                    </div>
+                </div>
+                <div className={ 'w-1/3 bg-v1-bg2' }>2</div>
+                <div className={ 'w-1/3 bg-v1-bg3' }>3</div>
+            </div>
 
             <Center_box col={ true }>
-                <Title size={ 50 } height={ 20 } bold={ true } center={ true }
+            <Title size={ 50 } height={ 20 } bold={ true } center={ true }
                        title={ '移民省份' }/>
                 <div className={ 'w-full bg-[url("/5db84e.png")] bg-cover bg-no-repeat py-40' }>
                     <Margin20_box className={ 'p-6 bg-white rounded-lg flex justify-around' }>
@@ -147,7 +249,7 @@ export default function MarketingPage(){
             <div>
                 <Title size={ 50 } title={ '我们的社交媒体' }
                        bold={ true } height={ 24 } center={ true }/>
-                <Margin20_box className={ 'flex justify-between mb-24' } border={true}>
+                <Margin20_box className={ 'flex justify-between mb-24' } border={ true }>
                     <Media_item title={ '抖音' } url={ '/tiktok.svg' }/>
                     <Media_item title={ 'youtube' } url={ '/youtube.svg' }/>
                     <Media_item url={ '/facebook.svg' } title={ 'facebook' }/>

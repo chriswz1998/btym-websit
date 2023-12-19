@@ -9,6 +9,9 @@ module.exports = {
             }
         }, extend: {
             colors: {
+                'v1-bg1': 'rgba(17, 67, 127, 0.7)',
+                'v1-bg2': 'rgba(153, 90, 112, 0.7)',
+                'v1-bg3': 'rgba(30, 139, 132, 0.7)',
                 'default-blue': 'rgba(62, 128, 255, 1)',
                 'default-text-color': 'rgba(16, 36, 52, 1)',
                 'description-text-color': 'rgba(134, 150, 160, 1)',

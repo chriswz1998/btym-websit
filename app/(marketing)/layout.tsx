@@ -6,7 +6,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     return (<div
         suppressHydrationWarning={ true }
         className={ 'min-h-screen font-[\'Maven Pro\']' }>
-        <Main_c/>
+        {/*<Main_c/>*/}
         { children }
         <Footer/>
     </div>)
