@@ -37,7 +37,7 @@ export const Main_c = () => {
                     </div>
                     <p className={ 'text-[36px] text-default-blue mt-10' }>完整签证解决方案提供方</p>
                     <div className={ 'flex pt-10' }>
-                        <DialogCoverFrom dialog_model={ 'normal' }/>
+                        {/*<DialogCoverFrom dialog_model={ 'normal' }/>*/}
                         <div className={ 'w-[75px]' }/>
                         <Button
                             className={ 'text-[28px] px-14 py-8 text-default-blue bg-white hover:bg-white font-light' }>
