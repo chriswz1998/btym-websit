@@ -1,5 +1,5 @@
 import {
-    AtSign, ChevronsRight, MapPinned, PhoneCall
+    ArrowLeft, ArrowRight, AtSign, ChevronsRight, MapPinned, PhoneCall
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
@@ -129,19 +129,271 @@ export default function MarketingPage(){
             </div>
 
             <div className={ 'bg-[url("/images121212.png")] bg-cover bg-no-repeat flex' }>
-                <div className={ 'w-1/3 bg-v1-bg1 p-5' }>
-                    <div className="text-white text-[50px] font-semibold font-['Maven Pro']">技术类</div>
-                    <div className="bg-white bg-opacity-50 rounded p-5 mb-5">
-                        <p className={'text-white text-2xl font-normal font-[\'Maven Pro\']'}>省提名雇主担保</p>
-
+                <div className={ 'w-1/3 bg-v1-bg1 py-24 px-10 space-y-16' }>
+                    <div className="text-center text-white text-[50px] font-semibold font-['Maven Pro']">技术类</div>
+                    <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
+                        <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                        <div className={ 'flex space-x-3' }>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                        </div>
+                    </div>
+                    <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
+                        <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                        <div className={ 'flex space-x-3' }>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                        </div>
+                    </div>
+                    <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
+                        <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                        <div className={ 'flex space-x-3' }>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                        </div>
                     </div>
                 </div>
-                <div className={ 'w-1/3 bg-v1-bg2' }>2</div>
-                <div className={ 'w-1/3 bg-v1-bg3' }>3</div>
+                <div className={ 'w-1/3 bg-v1-bg2 py-24 px-10 space-y-16' }>
+                    <div className="text-center text-white text-[50px] font-semibold font-['Maven Pro']">技术类</div>
+                    <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
+                        <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                        <div className={ 'flex space-x-3' }>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                        </div>
+                    </div>
+                    <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
+                        <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                        <div className={ 'flex space-x-3' }>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                        </div>
+                    </div>
+                    <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
+                        <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                        <div className={ 'flex space-x-3' }>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                        </div>
+                    </div>
+                </div>
+                <div className={ 'w-1/3 bg-v1-bg3 py-24 px-10 space-y-16' }>
+                    <div className="text-center text-white text-[50px] font-semibold font-['Maven Pro']">技术类</div>
+                    <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
+                        <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                        <div className={ 'flex space-x-3' }>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                        </div>
+                    </div>
+                    <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
+                        <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                        <div className={ 'flex space-x-3' }>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                        </div>
+                    </div>
+                    <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
+                        <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                        <div className={ 'flex space-x-3' }>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                            <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <div
+                className={ 'mt-20 p-20 text-center text-black text-[50px] font-semibold font-[\'Maven Pro\'] space-y-4' }>
+                <div>博泰专注加拿大移民</div>
+                <div
+                    className="text-stone-500 text-[40px] font-normal font-['Noto Sans HK'] leading-10">
+                    致力于为中国申请人带来优质的加拿大移民服务
+                </div>
+            </div>
+
+            <div className={ 'relative w-full h-[460px]' }>
+                <div className={ 'absolute top-0 left-0 w-full h-full' }>
+                    <Province_banner banner={ '/pki4492111.png' }/>
+                </div>
+                <div
+                    className={ 'px-20 flex items-center justify-around text-white w-full h-full absolute left-0 top-0 bg-gradient-to-r from-[#062F7E] to-[#3B63B173]' }>
+                    <div className={ 'space-y-4 text-center' }>
+                        <span className="text-6xl font-bold">5</span>
+                        <span className="text-3xl">家+</span>
+                        <p className={ 'text-xl' }>加拿大直营公司</p>
+                    </div>
+                    <div className={ 'w-[1px] h-[110px] bg-white' }></div>
+                    <div className={ 'space-y-4 text-center' }>
+                        <span className="text-6xl font-bold">15</span>
+                        <span className="text-3xl">年+</span>
+                        <p className={ 'text-xl' }>加拿大本土移民服务经验</p>
+                    </div>
+                    <div className={ 'w-[1px] h-[110px] bg-white' }></div>
+                    <div className={ 'space-y-4 text-center' }>
+                        <span className="text-6xl font-bold">15</span>
+                        <span className="text-3xl">位+</span>
+                        <p className={ 'text-xl' }>加拿大持牌顾问供职</p>
+                    </div>
+                    <div className={ 'w-[1px] h-[110px] bg-white' }></div>
+                    <div className={ 'space-y-4 text-center' }>
+                        <span className="text-6xl font-bold">2000</span>
+                        <span className="text-3xl">+</span>
+                        <p className={ 'text-xl' }>成功案例</p>
+                    </div>
+                </div>
+            </div>
+
+            <Province_banner banner={ '/581703237163_.jpg' }/>
+
+            <div className={ 'space-x-20 text-center' }>
+                <Button
+                    className={ 'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>资深顾问全面解答</Button>
+                <Button
+                    className={ 'bg-[#E83328] hover:bg-[#E83328] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>了解更多福利</Button>
+            </div>
+
+            <div className={ 'relative  w-full h-[863px]' }>
+                <div className={ 'absolute top-0 left-0 w-full h-full' }>
+                    <Province_banner banner={ '/bg8dfw.png' }/>
+                </div>
+                <div
+                    className={ 'absolute top-0 left-0 w-full h-full bg-v1-bg1 flex flex-col justify-center space-y-20' }>
+                    <div className={ 'text-center text-white text-[40px] font-bold font-[\'Maven Pro\']' }>
+                        博泰<span className="text-red-600">8</span>大服务保障
+                        <p className={ 'text-[30px] font-light' }>加拿大移民福利——不可拒绝的加拿大移民理由</p>
+                    </div>
+                    <div className={ 'flex flex-wrap justify-center' }>
+                        <div
+                            className={ 'm-4 w-[300px] h-[190px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                            <Image src={ '/Group4591.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                            <p
+                                className="text-black text-2xl font-bold">
+                                量身定制方案
+                            </p>
+                        </div>
+                        <div
+                            className={ 'm-4 w-[300px] h-[190px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                            <Image src={ '/Group4592.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                            <p
+                                className="text-black text-2xl font-bold">
+                                量身定制方案
+                            </p>
+                        </div>
+                        <div
+                            className={ 'm-4 w-[300px] h-[190px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                            <Image src={ '/Group4593.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                            <p
+                                className="text-black text-2xl font-bold">
+                                量身定制方案
+                            </p>
+                        </div>
+                        <div
+                            className={ 'm-4 w-[300px] h-[190px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                            <Image src={ '/Group4594.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                            <p
+                                className="text-black text-2xl font-bold">
+                                量身定制方案
+                            </p>
+                        </div>
+                        <div
+                            className={ 'm-4 w-[300px] h-[190px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                            <Image src={ '/Group4595.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                            <p
+                                className="text-black text-2xl font-bold">
+                                量身定制方案
+                            </p>
+                        </div>
+                        <div
+                            className={ 'm-4 w-[300px] h-[190px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                            <Image src={ '/Group4596.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                            <p
+                                className="text-black text-2xl font-bold">
+                                量身定制方案
+                            </p>
+                        </div>
+                        <div
+                            className={ 'm-4 w-[300px] h-[190px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                            <Image src={ '/Group4597.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                            <p
+                                className="text-black text-2xl font-bold">
+                                量身定制方案
+                            </p>
+                        </div>
+                        <div
+                            className={ 'm-4 w-[300px] h-[190px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
+                            <Image src={ '/Group4598.svg' } alt={ '' } width={ 70 } height={ 70 }/>
+                            <p
+                                className="text-black text-2xl font-bold">
+                                量身定制方案
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={ 'w-full h-[855px] bg-default-blue' }>
+                <div className={ 'relative w-full h-[557px]' }>
+                    <div className={ 'absolute top-0 left-0 w-full h-full' }>
+                        <Province_banner banner={ '/pki7947412.png' }/>
+                    </div>
+                    <div
+                        className={ 'w-full h-full absolute left-0 top-0 bg-gradient-to-r from-[#451411] to-[#5F100B5E] space-y-20' }>
+                        <div className={ 'text-center font-bold pt-10' }>
+                            <span className="text-[#E83328] text-[150px]">2000+</span>
+                            <p className={ 'text-6xl text-white font-light' }>申请人认可的移民服务品牌</p>
+                        </div>
+                        <div
+                            className={ 'w-[1280px] h-[450px] bg-white mx-auto rounded-lg flex items-center space-x-6 p-6' }>
+                            <ArrowLeft/>
+                            <div className={ 'w-full flex space-x-4' }>
+                                <Image src={ '/qdasdasdasdas.png' } alt={ '' } width={ 220 } height={ 400 }
+                                       className={ 'shadow' }/>
+                                <Image src={ '/qdasdasdasdas.png' } alt={ '' } width={ 220 } height={ 400 }
+                                       className={ 'shadow' }/>
+                                <Image src={ '/qdasdasdasdas.png' } alt={ '' } width={ 220 } height={ 400 }
+                                       className={ 'shadow' }/>
+                                <Image src={ '/qdasdasdasdas.png' } alt={ '' } width={ 220 } height={ 400 }
+                                       className={ 'shadow' }/>
+                                <Image src={ '/qdasdasdasdas.png' } alt={ '' } width={ 220 } height={ 400 }
+                                       className={ 'shadow' }/>
+                            </div>
+                            <ArrowRight/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <Center_box col={ true }>
-            <Title size={ 50 } height={ 20 } bold={ true } center={ true }
+                <Title size={ 50 } height={ 20 } bold={ true } center={ true }
                        title={ '移民省份' }/>
                 <div className={ 'w-full bg-[url("/5db84e.png")] bg-cover bg-no-repeat py-40' }>
                     <Margin20_box className={ 'p-6 bg-white rounded-lg flex justify-around' }>
