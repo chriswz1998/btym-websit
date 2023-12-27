@@ -4,7 +4,7 @@ import Footer from '@/components/footer'
 
 const MainLayout = async({ children }: { children: React.ReactNode }) => {
     return (<div
-        className={ 'min-h-screen font-[\'Maven Pro\']' }>
+        className={ 'min-h-screen  max-w-[1580px] mx-auto font-[\'Maven Pro\']' }>
         <Navbar noBgModel={ true }/>
         { children }
         <Footer has_dialog={ true }/>

@@ -9,6 +9,8 @@ import toast from 'react-hot-toast'
 import { Margin20_box } from '@/components/margin20_box'
 import { Title } from '@/components/Title'
 import { PrWayItem } from '@/app/(immigrationProvince)/province/_components/pr_way_item'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 const data_url = [ {
     province: 'ontario', url: 'https://api.npoint.io/a265a7aba90f8338908e'
@@ -100,7 +102,6 @@ const ProvinceIdPage = ({ params }: { params: { privinceId: string } }) => {
 
     return (<div>
         <Province_banner banner={ banner }/>
-        <Margin20_box>
             <div className={ 'py-20 flex items-center justify-center space-x-16' }>
                 <Image src={ image } alt={ '' } width={ 500 }
                        height={ 400 } className={ 'rounded-lg' }/>
@@ -113,23 +114,28 @@ const ProvinceIdPage = ({ params }: { params: { privinceId: string } }) => {
                     <p className={ 'text-[20px] text-[#858A8F] font-light w-[600px]' }>
                         { title_description }
                     </p>
-                    <DialogCoverFrom dialog_model={ 'normal' }/>
+                    <DialogCoverFrom text={'预约顾问评估'} variant={'ghost'} className={'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow'}/>
                 </div>
             </div>
-        </Margin20_box>
 
         { pageResult.map((item, index) => {
-            return (<div className={ `${ index % 2 === 0 ? 'bg-mask-color6' : '' }` } key={ index }>
-                <Margin20_box className={ 'pb-24' }>
-                    <Title size={ 50 } title_en={ item.title_en } en_size={ 24 } height={ 24 } title={ item.title }
-                           bold={ true }
-                           center={ true }/>
-                    <div className={ 'flex justify-center items-center space-x-16' }>
-                        { item.data.map((Item, Index) => {
-                            return (<PrWayItem key={ Index } num={ Index + 1 } item_detail={ Item }/>)
-                        }) }
-                    </div>
-                </Margin20_box>
+            return (<div className={ `${ index % 2 === 0 ? 'bg-mask-color6' : '' } pb-20` } key={ index }>
+                <Title size={ 50 } title_en={ item.title_en } en_size={ 24 } height={ 24 } title={ item.title }
+                       bold={ true }
+                       center={ true }/>
+                <div className={ 'flex justify-center items-center space-x-16' }>
+                    { item.data.map((Item, Index) => {
+                        return (<PrWayItem key={ Index } num={ Index + 1 } item_detail={ Item }/>)
+                    }) }
+                </div>
+                <div className={ 'space-x-20 text-center mt-20' }>
+                    <DialogCoverFrom text={'预约顾问评估'} variant={'ghost'} className={'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow'}/>
+                    <Link href={'/condition_self_test'}>
+                        <Button
+                            className={ 'bg-[#E83328] hover:bg-[#E83328] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>条件自测</Button>
+                    </Link>
+
+                </div>
             </div>)
         }) }
     </div>)

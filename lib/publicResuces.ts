@@ -48,3 +48,15 @@ export const DropdownMenuItemEach_tools: ItemDropdown[] = [ {
 }, {
     text: '安省省提名(OINP)', href: '/immigration_score/OINP', description: '1分钟速测，甄选适合你的移民项目'
 } ]
+
+export const how_item_res = [ {
+    url: '/asgzdb.png', href: '/employer', text: '安省雇主担保'
+},{
+    url: '/bcsgzdb.png', href: '/employer', text: 'BC雇主担保'
+},{
+    url: '/ssgzdb.png', href: '/employer', text: '萨省雇主担保'
+},{
+    url: '/arsgzdb.png', href: '/employer', text: '阿省雇主担保'
+},{
+    url: '/nssgzdb.png', href: '/employer', text: 'NS省雇主担保'
+} ]

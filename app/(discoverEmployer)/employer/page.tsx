@@ -48,8 +48,23 @@ const Employer = () => {
         const { data } = await axios.get<Result>(url)
         setPageData(data)
     }
+
+    const clickItemToThis = async() => {
+        const name = window.localStorage.getItem('employer_name')
+        if( !name){
+            await getDatas(employers[0].url)
+            return
+        }
+        const index = employers.map((item, index) => {
+            if(item.name === name){
+                return index
+            }
+        }).filter(item => item !== undefined)[0]
+        setIsTab(index || 0)
+        await getDatas(employers[index || 0].url)
+    }
     useEffect(() => {
-        getDatas(employers[0].url).then()
+        clickItemToThis()
     }, [])
     return (<div>
         <div>

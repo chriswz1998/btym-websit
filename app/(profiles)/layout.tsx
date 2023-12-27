@@ -6,7 +6,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div
             suppressHydrationWarning={ true }
-            className={ 'min-h-screen font-[\'Maven Pro\']' }>
+            className={ 'min-h-screen max-w-[1580px] mx-auto font-[\'Maven Pro\']' }>
             <Navbar noBgModel={ true }/>
             <div className={ 'w-full flex items-center justify-center' }>
                 <Image src={ 'https://i.ibb.co/rQpsVHQ/ibg.png' } alt={ '' } width={ 0 }

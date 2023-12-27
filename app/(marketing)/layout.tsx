@@ -1,12 +1,10 @@
 import React from 'react'
 import Footer from '@/components/footer'
-import { Main_c } from '@/app/(marketing)/_components/main_c'
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
     return (<div
         suppressHydrationWarning={ true }
-        className={ 'min-h-screen font-[\'Maven Pro\']' }>
-        {/*<Main_c/>*/}
+        className={ 'min-h-screen max-w-[1580px] mx-auto font-[\'Maven Pro\']' }>
         { children }
         <Footer/>
     </div>)

@@ -4,6 +4,10 @@ import Image from 'next/image'
 import { Title } from '@/components/Title'
 import { Navbar } from '@/components/navbar'
 import { Province_banner } from '@/components/province_banner'
+import { Hot_project_item } from '@/app/(marketing)/_components/hot_project_item'
+import { how_item_res } from '@/lib/publicResuces'
+import Link from 'next/link'
+import { DialogCoverFrom } from '@/components/dialog'
 
 export default function MarketingPage(){
     return (<div>
@@ -21,22 +25,22 @@ export default function MarketingPage(){
             <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
                 <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
                 <div>
-                    <Title size={ 20 } bold={ true } title={ '申请条件自测' } en_size={ 8 }
-                           title_en={ '1分钟速测，甄选适合您的移民项目' }/>
+                    <Title size={ 20 } bold={ true } title={ '技术移民打分' } en_size={ 8 }
+                           title_en={ '自己算太麻烦，试试自动打分吧' }/>
                 </div>
             </div>
             <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
                 <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
                 <div>
-                    <Title size={ 20 } bold={ true } title={ '申请条件自测' } en_size={ 8 }
-                           title_en={ '1分钟速测，甄选适合您的移民项目' }/>
+                    <Title size={ 20 } bold={ true } title={ '申请费用计算' } en_size={ 8 }
+                           title_en={ '费用问题，计算一下更有底' }/>
                 </div>
             </div>
             <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
                 <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
                 <div>
-                    <Title size={ 20 } bold={ true } title={ '申请条件自测' } en_size={ 8 }
-                           title_en={ '1分钟速测，甄选适合您的移民项目' }/>
+                    <Title size={ 20 } bold={ true } title={ '免费资料获取' } en_size={ 8 }
+                           title_en={ '获取详细项目资料和费用清单' }/>
                 </div>
             </div>
         </div>
@@ -52,55 +56,18 @@ export default function MarketingPage(){
         </div>
 
         <div className={ 'py-16  flex flex-wrap justify-center' }>
-            <div
-                className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
-                <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
-                <div
-                    className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
-                </div>
-            </div>
-            <div
-                className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
-                <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
-                <div
-                    className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
-                </div>
-            </div>
-            <div
-                className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
-                <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
-                <div
-                    className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
-                </div>
-            </div>
-            <div
-                className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
-                <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
-                <div
-                    className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
-                </div>
-            </div>
-            <div
-                className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
-                <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
-                <div
-                    className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
-                </div>
-            </div>
-            <div
-                className={ 'm-4 w-[370px] h-[230px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4' }>
-                <Image src={ '/test2.svg' } alt={ '' } width={ 70 } height={ 70 }/>
-                <div
-                    className="text-stone-500 text-xl font-normal font-['Noto Sans HK'] leading-tight">福利完善多样津贴
-                </div>
-            </div>
+            { how_item_res.map((item, index) => {
+                return (<Hot_project_item url={ item.url } href={ item.href } text={ item.text } key={ index }/>)
+            }) }
         </div>
 
         <div className={ 'space-x-20 text-center' }>
-            <Button
-                className={ 'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>资深顾问全面解答</Button>
-            <Button
-                className={ 'bg-[#E83328] hover:bg-[#E83328] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>了解更多福利</Button>
+            <DialogCoverFrom text={'资深顾问全面解答'} variant={'ghost'} className={'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow'}/>
+            <Link href={ '/employer' }>
+                <Button
+                    className={ 'bg-[#E83328] hover:bg-[#E83328] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>了解更多福利</Button>
+            </Link>
+
         </div>
 
         {/*加拿大提供80余种移民途径*/ }
@@ -129,7 +96,7 @@ export default function MarketingPage(){
                     </div>
                 </div>
                 <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
-                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>联邦快速通道</div>
                     <div className={ 'flex space-x-3' }>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
@@ -139,7 +106,7 @@ export default function MarketingPage(){
                     </div>
                 </div>
                 <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
-                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>联邦北部试点</div>
                     <div className={ 'flex space-x-3' }>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
@@ -150,9 +117,9 @@ export default function MarketingPage(){
                 </div>
             </div>
             <div className={ 'w-1/3 bg-v1-bg2 py-24 px-10 space-y-16' }>
-                <div className="text-center text-white text-[50px] font-semibold font-['Maven Pro']">技术类</div>
+                <div className="text-center text-white text-[50px] font-semibold font-['Maven Pro']">商业类</div>
                 <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
-                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>萨省企业家移民</div>
                     <div className={ 'flex space-x-3' }>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
@@ -162,7 +129,7 @@ export default function MarketingPage(){
                     </div>
                 </div>
                 <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
-                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>BC企业家试点</div>
                     <div className={ 'flex space-x-3' }>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
@@ -172,7 +139,7 @@ export default function MarketingPage(){
                     </div>
                 </div>
                 <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
-                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>联邦创投</div>
                     <div className={ 'flex space-x-3' }>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
@@ -182,10 +149,10 @@ export default function MarketingPage(){
                     </div>
                 </div>
             </div>
-            <div className={ 'w-1/3 bg-v1-bg3 py-24 px-10 space-y-16' }>
-                <div className="text-center text-white text-[50px] font-semibold font-['Maven Pro']">技术类</div>
+            <div className={ 'w-1/3 bg-v1-bg1 py-24 px-10 space-y-16' }>
+                <div className="text-center text-white text-[50px] font-semibold font-['Maven Pro']">留学类</div>
                 <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
-                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>曼省留学移民</div>
                     <div className={ 'flex space-x-3' }>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
@@ -195,7 +162,7 @@ export default function MarketingPage(){
                     </div>
                 </div>
                 <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
-                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>BC省留学移民</div>
                     <div className={ 'flex space-x-3' }>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
@@ -205,7 +172,7 @@ export default function MarketingPage(){
                     </div>
                 </div>
                 <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">
-                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>
+                    <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>安省留学移民</div>
                     <div className={ 'flex space-x-3' }>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
                         <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>
@@ -262,8 +229,7 @@ export default function MarketingPage(){
         <div className={ 'bg-[#EBF3FC] py-20 space-x-20 text-center' }>
             <Button
                 className={ 'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>移民专家在线解答</Button>
-            <Button
-                className={ 'bg-[#E83328] hover:bg-[#E83328] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>预约顾问评估</Button>
+            <DialogCoverFrom text={'预约顾问评估'} variant={'ghost'} className={'bg-[#E83328] hover:bg-[#E83328] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow'}/>
         </div>
 
         {/*博泰8大服务保障*/ }
@@ -291,7 +257,7 @@ export default function MarketingPage(){
                         <Image src={ '/Group4592.svg' } alt={ '' } width={ 70 } height={ 70 }/>
                         <p
                             className="text-black text-2xl font-bold">
-                            量身定制方案
+                            中加两地直营
                         </p>
                     </div>
                     <div
@@ -299,7 +265,7 @@ export default function MarketingPage(){
                         <Image src={ '/Group4593.svg' } alt={ '' } width={ 70 } height={ 70 }/>
                         <p
                             className="text-black text-2xl font-bold">
-                            量身定制方案
+                            本土团队
                         </p>
                     </div>
                     <div
@@ -307,7 +273,7 @@ export default function MarketingPage(){
                         <Image src={ '/Group4594.svg' } alt={ '' } width={ 70 } height={ 70 }/>
                         <p
                             className="text-black text-2xl font-bold">
-                            量身定制方案
+                            多重材料审核
                         </p>
                     </div>
                     <div
@@ -315,7 +281,7 @@ export default function MarketingPage(){
                         <Image src={ '/Group4595.svg' } alt={ '' } width={ 70 } height={ 70 }/>
                         <p
                             className="text-black text-2xl font-bold">
-                            量身定制方案
+                            成功后再收费
                         </p>
                     </div>
                     <div
@@ -323,7 +289,7 @@ export default function MarketingPage(){
                         <Image src={ '/Group4596.svg' } alt={ '' } width={ 70 } height={ 70 }/>
                         <p
                             className="text-black text-2xl font-bold">
-                            量身定制方案
+                            协助拒签复议
                         </p>
                     </div>
                     <div
@@ -331,7 +297,7 @@ export default function MarketingPage(){
                         <Image src={ '/Group4597.svg' } alt={ '' } width={ 70 } height={ 70 }/>
                         <p
                             className="text-black text-2xl font-bold">
-                            量身定制方案
+                            登陆面试指导
                         </p>
                     </div>
                     <div
@@ -339,14 +305,14 @@ export default function MarketingPage(){
                         <Image src={ '/Group4598.svg' } alt={ '' } width={ 70 } height={ 70 }/>
                         <p
                             className="text-black text-2xl font-bold">
-                            量身定制方案
+                            安家生活服务
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div className={ 'w-full h-[855px]' }>
+        <div className={ 'w-full h-[855px] mt-20' }>
             <div className={ 'relative w-full h-[557px]' }>
                 <div className={ 'absolute top-0 left-0 w-full h-full' }>
                     <Province_banner banner={ '/pki7947412.png' }/>
@@ -393,7 +359,7 @@ export default function MarketingPage(){
                         <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>
                     </div>
                     <span
-                        className={ 'bg-white absolute top-[170px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
+                        className={ 'bg-white absolute top-[180px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
                             创始人
                         </span>
                 </div>
@@ -406,7 +372,7 @@ export default function MarketingPage(){
                         <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>
                     </div>
                     <span
-                        className={ 'bg-white absolute top-[170px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
+                        className={ 'bg-white absolute top-[180px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
                             创始人
                         </span>
                 </div>
@@ -419,7 +385,7 @@ export default function MarketingPage(){
                         <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>
                     </div>
                     <span
-                        className={ 'bg-white absolute top-[170px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
+                        className={ 'bg-white absolute top-[180px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
                             创始人
                         </span>
                 </div>

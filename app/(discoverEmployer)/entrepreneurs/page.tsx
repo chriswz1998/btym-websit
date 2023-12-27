@@ -58,7 +58,6 @@ const FederationPage = () => {
 
     return (<div>
         <Province_banner banner={ 'https://i.ibb.co/CJyDGCn/123123123.png' }/>
-        <Margin20_box>
             <div className={ 'py-20 flex items-center justify-center space-x-16' }>
                 <Image src={ image } alt={ '' } width={ 500 }
                        height={ 400 } className={ 'rounded-lg' }/>
@@ -71,14 +70,12 @@ const FederationPage = () => {
                     <p className={ 'text-[20px] text-[#858A8F] font-light w-[600px]' }>
                         { title_description }
                     </p>
-                    <DialogCoverFrom dialog_model={ 'normal' }/>
+                    <DialogCoverFrom text={'预约顾问评估'} variant={'ghost'} className={'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow'}/>
                 </div>
             </div>
-        </Margin20_box>
 
         { pageResult.map((item, index) => {
-            return (<div className={ `${ index % 2 === 0 ? 'bg-mask-color6' : '' }` } key={ index }>
-                <Margin20_box className={ 'pb-24' }>
+            return (<div className={ `${ index % 2 === 0 ? 'bg-mask-color6' : '' } pb-24` } key={ index }>
                     <Title size={ 50 } title_en={ item.title_en } en_size={ 24 } height={ 24 } title={ item.title }
                            bold={ true }
                            center={ true }/>
@@ -87,7 +84,6 @@ const FederationPage = () => {
                             return (<PrWayItem key={ Index } num={ Index + 1 } item_detail={ Item }/>)
                         }) }
                     </div>
-                </Margin20_box>
             </div>)
         }) }
     </div>)
