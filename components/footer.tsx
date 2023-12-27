@@ -1,55 +1,42 @@
-import { Building2, Mailbox, PhoneCall } from 'lucide-react'
+import { Logo } from '@/app/(marketing)/_components/logo'
 import { Title } from '@/components/Title'
-import { Margin20_box } from '@/components/margin20_box'
-import { DialogCoverFrom } from '@/components/dialog'
-import React from 'react'
+import { LucideMailbox, MapPin, Phone } from 'lucide-react'
+import { DropdownMenuItemEach_employers } from '@/lib/publicResuces'
+import Link from 'next/link'
 
 const Footer = ({ has_dialog }: { has_dialog?: boolean }) => {
-    return (<div>
-        { has_dialog ? (<div className={ 'space-y-14 py-14 bg-[#11437F] text-center' }>
-                <div>
-                    <Title className={ 'text-white' } size={ 50 } bold={ true } center={ true }
-                           title={ '移民项目太多，不知道哪个适合自己？' }/>
-                    <Title className={ 'text-white' } size={ 50 } bold={ true } center={ true }
-                           title={ '博泰移民助力您的移民之路!' }/>
+    return (<div className={ 'bg-mask-color5 px-20 text-white flex space-x-20' }>
+        <div className={ 'w-[500px] py-20' }>
+            <Logo/>
+            <p className={ 'mt-10' }>我们是加拿大本土实力最强、规模最大的移民公司，专注于加拿大移民留学签证等服务。公司名下拥有12位华人持牌移民顾问，持牌移民顾问数量加拿大同行业首位；拥有10家直营公司，两家位于国内，另外八家在加拿大，横跨加拿大东西海岸，真正实现了加拿大移民留学全覆盖</p>
+        </div>
+        <div className={ 'w-[400px] py-20' }>
+            <Title size={ 30 } title={ '联系我们' }/>
+            <div className={ 'mt-16 space-y-6' }>
+                <div className={ 'flex space-x-3 ' }>
+                    <MapPin/>
+                    <p>1174 Pembina Hwy Winnipeg, MB R3T 2A4,</p>
                 </div>
-                <DialogCoverFrom dialog_model={ 'as' } variant={ 'destructive' }/>
-            </div>) : null }
-
-
-        <Title size={ 50 } title={ '联系我们' } title_en={ '我们将竭诚为您服务' } en_size={ 24 } center={ true }
-               height={ 24 } bold={ true }/>
-        <Margin20_box className={ 'mb-24 flex justify-between' }>
-            <div className={ 'flex flex-col items-center' }>
-                <div
-                    className={ 'flex justify-center items-center w-20 h-20 rounded-full bg-[#F4F4F4]' }>
-                    <PhoneCall size={ 40 }/>
+                <div className={ 'flex space-x-3' }>
+                    <LucideMailbox/>
+                    <p>info@boatvisa.ca</p>
                 </div>
-                <div className={ 'text-2xl font-bold mt-10' }>联系电话</div>
-                <div className={ 'text-xl mt-5' }>400-123-4567</div>
-            </div>
-
-            <div className={ 'flex flex-col items-center' }>
-                <div
-                    className={ 'flex justify-center items-center w-20 h-20 rounded-full bg-[#F4F4F4]' }>
-                    <Building2 size={ 40 }/>
-                </div>
-                <div className={ 'text-2xl font-bold mt-10' }>联系地址</div>
-                <div className={ 'text-xl mt-5' }>北京市海淀区中关村大街1号</div>
-            </div>
-
-            <div className={ 'flex flex-col items-center' }>
-                <div
-                    className={ 'flex justify-center items-center w-20 h-20 rounded-full bg-[#F4F4F4]' }>
-                    <Mailbox size={ 40 }/>
-                </div>
-                <div className={ 'text-2xl font-bold mt-10' }>联系邮箱</div>
-                <div className={ 'text-xl mt-5' }>
-                    scissorwz@gmail.com
+                <div className={ 'flex space-x-3' }>
+                    <Phone/>
+                    <p>204-615-6555</p>
                 </div>
             </div>
-        </Margin20_box>
-
+        </div>
+        <div className={ 'w-[200px] py-20' }>
+            <Title size={ 30 } title={ '热门项目' }/>
+            <div className={ 'mt-16' }>
+                { DropdownMenuItemEach_employers.map((item, index) => {
+                    return (<Link key={ index } href={ item.href }>
+                        <p className={'pb-4 ease-in-out duration-300'}>{ item.text }</p>
+                    </Link>)
+                }) }
+            </div>
+        </div>
     </div>)
 }
 

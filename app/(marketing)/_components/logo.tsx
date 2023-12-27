@@ -12,7 +12,6 @@ export const Logo = () => {
                     alt="Logo"
                 />
             </Link>
-
         </div>
     )
 }
