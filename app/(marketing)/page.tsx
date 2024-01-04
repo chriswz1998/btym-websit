@@ -351,7 +351,7 @@ export default function MarketingPage(){
             <ArrowLeft/>
             <div className={ 'w-full flex justify-center space-x-10' }>
                 <div className={ 'shadow w-[240px] rounded-lg overflow-hidden relative' }>
-                    <Image src={ '/2023-12-168.441.png' } alt={ '' } width={ 240 } height={ 400 }/>
+                    <Image src={ '/151704349688.jpg' } alt={ '' } width={ 240 } height={ 400 }/>
                     <div
                         className="p-3 pt-6 text-slate-900">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
                     </div>
@@ -364,7 +364,7 @@ export default function MarketingPage(){
                         </span>
                 </div>
                 <div className={ 'shadow w-[240px] rounded-lg overflow-hidden relative' }>
-                    <Image src={ '/2023-12-168.441.png' } alt={ '' } width={ 240 } height={ 400 }/>
+                    <Image src={ '/151704349688.jpg' } alt={ '' } width={ 240 } height={ 400 }/>
                     <div
                         className="p-3 pt-6 text-slate-900">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
                     </div>
@@ -377,7 +377,7 @@ export default function MarketingPage(){
                         </span>
                 </div>
                 <div className={ 'shadow w-[240px] rounded-lg overflow-hidden relative' }>
-                    <Image src={ '/2023-12-168.441.png' } alt={ '' } width={ 240 } height={ 400 }/>
+                    <Image src={ '/151704349688.jpg' } alt={ '' } width={ 240 } height={ 400 }/>
                     <div
                         className="p-3 pt-6 text-slate-900">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
                     </div>

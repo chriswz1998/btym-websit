@@ -26,6 +26,13 @@ export function Navigation(){
                 </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
+                <Link href="/aboutUs" legacyBehavior passHref>
+                    <NavigationMenuLink className={ 'bg-transparent hover:bg-transparent' }>
+                        博泰介绍
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
                 <Link href="/all_profiles" legacyBehavior passHref>
                     <NavigationMenuLink className={ 'bg-transparent hover:bg-transparent' }>
                         客户案例
