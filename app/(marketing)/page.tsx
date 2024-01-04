@@ -359,7 +359,7 @@ export default function MarketingPage(){
                         <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>
                     </div>
                     <span
-                        className={ 'bg-white absolute top-[180px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
+                        className={ 'bg-white absolute top-[225px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
                             创始人
                         </span>
                 </div>
@@ -372,7 +372,7 @@ export default function MarketingPage(){
                         <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>
                     </div>
                     <span
-                        className={ 'bg-white absolute top-[180px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
+                        className={ 'bg-white absolute top-[225px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
                             创始人
                         </span>
                 </div>
@@ -385,7 +385,7 @@ export default function MarketingPage(){
                         <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>
                     </div>
                     <span
-                        className={ 'bg-white absolute top-[180px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
+                        className={ 'bg-white absolute top-[225px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
                             创始人
                         </span>
                 </div>

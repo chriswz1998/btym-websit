@@ -57,7 +57,9 @@ const FederationPage = () => {
     }, [])
 
     return (<div>
-        <Province_banner banner={ 'https://i.ibb.co/tmcjmqS/FRTU7p-Mgw69-IRCgf99-RKESxhv8-RYl45ju-BYx3-W8n.png' }/>
+
+        <img src={ 'https://i.ibb.co/tmcjmqS/FRTU7p-Mgw69-IRCgf99-RKESxhv8-RYl45ju-BYx3-W8n.png' } alt={ '' } className={ 'w-full h-[600px] block' }/>
+
         <div className={ 'py-20 flex items-center justify-center space-x-16' }>
             <Image src={ image } alt={ '' } width={ 500 }
                    height={ 400 } className={ 'rounded-lg' }/>

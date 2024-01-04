@@ -57,33 +57,34 @@ const FederationPage = () => {
     }, [])
 
     return (<div>
-        <Province_banner banner={ 'https://i.ibb.co/CJyDGCn/123123123.png' }/>
-            <div className={ 'py-20 flex items-center justify-center space-x-16' }>
-                <Image src={ image } alt={ '' } width={ 500 }
-                       height={ 400 } className={ 'rounded-lg' }/>
-                <div className={ 'space-y-28' }>
-                    <div>
-                        <Title size={ 50 } bold={ true } title={ title }/>
-                        <p className={ 'text-[40px] font-bold text-[#999999]' }>{ title_en }</p>
-                    </div>
-
-                    <p className={ 'text-[20px] text-[#858A8F] font-light w-[600px]' }>
-                        { title_description }
-                    </p>
-                    <DialogCoverFrom text={'预约顾问评估'} variant={'ghost'} className={'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow'}/>
+        <img src={ 'https://i.ibb.co/CJyDGCn/123123123.png' } alt={ '' } className={ 'w-full h-[600px] block' }/>
+        <div className={ 'py-20 flex items-center justify-center space-x-16' }>
+            <Image src={ image } alt={ '' } width={ 500 }
+                   height={ 400 } className={ 'rounded-lg' }/>
+            <div className={ 'space-y-28' }>
+                <div>
+                    <Title size={ 50 } bold={ true } title={ title }/>
+                    <p className={ 'text-[40px] font-bold text-[#999999]' }>{ title_en }</p>
                 </div>
+
+                <p className={ 'text-[20px] text-[#858A8F] font-light w-[600px]' }>
+                    { title_description }
+                </p>
+                <DialogCoverFrom text={ '预约顾问评估' } variant={ 'ghost' }
+                                 className={ 'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow' }/>
             </div>
+        </div>
 
         { pageResult.map((item, index) => {
             return (<div className={ `${ index % 2 === 0 ? 'bg-mask-color6' : '' } pb-24` } key={ index }>
-                    <Title size={ 50 } title_en={ item.title_en } en_size={ 24 } height={ 24 } title={ item.title }
-                           bold={ true }
-                           center={ true }/>
-                    <div className={ 'flex justify-center items-center space-x-16' }>
-                        { item.data.map((Item, Index) => {
-                            return (<PrWayItem key={ Index } num={ Index + 1 } item_detail={ Item }/>)
-                        }) }
-                    </div>
+                <Title size={ 50 } title_en={ item.title_en } en_size={ 24 } height={ 24 } title={ item.title }
+                       bold={ true }
+                       center={ true }/>
+                <div className={ 'flex justify-center items-center space-x-16' }>
+                    { item.data.map((Item, Index) => {
+                        return (<PrWayItem key={ Index } num={ Index + 1 } item_detail={ Item }/>)
+                    }) }
+                </div>
             </div>)
         }) }
     </div>)
