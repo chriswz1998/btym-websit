@@ -311,15 +311,15 @@ export default function MarketingPage(){
                     <div
                         className={ 'w-[1280px] h-[450px] bg-white mx-auto rounded-lg flex flex-col items-center justify-center space-x-6 p-6' }>
                         <div className={ 'w-full flex space-x-4' }>
-                            <Image src={ '/161704431045_.pic.jpg' } alt={ '' } width={ 240 } height={ 400 }
+                            <img src={ '/161704431045_.pic.jpg' } alt={ '' } width={ 233 }
                                    className={ 'shadow' }/>
-                            <Image src={ '/171704431045_.pic.jpg' } alt={ '' } width={ 240 } height={ 400 }
+                            <img src={ '/171704431045_.pic.jpg' } alt={ '' } width={ 233 }
                                    className={ 'shadow' }/>
-                            <Image src={ '/181704431045_.pic.jpg' } alt={ '' } width={ 240 } height={ 400 }
+                            <img src={ '/181704431045_.pic.jpg' } alt={ '' } width={ 233 }
                                    className={ 'shadow' }/>
-                            <Image src={ '/191704431045_.pic.jpg' } alt={ '' } width={ 240 } height={ 400 }
+                            <img src={ '/191704431045_.pic.jpg' } alt={ '' } width={ 233 }
                                    className={ 'shadow' }/>
-                            <Image src={ '/201704431045_.pic.jpg' } alt={ '' } width={ 240 } height={ 400 }
+                            <img src={ '/201704431045_.pic.jpg' } alt={ '' } width={ 233 }
                                    className={ 'shadow' }/>
                         </div>
                         <Link href={ '/all_profiles' }>
@@ -338,7 +338,7 @@ export default function MarketingPage(){
             <ArrowLeft/>
             <div className={ 'w-full flex justify-center space-x-10' }>
                 <div className={ 'shadow w-[240px] rounded-lg overflow-hidden relative' }>
-                    <Image src={ '/151704349688.jpg' } alt={ '' } width={ 240 } height={ 400 }/>
+                    <img src={ '/151704349688.jpg' } alt={ '' } className={'w-[240px]'}/>
                     <div
                         className="p-3 pt-6 text-slate-900">Ken. 博泰移民创始人,资深移民顾问,帮助上百客户圆梦!
                     </div>

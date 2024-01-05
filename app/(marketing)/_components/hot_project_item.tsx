@@ -10,12 +10,12 @@ export const Hot_project_item = ({ url, text, href }: { url: string, text: strin
         window.localStorage.setItem('employer_name', text)
     }
     return (<div className={ 'm-6 shadow w-[240px] rounded-lg overflow-hidden' }>
-        <Image src={ url } alt={ '' } width={ 240 } height={ 400 }/>
+        <img src={ url } alt={ '' } width={ 240 }/>
         <div
             className="text-center p-3 pt-6 font-bold text-slate-900">{ text }
         </div>
         <div className={ 'flex justify-center' }>
-            <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>
+            <img src={ 'Starsasasas.svg' } alt={ '' } width={ 100 }/>
         </div>
         <div className={ 'flex justify-around py-6' }>
             <Link href={ href }>
