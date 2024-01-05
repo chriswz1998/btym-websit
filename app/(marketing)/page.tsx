@@ -5,7 +5,7 @@ import { Title } from '@/components/Title'
 import { Navbar } from '@/components/navbar'
 import { Province_banner } from '@/components/province_banner'
 import { Hot_project_item } from '@/app/(marketing)/_components/hot_project_item'
-import { how_item_res } from '@/lib/publicResuces'
+import { DropdownMenuItemEach_tools, how_item_res } from '@/lib/publicResuces'
 import Link from 'next/link'
 import { DialogCoverFrom } from '@/components/dialog'
 
@@ -15,34 +15,17 @@ export default function MarketingPage(){
         <Province_banner banner={ '/banner.png' }/>
         {/*申请条件自测*/ }
         <div className={ 'flex justify-around flex-wrap p-10' }>
-            <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
-                <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
-                <div>
-                    <Title size={ 20 } bold={ true } title={ '申请条件自测' } en_size={ 8 }
-                           title_en={ '1分钟速测，甄选适合您的移民项目' }/>
-                </div>
-            </div>
-            <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
-                <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
-                <div>
-                    <Title size={ 20 } bold={ true } title={ '技术移民打分' } en_size={ 8 }
-                           title_en={ '自己算太麻烦，试试自动打分吧' }/>
-                </div>
-            </div>
-            <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
-                <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
-                <div>
-                    <Title size={ 20 } bold={ true } title={ '申请费用计算' } en_size={ 8 }
-                           title_en={ '费用问题，计算一下更有底' }/>
-                </div>
-            </div>
-            <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
-                <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
-                <div>
-                    <Title size={ 20 } bold={ true } title={ '免费资料获取' } en_size={ 8 }
-                           title_en={ '获取详细项目资料和费用清单' }/>
-                </div>
-            </div>
+            { DropdownMenuItemEach_tools.map((item, index) => {
+                return (<Link key={ index } href={ `${ item.href }/${ index }` }>
+                    <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
+                        <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
+                        <div>
+                            <Title size={ 20 } bold={ true } title={ item.text } en_size={ 8 }
+                                   title_en={ item.description }/>
+                        </div>
+                    </div>
+                </Link>)
+            }) }
         </div>
         {/*每年有2000+选择移民加拿大*/ }
         <div className={ 'mt-20 text-center text-black text-[50px] font-semibold font-[\'Maven Pro\'] space-y-4' }>
@@ -62,7 +45,8 @@ export default function MarketingPage(){
         </div>
 
         <div className={ 'space-x-20 text-center' }>
-            <DialogCoverFrom text={'资深顾问全面解答'} variant={'ghost'} className={'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow'}/>
+            <DialogCoverFrom text={ '资深顾问全面解答' } variant={ 'ghost' }
+                             className={ 'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow' }/>
             <Link href={ '/employer' }>
                 <Button
                     className={ 'bg-[#E83328] hover:bg-[#E83328] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>了解更多福利</Button>
@@ -229,7 +213,8 @@ export default function MarketingPage(){
         <div className={ 'bg-[#EBF3FC] py-20 space-x-20 text-center' }>
             <Button
                 className={ 'bg-[#11437F] hover:bg-[#11437F] w-[300px] h-[66px] px-4 py-2.5 rounded-[10px] shadow' }>移民专家在线解答</Button>
-            <DialogCoverFrom text={'预约顾问评估'} variant={'ghost'} className={'bg-[#E83328] hover:bg-[#E83328] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow'}/>
+            <DialogCoverFrom text={ '预约顾问评估' } variant={ 'ghost' }
+                             className={ 'bg-[#E83328] hover:bg-[#E83328] w-[300px] h-[66px] text-white hover:text-white px-4 py-2.5 rounded-[10px] shadow' }/>
         </div>
 
         {/*博泰8大服务保障*/ }
@@ -324,22 +309,24 @@ export default function MarketingPage(){
                         <p className={ 'text-6xl text-white font-light' }>申请人认可的移民服务品牌</p>
                     </div>
                     <div
-                        className={ 'w-[1280px] h-[450px] bg-white mx-auto rounded-lg flex items-center space-x-6 p-6' }>
-                        <ArrowLeft/>
+                        className={ 'w-[1280px] h-[450px] bg-white mx-auto rounded-lg flex flex-col items-center justify-center space-x-6 p-6' }>
                         <div className={ 'w-full flex space-x-4' }>
-                            <Image src={ '/qdasdasdasdas.png' } alt={ '' } width={ 220 } height={ 400 }
+                            <Image src={ '/161704431045_.pic.jpg' } alt={ '' } width={ 240 } height={ 400 }
                                    className={ 'shadow' }/>
-                            <Image src={ '/qdasdasdasdas.png' } alt={ '' } width={ 220 } height={ 400 }
+                            <Image src={ '/171704431045_.pic.jpg' } alt={ '' } width={ 240 } height={ 400 }
                                    className={ 'shadow' }/>
-                            <Image src={ '/qdasdasdasdas.png' } alt={ '' } width={ 220 } height={ 400 }
+                            <Image src={ '/181704431045_.pic.jpg' } alt={ '' } width={ 240 } height={ 400 }
                                    className={ 'shadow' }/>
-                            <Image src={ '/qdasdasdasdas.png' } alt={ '' } width={ 220 } height={ 400 }
+                            <Image src={ '/191704431045_.pic.jpg' } alt={ '' } width={ 240 } height={ 400 }
                                    className={ 'shadow' }/>
-                            <Image src={ '/qdasdasdasdas.png' } alt={ '' } width={ 220 } height={ 400 }
+                            <Image src={ '/201704431045_.pic.jpg' } alt={ '' } width={ 240 } height={ 400 }
                                    className={ 'shadow' }/>
                         </div>
-                        <ArrowRight/>
+                        <Link href={ '/all_profiles' }>
+                            <Button className={ 'm-6' } variant={ 'ghost' }>查看更多案例</Button>
+                        </Link>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -353,33 +340,7 @@ export default function MarketingPage(){
                 <div className={ 'shadow w-[240px] rounded-lg overflow-hidden relative' }>
                     <Image src={ '/151704349688.jpg' } alt={ '' } width={ 240 } height={ 400 }/>
                     <div
-                        className="p-3 pt-6 text-slate-900">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
-                    </div>
-                    <div className={ 'pb-3 pl-3' }>
-                        <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>
-                    </div>
-                    <span
-                        className={ 'bg-white absolute top-[225px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
-                            创始人
-                        </span>
-                </div>
-                <div className={ 'shadow w-[240px] rounded-lg overflow-hidden relative' }>
-                    <Image src={ '/151704349688.jpg' } alt={ '' } width={ 240 } height={ 400 }/>
-                    <div
-                        className="p-3 pt-6 text-slate-900">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
-                    </div>
-                    <div className={ 'pb-3 pl-3' }>
-                        <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>
-                    </div>
-                    <span
-                        className={ 'bg-white absolute top-[225px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
-                            创始人
-                        </span>
-                </div>
-                <div className={ 'shadow w-[240px] rounded-lg overflow-hidden relative' }>
-                    <Image src={ '/151704349688.jpg' } alt={ '' } width={ 240 } height={ 400 }/>
-                    <div
-                        className="p-3 pt-6 text-slate-900">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
+                        className="p-3 pt-6 text-slate-900">Ken. 博泰移民创始人,资深移民顾问,帮助上百客户圆梦!
                     </div>
                     <div className={ 'pb-3 pl-3' }>
                         <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>

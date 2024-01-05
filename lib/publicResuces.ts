@@ -38,25 +38,21 @@ export const DropdownMenuItemEach_employers: ItemDropdown[] = [ {
 export const DropdownMenuItemEach_tools: ItemDropdown[] = [ {
     text: '申请条件自测', href: '/condition_self_test', description: '1分钟速测，甄选适合你的移民项目'
 }, {
-    text: '快速通道(EE)', href: '/immigration_score/EE', description: '1分钟速测，甄选适合你的移民项目'
+    text: '技术移民打分', href: '/condition_self_test', description: '自己算太麻烦，试试自动打分吧'
 }, {
-    text: 'BC省提名(BCPNP)', href: '/immigration_score/BCPNP', description: '1分钟速测，甄选适合你的移民项目'
+    text: '申请费用计算', href: '/condition_self_test', description: '费用问题，计算一下更有底'
 }, {
-    text: '萨省省提名(SINP)', href: '/immigration_score/SINP', description: '1分钟速测，甄选适合你的移民项目'
-}, {
-    text: '曼省提名(MPNP)', href: '/immigration_score/MPNP', description: '1分钟速测，甄选适合你的移民项目'
-}, {
-    text: '安省省提名(OINP)', href: '/immigration_score/OINP', description: '1分钟速测，甄选适合你的移民项目'
+    text: '免费资料获取', href: '/condition_self_test', description: '获取详细项目资料和费用清单'
 } ]
 
 export const how_item_res = [ {
     url: '/123as.png', href: '/employer', text: '安省雇主担保'
-},{
+}, {
     url: '/assdaaas.png', href: '/employer', text: 'BC雇主担保'
-},{
+}, {
     url: '/bcassad.png', href: '/employer', text: '萨省雇主担保'
-},{
+}, {
     url: '/sds1asaz.png', href: '/employer', text: '阿省雇主担保'
-},{
+}, {
     url: '/wwqeqwe.png', href: '/employer', text: 'NS省雇主担保'
 } ]

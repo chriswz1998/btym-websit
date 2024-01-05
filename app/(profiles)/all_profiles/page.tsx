@@ -6,18 +6,13 @@ import { Margin20_box } from '@/components/margin20_box'
 import { useRouter } from 'next/navigation'
 
 const Immigration_score = () => {
-    const [ value, setValue ] = useState('')
     const route = useRouter()
-    useEffect(() => {
-        console.log(value)
-    }, [ value ])
     return (<div>
         <div className={ 'text-center py-10' }><span
             className="text-black text-[50px] font-semibold font-['Maven Pro']">已帮助</span><span
             className="text-red-600 text-[50px] font-semibold font-['Maven Pro']">1000</span><span
             className="text-red-600 text-[68px] font-semibold font-['Maven Pro'] leading-[75px]">+</span><span
             className="text-black text-[50px] font-semibold font-['Maven Pro']">客户实现移民</span></div>
-        <SelectForm setValue={ setValue }/>
         <div className={ 'flex justify-center items-center flex-wrap pb-24 pt-12' }>
             { [ 1, 2, 3, 4, 5, 6 ].map((item, index) => {
                 return (<div
