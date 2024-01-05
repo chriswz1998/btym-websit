@@ -1,8 +1,5 @@
 'use client'
 import { Star } from 'lucide-react'
-import { SelectForm } from '@/app/(profiles)/_components/selecet'
-import { useEffect, useState } from 'react'
-import { Margin20_box } from '@/components/margin20_box'
 import { useRouter } from 'next/navigation'
 
 const Immigration_score = () => {

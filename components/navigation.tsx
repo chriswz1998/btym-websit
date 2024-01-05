@@ -12,7 +12,7 @@ import {
     NavigationMenuTrigger
 } from '@/components/ui/navigation-menu'
 import {
-    DropdownMenuItemEach_employers, DropdownMenuItemEach_province, DropdownMenuItemEach_tools
+    DropdownMenuItemEach_employers, DropdownMenuItemEach_province
 } from '@/lib/publicResuces'
 
 export function Navigation(){
@@ -89,31 +89,31 @@ export function Navigation(){
                     </ul>
                 </NavigationMenuContent>
             </NavigationMenuItem>
-            {/*<NavigationMenuItem>*/}
-            {/*    <NavigationMenuTrigger*/}
-            {/*        className={ 'bg-transparent text-[16px]' }>打分工具</NavigationMenuTrigger>*/}
-            {/*    <NavigationMenuContent>*/}
-            {/*        <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">*/}
-            {/*            { DropdownMenuItemEach_tools.map((item, index) => {*/}
-            {/*                return (<li key={ index }>*/}
-            {/*                    <Link href={ item.href } legacyBehavior passHref>*/}
-            {/*                        <NavigationMenuLink asChild>*/}
-            {/*                            <div*/}
-            {/*                                className={ 'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground' }*/}
-            {/*                            >*/}
-            {/*                                <div className="text-sm font-medium leading-none">{ item.text }</div>*/}
-            {/*                                <div*/}
-            {/*                                    className="line-clamp-2 text-sm leading-snug text-muted-foreground">*/}
-            {/*                                    { item.description }*/}
-            {/*                                </div>*/}
-            {/*                            </div>*/}
-            {/*                        </NavigationMenuLink>*/}
-            {/*                    </Link>*/}
-            {/*                </li>)*/}
-            {/*            }) }*/}
-            {/*        </ul>*/}
-            {/*    </NavigationMenuContent>*/}
-            {/*</NavigationMenuItem>*/}
+            {/*<NavigationMenuItem>*/ }
+            {/*    <NavigationMenuTrigger*/ }
+            {/*        className={ 'bg-transparent text-[16px]' }>打分工具</NavigationMenuTrigger>*/ }
+            {/*    <NavigationMenuContent>*/ }
+            {/*        <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">*/ }
+            {/*            { DropdownMenuItemEach_tools.map((item, index) => {*/ }
+            {/*                return (<li key={ index }>*/ }
+            {/*                    <Link href={ item.href } legacyBehavior passHref>*/ }
+            {/*                        <NavigationMenuLink asChild>*/ }
+            {/*                            <div*/ }
+            {/*                                className={ 'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground' }*/ }
+            {/*                            >*/ }
+            {/*                                <div className="text-sm font-medium leading-none">{ item.text }</div>*/ }
+            {/*                                <div*/ }
+            {/*                                    className="line-clamp-2 text-sm leading-snug text-muted-foreground">*/ }
+            {/*                                    { item.description }*/ }
+            {/*                                </div>*/ }
+            {/*                            </div>*/ }
+            {/*                        </NavigationMenuLink>*/ }
+            {/*                    </Link>*/ }
+            {/*                </li>)*/ }
+            {/*            }) }*/ }
+            {/*        </ul>*/ }
+            {/*    </NavigationMenuContent>*/ }
+            {/*</NavigationMenuItem>*/ }
         </NavigationMenuList>
     </NavigationMenu>)
 }
