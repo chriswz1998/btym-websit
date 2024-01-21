@@ -1,15 +1,21 @@
 'use client'
 import { Star } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import React from 'react'
 
 const Immigration_score = () => {
     const route = useRouter()
     return (<div>
         <div className={ 'text-center py-10' }><span
             className="text-black text-[50px] font-semibold font-['Maven Pro']">已帮助</span><span
-            className="text-red-600 text-[50px] font-semibold font-['Maven Pro']">1000</span><span
+            className="text-red-600 text-[50px] font-semibold font-['Maven Pro']">200</span><span
             className="text-red-600 text-[68px] font-semibold font-['Maven Pro'] leading-[75px]">+</span><span
-            className="text-black text-[50px] font-semibold font-['Maven Pro']">客户实现移民</span></div>
+            className="text-black text-[50px] font-semibold font-['Maven Pro']">客户实现移民</span>
+        </div>
+        <div
+            className="text-center text-stone-500 text-[40px] font-normal font-['Noto Sans HK'] leading-10">
+            精选案例
+        </div>
         <div className={ 'flex justify-center items-center flex-wrap pb-24 pt-12' }>
             { [ 1, 2, 3, 4, 5, 6 ].map((item, index) => {
                 return (<div

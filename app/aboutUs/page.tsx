@@ -5,6 +5,7 @@ import { Province_banner } from '@/components/province_banner'
 import ReactPlayer from 'react-player'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import React from 'react'
 
 export default function AboutUsPage(){
     const storageName = (text: string) => {
@@ -28,6 +29,16 @@ export default function AboutUsPage(){
                          height="300px"
                          url={ 'https://www.youtube.com/watch?v=ckxHflanrPk' }/>
         </div>
+
+        <div
+            className={ 'p-20 pt-30 text-center text-black text-[50px] font-semibold font-[\'Maven Pro\'] space-y-4' }>
+            <div>选择博泰,选择成功</div>
+            <div
+                className="text-stone-500 text-[40px] font-normal font-['Noto Sans HK'] leading-10">
+                致力于为中国申请人带来最优质的加拿大移民服务
+            </div>
+        </div>
+
         <div className={ 'relative' }>
             <Province_banner banner={ '/5daea7e521746123.png' }/>
             <div
