@@ -46,13 +46,13 @@ export const DropdownMenuItemEach_tools: ItemDropdown[] = [ {
 } ]
 
 export const how_item_res = [ {
-    url: '/123as.png', href: '/employer', text: '安省雇主担保'
+    url: '/123as.png', href: '/employer', text: '安省'
 }, {
-    url: '/assdaaas.png', href: '/employer', text: 'BC雇主担保'
+    url: '/assdaaas.png', href: '/employer', text: 'BC'
 }, {
-    url: '/bcassad.png', href: '/employer', text: '萨省雇主担保'
+    url: '/bcassad.png', href: '/employer', text: '萨省'
 }, {
-    url: '/sds1asaz.png', href: '/employer', text: '阿省雇主担保'
+    url: '/sds1asaz.png', href: '/employer', text: '阿省'
 }, {
-    url: '/wwqeqwe.png', href: '/employer', text: 'NS省雇主担保'
+    url: '/wwqeqwe.png', href: '/employer', text: 'NS省'
 } ]

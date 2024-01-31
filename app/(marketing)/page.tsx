@@ -1,66 +1,44 @@
 'use client'
 
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { Title } from '@/components/Title'
 import { Navbar } from '@/components/navbar'
 import { Province_banner } from '@/components/province_banner'
 import { Hot_project_item } from '@/app/(marketing)/_components/hot_project_item'
-import { DropdownMenuItemEach_tools, how_item_res } from '@/lib/publicResuces'
+import { how_item_res } from '@/lib/publicResuces'
 import Link from 'next/link'
 import { DialogCoverFrom } from '@/components/dialog'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
 import React from 'react'
+import {Carousels} from "@/app/(marketing)/_components/carousel";
 
 
 export default function MarketingPage(){
     return (<div>
-        <Navbar noBgModel={ true }/>
-        <Carousel plugins={ [ Autoplay({
-            delay: 2000
-        }) ] } className={ 'w-full h-[550px]' }>
-            <CarouselContent>
-                <CarouselItem className={ 'w-full h-[550px]' }>
-                    <img src={ '/banner.png' } alt={ '' } className={ 'w-full h-[550px] block' }/>
-                </CarouselItem>
-                <CarouselItem className={ 'w-full h-[550px]' }>
-                    <img src={ '/banner1.png' } alt={ '' } className={ 'w-full h-[550px] block' }/>
-                </CarouselItem>
-                <CarouselItem>
-                    <img src={ '/banner2.png' } alt={ '' } className={ 'w-full h-[550px] block' }/>
-                </CarouselItem>
-                <CarouselItem>
-                    <img src={ '/banner3.jpeg' } alt={ '' } className={ 'w-full h-[550px] block' }/>
-                </CarouselItem>
-            </CarouselContent>
-        </Carousel>
-        {/*申请条件自测*/ }
-        <div className={ 'flex justify-around flex-wrap p-10' }>
-            { DropdownMenuItemEach_tools.map((item, index) => {
-                return (<Link key={ index } href={ `${ item.href }/${ index }` }>
-                    <div className={ 'flex items-center bg-white p-3 rounded shadow w-[350px] space-x-2' }>
-                        <Image src={ '/testSvg.svg' } alt={ '' } width={ 45 } height={ 45 }/>
-                        <div>
-                            <Title size={ 20 } bold={ true } title={ item.text } en_size={ 8 }
-                                   title_en={ item.description }/>
-                        </div>
-                    </div>
-                </Link>)
-            }) }
-        </div>
-        {/*每年有2000+选择移民加拿大*/ }
-        <div className={ 'mt-20 text-center text-black text-[50px] font-semibold font-[\'Maven Pro\'] space-y-4' }>
-            <span>每年有</span>
-            <span className="text-red-600">2000+</span>
-            <span>选择移民加拿大</span>
-            <div
-                className="text-stone-500 text-[40px] font-normal font-['Noto Sans HK'] leading-10">
-                加拿大移民福利——不可拒绝的加拿大移民理由
+        <Navbar/>
+        <Carousels/>
+        <div className={'flex items-center flex-wrap py-5'}>
+            <div className='flex items-center bg-green-200 p-5 md:mx-auto'>
+                <ArrowLeft/>
+                移民行业旗舰 品牌信誉保证
+            </div>
+            <div className='flex items-center bg-green-200 p-5 md:mx-auto'>
+                <ArrowLeft/>
+                移民行业旗舰 品牌信誉保证
+            </div>
+            <div className='flex items-center bg-green-200 p-5 md:mx-auto'>
+                <ArrowLeft/>
+                移民行业旗舰 品牌信誉保证
+            </div>
+            <div className='flex items-center bg-green-200 p-5 md:mx-auto'>
+                <ArrowLeft/>
+                移民行业旗舰 品牌信誉保证
             </div>
         </div>
 
+        {/*每年有2000+选择移民加拿大*/}
         <div className={ 'py-16  flex flex-wrap justify-center' }>
             { how_item_res.map((item, index) => {
                 return (<Hot_project_item url={ item.url } href={ item.href } text={ item.text } key={ index }/>)
@@ -76,120 +54,6 @@ export default function MarketingPage(){
             </Link>
 
         </div>
-
-        {/*加拿大提供80余种移民途径*/ }
-        {/*<div*/}
-        {/*    className={ 'mt-20 p-20 text-center text-black text-[50px] font-semibold font-[\'Maven Pro\'] space-y-4' }>*/}
-        {/*    <span>加拿大提供</span>*/}
-        {/*    <span className="text-red-600">80</span>*/}
-        {/*    <span>余种移民途径</span>*/}
-        {/*    <div*/}
-        {/*        className="text-stone-500 text-[40px] font-normal font-['Noto Sans HK'] leading-10">*/}
-        {/*        不管你是学生还是职场人、企业主，有才或有“财”都可以申请*/}
-        {/*    </div>*/}
-        {/*</div>*/}
-
-        {/*<div className={ 'bg-[url("/images121212.png")] bg-cover bg-no-repeat flex' }>*/}
-        {/*    <div className={ 'w-1/3 bg-v1-bg1 py-24 px-10 space-y-16' }>*/}
-        {/*        <div className="text-center text-white text-[50px] font-semibold font-['Maven Pro']">技术类</div>*/}
-        {/*        <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">*/}
-        {/*            <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>省提名雇主担保</div>*/}
-        {/*            <div className={ 'flex space-x-3' }>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*            </div>*/}
-        {/*        </div>*/}
-        {/*        <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">*/}
-        {/*            <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>联邦快速通道</div>*/}
-        {/*            <div className={ 'flex space-x-3' }>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*            </div>*/}
-        {/*        </div>*/}
-        {/*        <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">*/}
-        {/*            <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>联邦北部试点</div>*/}
-        {/*            <div className={ 'flex space-x-3' }>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*            </div>*/}
-        {/*        </div>*/}
-        {/*    </div>*/}
-        {/*    <div className={ 'w-1/3 bg-v1-bg2 py-24 px-10 space-y-16' }>*/}
-        {/*        <div className="text-center text-white text-[50px] font-semibold font-['Maven Pro']">商业类</div>*/}
-        {/*        <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">*/}
-        {/*            <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>萨省企业家移民</div>*/}
-        {/*            <div className={ 'flex space-x-3' }>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*            </div>*/}
-        {/*        </div>*/}
-        {/*        <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">*/}
-        {/*            <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>BC企业家试点</div>*/}
-        {/*            <div className={ 'flex space-x-3' }>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*            </div>*/}
-        {/*        </div>*/}
-        {/*        <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">*/}
-        {/*            <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>联邦创投</div>*/}
-        {/*            <div className={ 'flex space-x-3' }>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*            </div>*/}
-        {/*        </div>*/}
-        {/*    </div>*/}
-        {/*    <div className={ 'w-1/3 bg-v1-bg1 py-24 px-10 space-y-16' }>*/}
-        {/*        <div className="text-center text-white text-[50px] font-semibold font-['Maven Pro']">留学类</div>*/}
-        {/*        <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">*/}
-        {/*            <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>曼省留学移民</div>*/}
-        {/*            <div className={ 'flex space-x-3' }>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*            </div>*/}
-        {/*        </div>*/}
-        {/*        <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">*/}
-        {/*            <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>BC省留学移民</div>*/}
-        {/*            <div className={ 'flex space-x-3' }>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*            </div>*/}
-        {/*        </div>*/}
-        {/*        <div className="flex justify-between flex-wrap bg-white bg-opacity-50 rounded p-5 mb-5">*/}
-        {/*            <div className={ 'text-white text-2xl font-normal font-[\'Maven Pro\']' }>安省留学移民</div>*/}
-        {/*            <div className={ 'flex space-x-3' }>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*                <Image src={ 'Star.svg' } alt={ '' } width={ 25 } height={ 25 }/>*/}
-        {/*            </div>*/}
-        {/*        </div>*/}
-        {/*    </div>*/}
-        {/*</div>*/}
 
         {/*博泰专注加拿大移民*/ }
         <div
@@ -335,15 +199,15 @@ export default function MarketingPage(){
                     <div
                         className={ 'w-[1280px] h-[450px] bg-white mx-auto rounded-lg flex flex-col items-center justify-center space-x-6 p-6' }>
                         <div className={ 'w-full flex space-x-4' }>
-                            <img src={ '/161704431045_.pic.jpg' } alt={ '' } width={ 233 }
+                            <Image src={ '/161704431045_.pic.jpg' } alt={ '' } width={ 233 } height={300}
                                  className={ 'shadow' }/>
-                            <img src={ '/171704431045_.pic.jpg' } alt={ '' } width={ 233 }
+                            <Image src={ '/171704431045_.pic.jpg' } alt={ '' } width={ 233 } height={300}
                                  className={ 'shadow' }/>
-                            <img src={ '/181704431045_.pic.jpg' } alt={ '' } width={ 233 }
+                            <Image src={ '/181704431045_.pic.jpg' } alt={ '' } width={ 233 } height={300}
                                  className={ 'shadow' }/>
-                            <img src={ '/191704431045_.pic.jpg' } alt={ '' } width={ 233 }
+                            <Image src={ '/191704431045_.pic.jpg' } alt={ '' } width={ 233 } height={300}
                                  className={ 'shadow' }/>
-                            <img src={ '/201704431045_.pic.jpg' } alt={ '' } width={ 233 }
+                            <Image src={ '/201704431045_.pic.jpg' } alt={ '' } width={ 233 } height={300}
                                  className={ 'shadow' }/>
                         </div>
                         <Link href={ '/all_profiles' }>
@@ -353,29 +217,6 @@ export default function MarketingPage(){
 
                 </div>
             </div>
-        </div>
-        <div
-            className="text-[50px] font-bold text-center font-['Maven Pro']">中加两地专业服务团队·带给申请人高标准的移民体验
-        </div>
-        <div
-            className={ 'w-[1280px] h-[450px] bg-white mx-auto rounded-lg flex items-center space-x-6 p-6' }>
-            <ArrowLeft/>
-            <div className={ 'w-full flex justify-center space-x-10' }>
-                <div className={ 'shadow w-[240px] rounded-lg overflow-hidden relative' }>
-                    <img src={ '/151704349688.jpg' } alt={ '' } className={ 'w-[240px]' }/>
-                    <div
-                        className="p-3 pt-6 text-slate-900">Ken. 博泰移民创始人,资深移民顾问,帮助上百客户圆梦!
-                    </div>
-                    <div className={ 'pb-3 pl-3' }>
-                        <Image src={ 'Starsasasas.svg' } alt={ '' } width={ 100 } height={ 100 }/>
-                    </div>
-                    <span
-                        className={ 'bg-white absolute top-[225px] left-[12px] border border-[#E83328] px-6 py-1 text-[#E83328] rounded-md text-[12px]' }>
-                            创始人
-                        </span>
-                </div>
-            </div>
-            <ArrowRight/>
         </div>
     </div>)
 }

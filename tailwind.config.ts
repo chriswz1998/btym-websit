@@ -9,7 +9,7 @@ module.exports = {
             }
         }, extend: {
             colors: {
-                'v1-bg1': 'rgba(17, 67, 127, 0.7)',
+                'v1-bg1': 'rgba(47,64,83,0.5)',
                 'v1-bg2': 'rgba(153, 90, 112, 0.7)',
                 'v1-bg3': 'rgba(30, 139, 132, 0.7)',
                 'default-blue': 'rgba(62, 128, 255, 1)',
