@@ -1,5 +1,3 @@
-'use client'
-
 import { Logo } from '@/app/(marketing)/_components/logo'
 import { Navigation } from '@/components/navigation'
 

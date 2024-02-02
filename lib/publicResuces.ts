@@ -1,49 +1,386 @@
-export const DropdownMenuItemEach_province: ItemDropdown[] = [ {
-    text: '安大略省', href: '/province/ontario', description: '加拿大最大的省份，也是加拿大经济中心，多伦多是加拿大最大的城市，也是加拿大的首都。'
-}, {
-    text: '不列颠哥伦比亚省', href: '/province/british-columbia', description: '温哥华是加拿大第三大城市，也是加拿大最美丽的城市。'
-}, {
-    text: '魁北克省', href: '/province/quebec', description: '魁北克市是加拿大第二大城市，也是加拿大法语区的经济中心。'
-}, {
-    text: '爱德华王子岛省', href: '/province/prince-edward-island', description: '加拿大东海岸省份，夏季是加拿大最美丽的地方。'
-}, {
-    text: '艾尔伯塔省', href: '/province/alberta', description: '卡尔加里是加拿大第四大城市，也是加拿大石油中心。'
-}, {
-    text: '曼尼托巴省', href: '/province/manitoba', description: '温尼伯是加拿大第七大城市，也是加拿大农业中心。'
-}, {
-    text: '萨斯喀彻温省', href: '/province/saskatchewan', description: '里贾纳是加拿大第十大城市，也是加拿大农业中心。'
-}, {
-    text: '新斯科舍省', href: '/province/nova-scotia', description: '哈利法克斯是加拿大第十一大城市，也是加拿大东海岸省份的经济中心。'
-}, {
-    text: '纽芬兰和拉布拉多省',
-    href: '/province/newfoundland-and-labrador',
-    description: '加拿大东海岸省份，圣约翰是加拿大第十二大城市，也是加拿大东海岸省份的经济中心。'
+export interface NavigationItem {
+    engDes: string;
+    subItem: {
+        subTitle: string;
+        items: ({ productName: string; productDes: string })[]
+    };
+    title: string
+}
 
-}, {
-    text: '新不伦瑞克省', href: '/province/new-brunswick', description: '加拿大东海岸省份，弗雷德里克顿是加拿大第十三大城市，也是加拿大东海岸省份的经济中心。'
-} ]
+export const navigationItem1: NavigationItem[] = [
+    {
+        title: "商业类移民",
+        engDes: "BUSINESS STREAM",
+        subItem: {
+            subTitle: "",
+            items: [
+                {
+                    productName: "联邦创业移民",
+                    productDes: "Federal Start-Up Visa",
+                },
+                {
+                    productName: "联邦自雇移民",
+                    productDes: "Federal Self-employed",
+                },
+                {
+                    productName: "BC省企业家移民",
+                    productDes: "BCPNP-EI",
+                },
+                {
+                    productName: "BC省十万小镇试点",
+                    productDes: "BCPNP-EI Regional Pilot",
+                },
+                {
+                    productName: "萨省企业家移民",
+                    productDes: "SINP-EI",
+                },
+                {
+                    productName: "萨省农场主移民",
+                    productDes: "Farm Owner & Operator",
+                },
+                {
+                    productName: "魁省投资移民",
+                    productDes: "Quebec Investor Program",
+                },
+                {
+                    productName: "魁省企业家移民",
+                    productDes: "Quebec-EI",
+                },
+                {
+                    productName: "曼省企业家移民",
+                    productDes: "MPNP-EI",
+                },
+                {
+                    productName: "PEI企业家移民",
+                    productDes: "PEIPNP-EI",
+                },
+                {
+                    productName: "纽省企业家移民",
+                    productDes: "NLPNP-EI",
+                },
+            ],
+        },
+    },
+    {
+        title: "联邦快速通道",
+        engDes: "EXPRESS ENTRY ",
+        subItem: {
+            subTitle: "",
+            items: [
+                {
+                    productName: "加拿大经验类",
+                    productDes: "Canadian Experience Class",
+                },
+                {
+                    productName: "海外联邦技术类",
+                    productDes: "Federal Skilled Worker",
+                },
+                {
+                    productName: "联邦技工类",
+                    productDes: "Federal Skilled Trade",
+                }
+            ],
+        },
+    },
+    {
+        title: "家庭团聚类移民",
+        engDes: "FAMILY SPONSORSHIP  ",
+        subItem: {
+            subTitle: "",
+            items: [
+                {
+                    productName: "父母|祖父母团聚移民",
+                    productDes: "Parents & Grandparents sponsor",
+                },
+                {
+                    productName: "子女|养子女团聚",
+                    productDes: "Child or Other Dependent",
+                },
+                {
+                    productName: "配偶|伴侣团聚",
+                    productDes: "Spouse or Common Law Partner",
+                }
+            ],
+        },
+    },
+    {
+        title: "省提名移民",
+        engDes: "PROVINCIAL NOMINEE",
+        subItem: {
+            subTitle: "",
+            items: [
+                {
+                    productName: "BC省企业家移民",
+                    productDes: "BCPNP_Skill Immigration",
+                },
+                {
+                    productName: "阿省企业家移民",
+                    productDes: "AINP_Skill Immigration",
+                },
+                {
+                    productName: "安省企业家移民",
+                    productDes: "OINP_Skill Immigration",
+                },
+                {
+                    productName: "曼省技术移民",
+                    productDes: "MPNP_Skill Immigration",
+                },
+                {
+                    productName: "纽省技术移民",
+                    productDes: "NLPNP_Skill Immigration",
+                }
+            ],
+        },
+    },
+    {
+        title: "留学工签转移民",
+        engDes: "STUDY&VISA TO IMMIGRATION",
+        subItem: {
+            subTitle: "",
+            items: [
+                {
+                    productName: "留学转移民",
+                    productDes: "Study to Immigration",
+                },
+                {
+                    productName: "全球人才引进",
+                    productDes: "Global Talent Stream",
+                },
+                {
+                    productName: "ICT内部员工转移",
+                    productDes: "Intra-Company Transfers (ICT Work Permit)",
+                },
+                {
+                    productName: "加拿大体验计划",
+                    productDes: "International Experience Canada",
+                }
+            ],
+        },
+    },
+    {
+        title: "其它签证",
+        engDes: "OTHER VISA & PERMIT",
+        subItem: {
+            subTitle: "",
+            items: [
+                {
+                    productName: "访问签证申请及续签",
+                    productDes: "Visitor Visa Apply & Renew",
+                },
+                {
+                    productName: "探亲超级签证",
+                    productDes: "Super Visa",
+                },
+                {
+                    productName: "实习工签",
+                    productDes: "Co-op Work Permit",
+                },
+                {
+                    productName: "毕业后工签",
+                    productDes: "Post Graduate Work Permit",
+                },
+                {
+                    productName: "配偶/伴侣工签",
+                    productDes: "Spouse or Common Law Partner Work Permit",
+                },
+                {
+                    productName: "商务考察签证",
+                    productDes: "Apply Visa for a Business Visit",
+                }
+            ],
+        },
+    },
+    {
+        title: "移民常用工具",
+        engDes: "TOOLS FOR IMMIGRATION",
+        subItem: {
+            subTitle: "",
+            items: [
+                {
+                    productName: "语言考试成绩转换",
+                    productDes: "Test Score to CLB Converter",
+                },
+                {
+                    productName: "省提名职业清单",
+                    productDes: "Occupation in-demand List",
+                },
+                {
+                    productName: "移民历史抽签查询",
+                    productDes: "History Draw Search",
+                },
+                {
+                    productName: "加拿大技术移民评分标准",
+                    productDes: "Find out how to calculate your points",
+                },
+                {
+                    productName: "体检与无犯罪记录",
+                    productDes: "Physical Exam & Criminal Record",
+                },
+                {
+                    productName: "新移民入境须知",
+                    productDes: "Landing Instruction for Newcomers",
+                },
+            ]
+        }
+    }
+];
+export const navigationItem2: NavigationItem[] = [
+    {
+        title: "加拿大教育概览",
+        engDes: "CANADIAN EDUCATION OVERVIEW",
+        subItem: {
+            subTitle: "",
+            items: [
+                {
+                    productName: "中小学排名",
+                    productDes: "K-12 School Ranking",
+                },
+                {
+                    productName: "公校概览",
+                    productDes: "Introduction of Public School",
+                },
+                {
+                    productName: "私校概览",
+                    productDes: "Introduction of Private School",
+                },
+                {
+                    productName: "职业专科教育",
+                    productDes: "Art College",
+                },
+                {
+                    productName: "大学教育",
+                    productDes: "University in Canada",
+                },
+                {
+                    productName: "大学排名",
+                    productDes: "University Ranking",
+                },
+                {
+                    productName: "英语学习",
+                    productDes: "English Study",
+                }
+            ],
+        },
+    },
+    {
+        title: "学校申请",
+        engDes: "SCHOOL APPLICATION",
+        subItem: {
+            subTitle: "K-12中小学教育",
+            items: [
+                {
+                    productName: "中小学申请",
+                    productDes: "K-12 School Application",
+                },
+                {
+                    productName: "大学申请",
+                    productDes: "University Application",
+                },
+                {
+                    productName: "职业技术|培训申请",
+                    productDes: "Certificate Program Application",
+                },
+                {
+                    productName: "私校申请",
+                    productDes: "Private School|University Application",
+                },
+                {
+                    productName: "加拿大高校推荐",
+                    productDes: "Recommended Education Institutes",
+                }
+            ],
+        },
+    },
+    {
+        title: "签证许可",
+        engDes: "VISA & PERMIT FOR INTERNATIONAL STUDENT",
+        subItem: {
+            subTitle: "K-12中小学教育",
+            items: [
+                {
+                    productName: "实习工签",
+                    productDes: "Co-op Work Permit",
+                },
+                {
+                    productName: "毕业后工签 PGWP",
+                    productDes: "PGWP",
+                },
+                {
+                    productName: "留学生配偶工签",
+                    productDes: "Student's Spouse Work Permit",
+                },
+                {
+                    productName: "升降学工签",
+                    productDes: "Student's Spouse Work Permit",
+                },
+                {
+                    productName: "配偶开放工签",
+                    productDes: "Spouse Open Work Permit",
+                }
+            ],
+        },
+    },
+    {
+        title: "学生相关工作许可",
+        engDes: "STUDENT'S PERMITS APPLICATION",
+        subItem: {
+            subTitle: "K-12中小学教育",
+            items: [
+                {
+                    productName: "学签续签",
+                    productDes: "Study Permit Extension",
+                },
+                {
+                    productName: "陪读签证",
+                    productDes: "Visitor Visa for Accompanying Parents",
+                },
+                {
+                    productName: "转学工签",
+                    productDes: "School Transfer",
+                },
+                {
+                    productName: "配偶开放工签",
+                    productDes: "Spouse Open Work Permit",
+                }
+            ],
+        },
+    },
+    {
+        title: "加拿大高访认的教育机构",
+        engDes: "DESIGNATED LEARNING INSTITUTIONS",
+        subItem: {
+            subTitle: "K-12中小学教育",
+            items: [
+                {
+                    productName: "英属哥伦比亚省DLI",
+                    productDes: "DLI in British Columbia",
+                },
+                {
+                    productName: "安大略省DLI",
+                    productDes: "DLI in Ontario",
+                },
+                {
+                    productName: "曼尼托巴省DLI",
+                    productDes: "DLI in Manitoba",
+                },
+                {
+                    productName: "艾伯塔省DLI",
+                    productDes: "DLI in Alberta",
+                },
+                {
+                    productName: "萨斯喀彻温省DLI",
+                    productDes: "DLI in Saskatchewan",
+                }, {
+                    productName: "新布伦瑞克省认证教育机构",
+                    productDes: "DLI in NewBrunswick",
+                }, {
+                    productName: "新斯科舍省认证教育机构",
+                    productDes: "DLI in Nova Scotia",
+                },]
+        }
+    }
+];
 
-export const DropdownMenuItemEach_employers: ItemDropdown[] = [ {
-    text: '加拿大雇主担保', href: '/employer', description: '为了解决加拿大劳动力短缺问题，而推出的一项移民政策。'
-}, {
-    text: '加拿大联邦项目', href: '/federation', description: '针对高级人才，而推出的一项移民政策。'
-}, {
-    text: '加拿大企业家移民', href: '/entrepreneurs', description: '加拿大移民部门认可投资,拉懂经济，而推出的一项移民政策。'
-}, {
-    text: '加拿大留学移民', href: '/InternationalStudent', description: '为了留学生身份问题，而推出的一项移民政策。'
-}, {
-    text: '加拿大团聚移民', href: '/reunification', description: '为了持有PR或护照的非原住民，而推出的一项移民政策。'
-} ]
-
-export const DropdownMenuItemEach_tools: ItemDropdown[] = [ {
-    text: '申请条件自测', href: '/condition_self_test', description: '1分钟速测，甄选适合你的移民项目'
-}, {
-    text: '技术移民打分', href: '/condition_self_test', description: '自己算太麻烦，试试自动打分吧'
-}, {
-    text: '申请费用计算', href: '/condition_self_test', description: '费用问题，计算一下更有底'
-}, {
-    text: '免费资料获取', href: '/condition_self_test', description: '获取详细项目资料和费用清单'
-} ]
 
 export const how_item_res = [ {
     url: '/123as.png', href: '/employer', text: '安省'

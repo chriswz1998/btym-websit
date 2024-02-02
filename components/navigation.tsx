@@ -5,6 +5,7 @@ import Link from 'next/link'
 import {ChevronDown} from "lucide-react";
 import {HoverCardContentDetails} from "@/components/hoverCardContentDetails";
 import {HoverCard, HoverCardContent, HoverCardTrigger} from "@/components/ui/hover-card";
+import {navigationItem1, navigationItem2} from "@/lib/publicResuces";
 
 export function Navigation(){
     return (<div>
@@ -26,13 +27,9 @@ export function Navigation(){
                         <ChevronDown/>
                     </HoverCardTrigger>
                     <HoverCardContent className={'w-full  grid grid-cols-4 gap-4'}>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
+                        {
+                            navigationItem1.map((item, index) => (<HoverCardContentDetails Data={item} key={index}/>))
+                        }
                     </HoverCardContent>
                 </HoverCard>
             </li>
@@ -43,13 +40,9 @@ export function Navigation(){
                         <ChevronDown/>
                     </HoverCardTrigger>
                     <HoverCardContent className={'w-full  grid grid-cols-4 gap-4'}>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
+                        {
+                            navigationItem2.map((item, index) => (<HoverCardContentDetails Data={item} key={index}/>))
+                        }
                     </HoverCardContent>
                 </HoverCard>
             </li>
@@ -60,13 +53,7 @@ export function Navigation(){
                         <ChevronDown/>
                     </HoverCardTrigger>
                     <HoverCardContent className={'w-full  grid grid-cols-4 gap-4'}>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
-                        <HoverCardContentDetails/>
+
                     </HoverCardContent>
                 </HoverCard>
             </li>
