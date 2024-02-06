@@ -6,13 +6,13 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <div
             suppressHydrationWarning={ true }
             className={ 'min-h-screen max-w-[1580px] mx-auto font-[\'Maven Pro\']' }>
-            <Navbar noBgModel={ true }/>
+            <Navbar/>
             <div className={ 'w-full flex items-center justify-center' }>
                 <img src={ 'https://i.ibb.co/rQpsVHQ/ibg.png' } alt={ '' } className={ 'w-full h-[600px] block' }/>
 
             </div>
             { children }
-            <Footer has_dialog={ true }/>
+            <Footer/>
         </div>
     )
 }

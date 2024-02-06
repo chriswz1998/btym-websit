@@ -12,7 +12,7 @@ export default function AboutUsPage(){
         window.localStorage.setItem('employer_name', text)
     }
     return (<div>
-        <Navbar noBgModel={ true }/>
+        <Navbar/>
         <Province_banner banner={ '/banner.png' }/>
         <div className={ 'flex p-20 items-center justify-center space-x-20' }>
             <div className={ 'w-[478px] space-y-6' }>
