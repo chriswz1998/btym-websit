@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'standalone',
     trailingSlash: true,
-    experimental: {
-        outputStandalone: true
-    },
     images: {
         unoptimized: true,
         remotePatterns: [

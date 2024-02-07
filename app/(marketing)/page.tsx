@@ -61,7 +61,7 @@ export default function MarketingPage(){
 
         <div className={'relative w-full h-[460px]'}>
             <div className={'absolute top-0 left-0 w-full h-full'}>
-                <Image src={'/pki4492111.png'} alt={'/'} layout='fill'/>
+                <Image src={'/pki4492111.png'} alt={'/'} fill/>
             </div>
             <div
                 className={'px-20 flex items-center justify-around text-white w-full h-full absolute left-0 top-0 bg-gradient-to-r from-[#062F7E] to-[#3B63B173]'}>
@@ -91,7 +91,7 @@ export default function MarketingPage(){
                     <p className={'text-xl'}>大量真实成功案例</p>
                 </div>
             </div>
-            <Image src={'/581703237163_.jpg'} alt={'/'} layout='fill'/>
+            <Image src={'/581703237163_.jpg'} alt={'/'} fill/>
         </div>
 
         <div className={'bg-[#EBF3FC] py-20 space-x-20 text-center'}>
@@ -103,7 +103,7 @@ export default function MarketingPage(){
 
         <div className={'relative  w-full h-[863px]'}>
             <div className={'absolute top-0 left-0 w-full h-full'}>
-                <Image src={'/bg8dfw.png'} alt={'/'} layout='fill'/>
+                <Image src={'/bg8dfw.png'} alt={'/'} fill/>
             </div>
             <div
                 className={'absolute top-0 left-0 w-full h-full bg-v1-bg1 flex flex-col justify-center space-y-20'}>
@@ -182,7 +182,7 @@ export default function MarketingPage(){
         <div className={'w-full h-[855px] mt-20'}>
             <div className={'relative w-full h-[557px]'}>
                 <div className={'absolute top-0 left-0 w-full h-full'}>
-                    <Image src={'/pki7947412.png'} alt={'/'} layout='fill'/>
+                    <Image src={'/pki7947412.png'} alt={'/'} fill/>
                 </div>
                 <div
                     className={'w-full h-full absolute left-0 top-0 bg-gradient-to-r from-[#451411] to-[#5F100B5E] space-y-20'}>
