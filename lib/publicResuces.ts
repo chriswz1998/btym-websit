@@ -212,6 +212,17 @@ export const navigationItem2: NavigationItem[] = [ {
         } ]
     }
 } ];
+export const navigationItem3: NavigationItem[] = [ {
+    title: '加拿大资讯速览', engDes: 'Quick view news of canada', subItem: {
+        subTitle: '', items: [ {
+            productName: '留学资讯', productDes: 'news of study', link: '/business/FederalStartUp'
+        }, {
+            productName: '移民资讯', productDes: 'news of immigration', link: '/business/FederalStartUp'
+        }, {
+            productName: '生活资讯', productDes: 'news of life', link: '/business/FederalStartUp'
+        } ]
+    }
+} ];
 
 
 export const how_item_res = [ {

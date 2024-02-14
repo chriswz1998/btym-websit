@@ -10,7 +10,6 @@ export const HoverCardContentDetails = ({ Data }: { Data: NavigationItem }) => {
         console.log(1111)
     }
     return (<div className={ 'text-black space-y-4 p-5' }>
-
             <div className="flex space-x-4">
                 <div className="bg-red-600 h-[45px] w-[5px]"/>
                 <div className={ 'space-y-2' }>
@@ -30,7 +29,7 @@ export const HoverCardContentDetails = ({ Data }: { Data: NavigationItem }) => {
                     </div>
                     <div className={ 'text-xs space-y-2' }>
                         { Data.subItem.items.map((subItems, subIndex) => {
-                            return (<p key={ subIndex } className={ 'text-gray-600' } onClick={ () => jump(subItems.link) }>
+                            return (<p key={ subIndex } className={ 'text-gray-600 text-xs' } onClick={ () => jump(subItems.link) }>
                                     { subItems.productName }
                                     <span className={ 'text-blue-900' }>
                           { ' ' }

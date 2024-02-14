@@ -4,7 +4,6 @@ import Footer from '@/components/footer'
 
 const MainLayout = async({ children }: { children: React.ReactNode }) => {
     return (<div>
-        <Navbar/>
         { children }
         <Footer/>
     </div>)

@@ -15,7 +15,6 @@ export default function MarketingPage(){
     return (<div>
         <Navbar/>
         <Carousels/>
-
         <div className={'flex items-center flex-wrap py-5'}>
             <div className='flex items-center bg-mask-color/10 rounded-lg p-5 md:mx-auto space-x-4'>
                 <Image src={'/icon131-1.svg'} alt={''} height={30} width={30}/>
