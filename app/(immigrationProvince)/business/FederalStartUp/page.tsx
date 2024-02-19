@@ -33,7 +33,7 @@ function FederalStartUp(){
                     <h3 className="text-xl font-semibold mb-4 text-red-600">
                         企业要求
                     </h3>
-                    <ul className="list-disc pl-5 space-y-4 text-lg">
+                    <ul className="list-disc pl-5 space-y-4 text-lg max-w-5xl">
                         <li className="text-gray-600">1. 创新企业</li>
                         <li className="text-gray-600">2. 可以为加拿大人创造就业</li>
                         <li className="text-gray-600">3. 可以在全球范围内竞争</li>
@@ -43,7 +43,7 @@ function FederalStartUp(){
                     <h3 className="text-xl font-semibold mb-4 text-red-600">
                         资金要求
                     </h3>
-                    <ul className="list-disc pl-5 space-y-4 text-lg">
+                    <ul className="list-disc pl-5 space-y-4 text-lg max-w-5xl">
                         <li className="text-gray-600">1. 风险投资基金：必须获得风险投资集团至少20万加币的投资</li>
                         <li className="text-gray-600">2. 天使投资集团：必须获得天使投资集团至少75000加币的投资</li>
                         <li className="text-gray-600">3. 企业孵化器：必须被接受参与企业孵化器的项目</li>
@@ -67,7 +67,7 @@ function FederalStartUp(){
                     <h3 className="text-xl font-semibold mb-4 text-red-600">
                         项目优势
                     </h3>
-                    <ul className="list-disc pl-5 space-y-4 text-lg">
+                    <ul className="list-disc pl-5 space-y-4 text-lg max-w-5xl">
                         <li className="text-gray-600">周期短-永居申请仅需12-16个月</li>
                         <li className="text-gray-600">要求简单-语言要求较低且无高资产要求，无需准备繁杂的资金来源证明</li>
                         <li className="text-gray-600">居住要求-登陆后无定居地限制</li>
@@ -78,7 +78,7 @@ function FederalStartUp(){
                     <h3 className="text-xl font-semibold mb-4 text-red-600">
                         申请条件
                     </h3>
-                    <ul className="list-disc pl-5 space-y-4 text-lg">
+                    <ul className="list-disc pl-5 space-y-4 text-lg max-w-5xl">
                         <li className="text-gray-600">大专或以上学历</li>
                         <li className="text-gray-600">英语通过加拿大语言标准（CLB5或雅思G类5分）</li>
                         <li className="text-gray-600">具有5年创业的生意相关的商务及管理经验</li>

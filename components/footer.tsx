@@ -19,15 +19,15 @@ const Footer = () => {
 
             <div className='flex space-x-8'>
                 <div className={'text-center'}>
-                    <Image src={'/qrcoe1.webp'} alt={''} height={100} width={100}/>
+                    <Image src={'/weikf.png'} alt={''} height={100} width={100}/>
                     <span className={'pt-4 block'}>联系微信</span>
                 </div>
                 <div className={'text-center'}>
-                    <Image src={'/qrcoe1.webp'} alt={''} height={100} width={100}/>
+                    <Image src={'/wechat300x300.jpg'} alt={''} height={100} width={100}/>
                     <span className={'pt-4 block'}>博泰公众号</span>
                 </div>
                 <div className={'text-center'}>
-                    <Image src={'/qrcoe1.webp'} alt={''} height={100} width={100}/>
+                    <Image src={'/wechat300x300.jpg'} alt={''} height={100} width={100}/>
                     <span className={'pt-4 block'}>博泰小程序</span>
                 </div>
             </div>

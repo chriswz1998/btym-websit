@@ -13,9 +13,9 @@ export const navigationItem1: NavigationItem[] = [ {
         }, {
             productName: '联邦自雇移民', productDes: 'Federal Self-employed', link: '/business/FederalSelfEmployed'
         }, {
-            productName: 'BC省企业家移民', productDes: 'BCPNP-EI', link: '/business/FederalStartUp'
+            productName: 'BC省企业家移民', productDes: 'BCPNP-EI', link: '/business/BCPNP-EI'
         }, {
-            productName: 'BC省十万小镇试点', productDes: 'BCPNP-EI Regional Pilot', link: '/business/FederalStartUp'
+            productName: 'BC省十万小镇试点', productDes: 'BCPNP-EI Regional Pilot', link: '/business/BCEIRP'
         }, {
             productName: '萨省企业家移民', productDes: 'SINP-EI', link: '/business/FederalStartUp'
         }, {
