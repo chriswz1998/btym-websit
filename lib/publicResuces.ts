@@ -17,41 +17,33 @@ export const navigationItem1: NavigationItem[] = [ {
         }, {
             productName: 'BC省十万小镇试点', productDes: 'BCPNP-EI Regional Pilot', link: '/business/BCEIRP'
         }, {
-            productName: '萨省企业家移民', productDes: 'SINP-EI', link: '/business/FederalStartUp'
+            productName: '萨省企业家移民', productDes: 'SINP-EI', link: '/business/SINP-EI'
         }, {
-            productName: '萨省农场主移民', productDes: 'Farm Owner & Operator', link: '/business/FederalStartUp'
+            productName: '萨省农场主移民', productDes: 'Farm Owner & Operator', link: '/business/FarmOwnerOperator'
         }, {
-            productName: '魁省投资移民', productDes: 'Quebec Investor Program', link: '/business/FederalStartUp'
+            productName: '曼省企业家移民', productDes: 'MPNP-EI', link: '/business/MPNP-EI'
         }, {
-            productName: '魁省企业家移民', productDes: 'Quebec-EI', link: '/business/FederalStartUp'
-        }, {
-            productName: '曼省企业家移民', productDes: 'MPNP-EI', link: '/business/FederalStartUp'
-        }, {
-            productName: 'PEI企业家移民', productDes: 'PEIPNP-EI', link: '/business/FederalStartUp'
-        }, {
-            productName: '纽省企业家移民', productDes: 'NLPNP-EI', link: '/business/FederalStartUp'
+            productName: '纽省企业家移民', productDes: 'NLPNP-EI', link: '/business/NLPNP-EI'
         } ]
     }
 }, {
     title: '联邦快速通道', engDes: 'EXPRESS ENTRY ', subItem: {
         subTitle: '', items: [ {
-            productName: '加拿大经验类', productDes: 'Canadian Experience Class', link: '/business/FederalStartUp'
+            productName: '加拿大经验类', productDes: 'Canadian Experience Class', link: '/ExpressEntry/CanadianExperienceClass'
         }, {
-            productName: '海外联邦技术类', productDes: 'Federal Skilled Worker', link: '/business/FederalStartUp'
-        }, {
-            productName: '联邦技工类', productDes: 'Federal Skilled Trade', link: '/business/FederalStartUp'
-        } ]
+            productName: '海外联邦技术类', productDes: 'Federal Skilled Worker', link: '/ExpressEntry/FederalSkilledWorker'
+        }]
     }
 }, {
     title: '家庭团聚类移民', engDes: 'FAMILY SPONSORSHIP  ', subItem: {
         subTitle: '', items: [ {
             productName: '父母|祖父母团聚移民',
             productDes: 'Parents & Grandparents sponsor',
-            link: '/business/FederalStartUp'
+            link: '/FamilySponsorship/ParentsGrandparentsSponsor'
         }, {
-            productName: '子女|养子女团聚', productDes: 'Child or Other Dependent', link: '/business/FederalStartUp'
+            productName: '子女|养子女团聚', productDes: 'Child or Other Dependent', link: '/FamilySponsorship/ChildOrOtherDependent'
         }, {
-            productName: '配偶|伴侣团聚', productDes: 'Spouse or Common Law Partner', link: '/business/FederalStartUp'
+            productName: '配偶|伴侣团聚', productDes: 'Spouse or Common Law Partner', link: '/FamilySponsorship/SpouseOrCommonLawPartner'
         } ]
     }
 }, {
@@ -66,22 +58,6 @@ export const navigationItem1: NavigationItem[] = [ {
             productName: '曼省技术移民', productDes: 'MPNP_Skill Immigration', link: '/business/FederalStartUp'
         }, {
             productName: '纽省技术移民', productDes: 'NLPNP_Skill Immigration', link: '/business/FederalStartUp'
-        } ]
-    }
-}, {
-    title: '留学工签转移民', engDes: 'STUDY&VISA TO IMMIGRATION', subItem: {
-        subTitle: '', items: [ {
-            productName: '留学转移民', productDes: 'Study to Immigration', link: '/business/FederalStartUp'
-        }, {
-            productName: '全球人才引进', productDes: 'Global Talent Stream', link: '/business/FederalStartUp'
-        }, {
-            productName: 'ICT内部员工转移',
-            productDes: 'Intra-Company Transfers (ICT Work Permit)',
-            link: '/business/FederalStartUp'
-        }, {
-            productName: '加拿大体验计划',
-            productDes: 'International Experience Canada',
-            link: '/business/FederalStartUp'
         } ]
     }
 }, {
