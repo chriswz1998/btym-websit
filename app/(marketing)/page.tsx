@@ -9,11 +9,24 @@ import Link from 'next/link'
 import { DialogCoverFrom } from '@/components/dialog'
 import React from 'react'
 import { Carousels } from '@/app/(marketing)/_components/carousel';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import { Card, CardContent } from '@/components/ui/card'
+import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import useHttp from "@/hooks/useActions";
+import {CombinedSection} from "@/lib/model";
+import Footer from "@/components/footer";
 
 
 export default function MarketingPage(){
+
+
+    // if (isLoading) {
+    //     return (
+    //         <div className={'w-full h-full bg-mask-color5 flex flex-col justify-center items-center'}>
+    //             <h1 className={'text-white font-bold text-3xl'}>将要访问博泰移民，请稍后...</h1>
+    //             <Image src={'/logo.png'} alt={''} width={300} height={100}/>
+    //         </div>
+    //     )
+    // }
+
     return (<div>
         <Navbar/>
         <Carousels/>
@@ -223,5 +236,6 @@ export default function MarketingPage(){
                 </div>
             </div>
         </div>
+        <Footer/>
     </div>)
 }

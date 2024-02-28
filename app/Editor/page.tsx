@@ -4,7 +4,6 @@ import '@wangeditor/editor/dist/css/style.css' // 引入 css
 import React, { useState, useEffect } from 'react'
 import { Editor, Toolbar } from '@wangeditor/editor-for-react'
 import { IDomEditor, IEditorConfig, IToolbarConfig } from '@wangeditor/editor'
-import { Button } from '@/components/ui/button'
 import {
     Select,
     SelectContent,
@@ -23,6 +22,7 @@ function Editors(){
     const editorConfig: Partial<IEditorConfig> = {    // TS 语法
         placeholder: '请输入内容...'
     }
+
     useEffect(() => {
         return () => {
             if(editor == null) return

@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { ChevronDown } from 'lucide-react';
 import { HoverCardContentDetails } from '@/components/hoverCardContentDetails';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
-import { navigationItem1, navigationItem2, navigationItem3 } from '@/lib/publicResuces';
+import {CombinedSection} from "@/lib/model";
 
-export function Navigation(){
+export function Navigation({data }: {data:CombinedSection[] | null}){
     return (<div>
         <ul className="flex space-x-16">
             <li>
@@ -20,42 +20,22 @@ export function Navigation(){
                     博泰介绍
                 </Link>
             </li>
-            <li className="flex space-x-2 hover:">
-                <HoverCard>
-                    <HoverCardTrigger className={ 'flex space-x-2' }>
-                        <span>加拿大移民</span>
-                        <ChevronDown/>
-                    </HoverCardTrigger>
-                    <HoverCardContent className={ 'w-full  grid grid-cols-4 gap-4' }>
-                        { navigationItem1.map((item, index) => (
-                            <HoverCardContentDetails Data={ item } key={ index }/>)) }
-                    </HoverCardContent>
-                </HoverCard>
-            </li>
-            <li className="flex space-x-2">
-                <HoverCard>
-                    <HoverCardTrigger className={ 'flex space-x-2' }>
-                        <span>加拿大留学</span>
-                        <ChevronDown/>
-                    </HoverCardTrigger>
-                    <HoverCardContent className={ 'w-full  grid grid-cols-4 gap-4' }>
-                        { navigationItem2.map((item, index) => (
-                            <HoverCardContentDetails Data={ item } key={ index }/>)) }
-                    </HoverCardContent>
-                </HoverCard>
-            </li>
-            <li className="flex space-x-2">
-                <HoverCard>
-                    <HoverCardTrigger className={ 'flex space-x-2' }>
-                        <span>加拿大资讯</span>
-                        <ChevronDown/>
-                    </HoverCardTrigger>
-                    <HoverCardContent className={ 'w-full  grid grid-cols-4 gap-4' }>
-                        { navigationItem3.map((item, index) => (
-                            <HoverCardContentDetails Data={ item } key={ index }/>)) }
-                    </HoverCardContent>
-                </HoverCard>
-            </li>
+
+            {data?.map((section, index) => (
+                <li key={index} className="flex space-x-2 hover:cursor-pointer">
+                    <HoverCard>
+                        <HoverCardTrigger className="flex space-x-2">
+                            <span>{section.name}</span>
+                            <ChevronDown />
+                        </HoverCardTrigger>
+                        <HoverCardContent className="w-full grid grid-cols-4 gap-4">
+                            {section.subSections.map((subSection, subIndex) => (
+                                <HoverCardContentDetails key={subIndex} Data={subSection} />
+                            ))}
+                        </HoverCardContent>
+                    </HoverCard>
+                </li>
+            ))}
         </ul>
     </div>)
 }

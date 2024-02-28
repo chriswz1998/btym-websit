@@ -1,20 +1,20 @@
 import { PrismaClient } from '@prisma/client'
-import { subSection } from '@/lib/test'
+import {article, subSection} from '../lib/tests'
 
 const prisma = new PrismaClient()
 
 
 async function main() {
     console.log(`Start seeding ...`);
-    for(const item of subSection){
-        const section = await prisma.subSection.create({
+    for(const item of article){
+        await prisma.subSectionLinks.create({
             data: {
-                name: item.name,
-                description: item.description,
-                section_id: 1
+                name: item.productName,
+                description: item.productDes,
+                link: item.link,
+                subSection_id: 12
             },
         });
-        console.log(`Created section with id: ${section.section_id}`);
     }
     console.log(`Seeding finished.`);
 }
