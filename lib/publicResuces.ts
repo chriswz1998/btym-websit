@@ -48,61 +48,34 @@ export const navigationItem1: NavigationItem[] = [ {
     }
 }, {
     title: '省提名移民', engDes: 'PROVINCIAL NOMINEE', subItem: {
-        subTitle: '', items: [ {
-            productName: 'BC省企业家移民', productDes: 'BCPNP_Skill Immigration', link: '/business/FederalStartUp'
+        subTitle: '', items: [{
+            productName: '阿省企业家移民', productDes: 'AINP_Skill Immigration', link: '/ProvincialNominee/AINP_SkillImmigration'
         }, {
-            productName: '阿省企业家移民', productDes: 'AINP_Skill Immigration', link: '/business/FederalStartUp'
+            productName: '安省企业家移民', productDes: 'OINP_Skill Immigration', link: '/ProvincialNominee/OINP_SkillImmigration'
         }, {
-            productName: '安省企业家移民', productDes: 'OINP_Skill Immigration', link: '/business/FederalStartUp'
-        }, {
-            productName: '曼省技术移民', productDes: 'MPNP_Skill Immigration', link: '/business/FederalStartUp'
-        }, {
-            productName: '纽省技术移民', productDes: 'NLPNP_Skill Immigration', link: '/business/FederalStartUp'
+            productName: '曼省技术移民', productDes: 'MPNP_Skill Immigration', link: '/ProvincialNominee/MPNP_SkillImmigration'
         } ]
     }
 }, {
     title: '其它签证', engDes: 'OTHER VISA & PERMIT', subItem: {
         subTitle: '', items: [ {
-            productName: '访问签证申请及续签',
-            productDes: 'Visitor Visa Apply & Renew',
-            link: '/business/FederalStartUp'
+            productName: '探亲超级签证', productDes: 'Super Visa', link: '/OtherVisaPermit/superVisa'
         }, {
-            productName: '探亲超级签证', productDes: 'Super Visa', link: '/business/FederalStartUp'
+            productName: '实习工签', productDes: 'Co-op Work Permit', link: '/OtherVisaPermit/coop'
         }, {
-            productName: '实习工签', productDes: 'Co-op Work Permit', link: '/business/FederalStartUp'
-        }, {
-            productName: '毕业后工签', productDes: 'Post Graduate Work Permit', link: '/business/FederalStartUp'
+            productName: '毕业后工签', productDes: 'Post Graduate Work Permit', link: '/OtherVisaPermit/PostGraduateWorkPermit'
         }, {
             productName: '配偶/伴侣工签',
             productDes: 'Spouse or Common Law Partner Work Permit',
-            link: '/business/FederalStartUp'
+            link: '/OtherVisaPermit/SpouseOpenWorkPermit'
         }, {
-            productName: '商务考察签证', productDes: 'Apply Visa for a Business Visit', link: '/business/FederalStartUp'
-        } ]
-    }
-}, {
-    title: '移民常用工具', engDes: 'TOOLS FOR IMMIGRATION', subItem: {
-        subTitle: '', items: [ {
-            productName: '语言考试成绩转换', productDes: 'Test Score to CLB Converter', link: '/business/FederalStartUp'
-        }, {
-            productName: '省提名职业清单', productDes: 'Occupation in-demand List', link: '/business/FederalStartUp'
-        }, {
-            productName: '移民历史抽签查询', productDes: 'History Draw Search', link: '/business/FederalStartUp'
-        }, {
-            productName: '加拿大技术移民评分标准',
-            productDes: 'Find out how to calculate your points',
-            link: '/business/FederalStartUp'
-        }, {
-            productName: '体检与无犯罪记录',
-            productDes: 'Physical Exam & Criminal Record',
-            link: '/business/FederalStartUp'
-        }, {
-            productName: '新移民入境须知',
-            productDes: 'Landing Instruction for Newcomers',
-            link: '/business/FederalStartUp'
+            productName: '商务考察签证', productDes: 'Apply Visa for a Business Visit', link: '/OtherVisaPermit/BusinessVisit'
         } ]
     }
 } ];
+
+
+
 export const navigationItem2: NavigationItem[] = [ {
     title: '加拿大教育概览', engDes: 'CANADIAN EDUCATION OVERVIEW', subItem: {
         subTitle: '', items: [ {

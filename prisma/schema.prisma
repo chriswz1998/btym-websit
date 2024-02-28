@@ -16,21 +16,35 @@ enum ApplicationState {
   REJECTED
 }
 
-model ApplicationFromUser {
-  // 用户申请, 提交表单
-  id        Int              @id @default(autoincrement())
-  title     String?
-  name      String
-  email     String
-  content   String?
-  state     ApplicationState @default(PENDING)
-  createdAt DateTime         @default(now())
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
 }
 
-model ProvinceBanner {
-  // 省份banner
-  id        Int      @id @default(autoincrement())
-  province  String
-  image     String
-  createdAt DateTime @default(now())
+model Section {
+  section_id Int    @id @default(autoincrement())
+  name       String
+
+  @@map("sections")
+}
+
+model SubSection {
+  subSection_id Int    @id @default(autoincrement())
+  name          String
+  description   String
+  section_id    Int
+
+  @@map("subSection")
+}
+
+// 新模型：表示文章的一个分段
+model SubSectionLinks {
+  subSectionLinks_id Int    @id @default(autoincrement())
+  name               String
+  description        String
+  link               String
+  subSection_id      Int
+
+  @@map("subSectionLinks")
 }
