@@ -48,3 +48,11 @@ model SubSectionLinks {
 
   @@map("subSectionLinks")
 }
+
+model Articles {
+  articles_id Int @id @default(autoincrement())
+  html_content String
+  subSectionLinks_id Int
+
+  @@map("articles")
+}

@@ -14,7 +14,7 @@ export interface SubSection {
 }
 
 // 子分类链接数据的接口
-interface SubSectionLink {
+export interface SubSectionLink {
     subSectionLinks_id: number;
     name: string;
     description: string;
@@ -23,7 +23,7 @@ interface SubSectionLink {
 }
 
 // 组合后的子分类数据，包括链接
-interface CombinedSubSection extends SubSection {
+export interface CombinedSubSection extends SubSection {
     links: SubSectionLink[]; // 子分类下的链接数组
 }
 

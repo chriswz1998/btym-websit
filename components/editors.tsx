@@ -9,14 +9,18 @@ import {
 
 
 
-function Editors(){
+function Editors({ onHtmlChange }: {onHtmlChange: (html:string) => void}){
     const [ editor, setEditor ] = useState<IDomEditor | null>(null)   // TS 语法
-    const [ html, setHtml ] = useState('<p>hello</p>')
+    const [ html, setHtml ] = useState('')
+
+    const handleEditorChange = (newHtml: string) => {
+        setHtml(newHtml);
+        // 调用父组件传递的回调函数，将 HTML 值传递给父组件
+        onHtmlChange(newHtml);
+    };
 
     const toolbarConfig: Partial<IToolbarConfig> = {}  // TS 语法
-    const editorConfig: Partial<IEditorConfig> = {    // TS 语法
-        placeholder: '请输入内容...'
-    }
+    const editorConfig: Partial<IEditorConfig> = {}
 
     useEffect(() => {
         return () => {
@@ -37,13 +41,9 @@ function Editors(){
                 defaultConfig={ editorConfig }
                 value={ html }
                 onCreated={ setEditor }
-                onChange={ editor => setHtml(editor.getHtml()) }
+                onChange={ editor => handleEditorChange(editor.getHtml()) }
                 mode="default"
                 style={ { height: '500px', overflowY: 'hidden' } }
-            />
-            <div
-                className="border mt-10 p-5 bg-white"
-                dangerouslySetInnerHTML={ { __html: html } }
             />
         </div>)
 }
