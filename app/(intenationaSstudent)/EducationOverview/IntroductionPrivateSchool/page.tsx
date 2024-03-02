@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import React from 'react'
-import { Navbar } from '../../../../components/navbar'
+import { Navbar } from '@/components/navbar'
 
 function IntroductionPrivateSchool(){
     return (<div className="bg-[url('/Vancouver.webp')] bg-fixed bg-cover">
