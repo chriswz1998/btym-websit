@@ -11,7 +11,6 @@ import {Button} from "@/components/ui/button";
 import {useState} from "react";
 import {CombinedSubSection, SubSectionLink} from "@/lib/model";
 import useHttp from "@/hooks/useActions";
-import {value} from "dom7";
 
 
 function Editors(){

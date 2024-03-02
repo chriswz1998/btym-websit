@@ -1,6 +1,5 @@
 'use client'
 
-import { NavigationItem } from '@/lib/publicResuces';
 import { useRouter } from 'next/navigation'
 import {SubSection, SubSectionLink} from "@/lib/model";
 import {Button} from "@/components/ui/button";
@@ -8,7 +7,8 @@ import {Button} from "@/components/ui/button";
 export const HoverCardContentDetails = ({ Data }: { Data: SubSection }) => {
     const route = useRouter()
     const jump = ({subSectionLinks_id, link}: SubSectionLink) => {
-        route.push(`${link}/${subSectionLinks_id}`)
+        // route.push(`${link}/${subSectionLinks_id}`)
+        route.push(link)
     }
     return (<div className={ 'text-black space-y-4 p-5' }>
             <div className="flex space-x-4">
