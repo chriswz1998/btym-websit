@@ -2,13 +2,13 @@
 
 import { NavigationItem } from '@/lib/publicResuces';
 import { useRouter } from 'next/navigation'
-import {SubSection} from "@/lib/model";
+import {SubSection, SubSectionLink} from "@/lib/model";
+import {Button} from "@/components/ui/button";
 
 export const HoverCardContentDetails = ({ Data }: { Data: SubSection }) => {
     const route = useRouter()
-    const jump = (link: string) => {
-        route.push(link)
-        console.log(1111)
+    const jump = ({subSectionLinks_id, link}: SubSectionLink) => {
+        route.push(`${link}/${subSectionLinks_id}`)
     }
     return (<div className={ 'text-black space-y-4 p-5' }>
             <div className="flex space-x-4">
@@ -25,15 +25,14 @@ export const HoverCardContentDetails = ({ Data }: { Data: SubSection }) => {
             </div>
             <div className={ 'space-y-4' }>
                 <div className={ 'text-sm space-y-4' }>
-                    <div className={ 'text-xs space-y-2' }>
+                    <div className={ 'text-xs space-y-1 flex flex-col' }>
                         { Data.links.map((subItems, subIndex) => {
-                            return (<p key={ subIndex } className={ 'text-gray-600 text-xs' } onClick={ () => jump(subItems.link) }>
+                            return (<Button key={ subIndex } variant={'ghost'} className={ 'text-gray-600 flex justify-start' } onClick={ () => jump(subItems) }>
                                     { subItems.name }
-                                    <span className={ 'text-blue-900' }>
-                          { ' ' }
+                                    <span className={ 'text-blue-900 ml-3' }>
                                         { subItems.description }
                         </span>
-                                </p>);
+                                </Button>);
                         }) }
                     </div>
                 </div>
