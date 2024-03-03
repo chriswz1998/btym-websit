@@ -5,7 +5,7 @@ import React from 'react'
 import { Navbar } from '@/components/navbar'
 
 function FederalSelfEmployed(){
-    return (<div className="bg-[url('/Vancouver.webp')] bg-fixed bg-cover">
+    return (<div>
         <Navbar/>
         <div className="relative w-full h-[600px] overflow-hidden">
             <Image src={ '/SUV_cccd356739.jpg' } alt={ '/' } layout="fill"
@@ -16,8 +16,7 @@ function FederalSelfEmployed(){
                 <p className="text-white text-4xl font-bold">Federal Self Employed</p>
             </div>
         </div>
-
-        <div className="p-10 space-y-10 bg-gray-50">
+        <div className="p-10 space-y-10 bg-gray-50 border-b">
             <div className="flex space-x-4">
                 <div className="bg-red-600 h-[80px] w-[5px]"/>
                 <div className={ 'space-y-5 text-blue-950' }>
@@ -75,7 +74,7 @@ function FederalSelfEmployed(){
                 </div>
             </div>
         </div>
-        <div className="p-10 space-y-10 bg-white/30">
+        <div className="p-10 space-y-10 bg-gray-100 border-b">
             <div className="flex space-x-4">
                 <div className="bg-red-600 h-[80px] w-[5px]"/>
                 <div className={ 'space-y-5 text-blue-950' }>
@@ -115,7 +114,7 @@ function FederalSelfEmployed(){
                 </div>
             </div>
         </div>
-        <div className="p-10 space-y-10 bg-gray-50">
+        <div className="p-10 space-y-10 bg-gray-50 border-b">
             <div className="flex space-x-4">
                 <div className="bg-red-600 h-[80px] w-[5px]"/>
                 <div className={ 'space-y-5 text-blue-950' }>
@@ -151,7 +150,6 @@ function FederalSelfEmployed(){
                 </div>
             </div>
         </div>
-
     </div>)
 }
 
