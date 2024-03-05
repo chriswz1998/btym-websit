@@ -38,18 +38,24 @@ const Footer = () => {
         <div className='grid-cols-1 space-y-6'>
             <div className='font-bold text-4xl'>公司地址</div>
             <div className={'space-y-4'}>
-                <div className={'flex space-x-3 '}>
-                    <MapPin/>
-                    <span>1174 Pembina Hwy Winnipeg, MB R3T 2A4,</span>
+                <div className={'space-y-3'}>
+                    <div className='border-b pb-3'>
+                        <p className='flex items-center text-sm'><MapPin size={15} className='mr-1'/> Vancouver:
+                            5220-4000 No. 3Rd, Richmond, BC V6X 0C7, Canada</p>
+                        <p className='flex items-center text-xs'><Phone size={15} className='mr-1'/> +1(604)780-8711</p>
+                    </div>
+                    <div className='border-b pb-3'>
+                        <p className='flex items-center text-sm'><MapPin size={15} className='mr-1'/> Winnipeg:
+                            1174 Pembina Hwy, Winnipeg, MB R3T 2A4, Canada</p>
+                        <p className='flex items-center text-xs'><Phone size={15} className='mr-1'/> +1(204)615-6555</p>
+                    </div>
+                    <div className='border-b pb-3'>
+                        <p className='flex items-center text-sm'><MapPin size={15} className='mr-1'/> Toronto:
+                            Unit203-2750 14th Ave, Markham, ON L3R 0B6,Canada</p>
+                        <p className='flex items-center text-xs'><Phone size={15} className='mr-1'/> +1(416)880-9868</p>
+                    </div>
                 </div>
-                <div className={'flex space-x-3'}>
-                    <LucideMailbox/>
-                    <span>info@boatvisa.ca</span>
-                </div>
-                <div className={'flex space-x-3'}>
-                    <Phone/>
-                    <span>204-615-6555</span>
-                </div>
+
             </div>
         </div>
     </div>)
