@@ -16,8 +16,6 @@ const useHttp = <T>(url: string, options?: RequestOptions, autoExecuteOnMount: b
         setError(null);
         try{
             const response = await fetch(`${process.env.NEXT_PUBLIC_REQUEST_URL}/${url}`, options);
-            console.log(process.env.NEXT_PUBLIC_REQUEST_URL)
-            // const response = await fetch(url, options);
             if( !response.ok){
                 throw new Error('Network response was not ok');
             }
