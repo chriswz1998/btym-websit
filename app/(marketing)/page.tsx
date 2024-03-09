@@ -10,14 +10,9 @@ import { DialogCoverFrom } from '@/components/dialog'
 import React from 'react'
 import { Carousels } from '@/app/(marketing)/_components/carousel';
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import useHttp from "@/hooks/useActions";
-import {CombinedSection} from "@/lib/model";
-import Footer from "@/components/footer";
-
+import Footer from '@/components/footer';
 
 export default function MarketingPage(){
-
-
     // if (isLoading) {
     //     return (
     //         <div className={'w-full h-full bg-mask-color5 flex flex-col justify-center items-center'}>
@@ -50,20 +45,18 @@ export default function MarketingPage(){
         </div>
 
         <Carousel
-            opts={{
-                align: "start",
-            }}
+            opts={ {
+                align: 'start'
+            } }
             className="w-4/5 mx-auto my-10"
         >
             <CarouselContent>
                 { how_item_res.map((item, index) => {
-                    return (
-                        <Hot_project_item url={ item.url } href={ item.href } text={ item.text } key={ index }/>
-                    )
+                    return (<Hot_project_item url={ item.url } href={ item.href } text={ item.text } key={ index }/>)
                 }) }
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious/>
+            <CarouselNext/>
         </Carousel>
         <div className={ 'space-x-20 text-center' }>
             <DialogCoverFrom text={ '资深顾问全面解答' } variant={ 'ghost' }
