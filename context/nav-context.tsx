@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext } from 'react';
+import React, { createContext, ReactNode, useContext, useEffect } from 'react';
 import { CombinedSection } from '@/lib/model';
 import useHttp from '@/hooks/useActions';
 
@@ -17,9 +17,10 @@ const NavContext = createContext<NavContextProps>({ data: null, isLoading: true 
 
 // 创建一个Provider组件NavProvider: React.FC<NavProviderProps> =
 export const NavProvider: React.FC<NavProviderProps> = ({ children }) => {
-    const { data, isLoading } = useHttp<CombinedSection[]>('NavList', {
-        method: 'GET'
-    }, true);
+    const { data, isLoading, execute } = useHttp<CombinedSection[], null>()
+    useEffect(() => {
+        execute('NavList', 'GET')
+    }, [])
 
     // 如果你需要在数据变化时执行副作用，可以在这里使用useEffect
 
