@@ -1,7 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic';
 
-const DynamicEditor = dynamic(() => import('../../../components/editors'), { ssr: false });
+const DynamicEditor = dynamic(() => import('../../../../../components/editors'), { ssr: false });
 
 import {
     Select, SelectContent, SelectItem, SelectTrigger, SelectValue
@@ -14,7 +14,7 @@ import useHttp from '@/hooks/useActions';
 import { useAuth } from '@/context/AuthContext'
 
 
-function Editors(){
+function EditAboutUs(){
     const { data, isLoading } = useNav();
     const [ subSections, setSubSections ] = useState<CombinedSubSection[] | undefined | null>(null)
     const [ subSectionsLinks, setSubSectionsLinks ] = useState<SubSectionLink[] | undefined | null>(null)
@@ -48,7 +48,6 @@ function Editors(){
     return (<div className={ 'w-full h-full bg-amber-300 flex flex-col items-center justify-center' }>
         <div>
             <div className={ 'p-5 bg-amber-100 flex space-x-5' }>
-                { JSON.stringify(user) }
                 <Select onValueChange={ (param) => sectionSelected(param) } disabled={ isLoading }>
                     <SelectTrigger className="w-[180px]">
                         <SelectValue placeholder="请选择导航栏项目"/>
@@ -86,4 +85,4 @@ function Editors(){
     </div>)
 }
 
-export default Editors
+export default EditAboutUs

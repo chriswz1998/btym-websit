@@ -3,6 +3,7 @@
 import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { Users } from '@/lib/model'
 import useHttp from '@/hooks/useActions'
+import toast from 'react-hot-toast'
 
 interface AuthContextProps{
     user: Users | null; // 可以根据需要定义更具体的类型
@@ -17,36 +18,36 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const { execute } = useHttp<{}, Users>()
 
     useEffect(() => {
-        console.log('AuthContext 1')
         const token = window.localStorage.getItem('access_token');
-        console.log('AuthContext 2')
 
         if(token){
-            console.log('AuthContext 3')
             const fetchUser = async() => {
-                console.log('AuthContext 4')
                 try{
                     const userData = await execute('auth/me', 'GET')
                     if(userData){
                         setUser(userData);
+                        toast.success('User information has been refreshed!')
                     }
                 } catch(error) {
-                    console.error(error);
+                    console.log(error);
                     // 处理错误情况，比如 token 过期
                 }
             };
-
             fetchUser();
         }
     }, []);
 
     const login = (userDetails: Users) => {
-        setUser(userDetails);
+        if(userDetails){
+            setUser(userDetails);
+            toast.success('login success!')
+        }
         // 这里可以处理登录逻辑，例如保存用户信息、调用API等
     };
 
     const logout = () => {
         setUser(null);
+        toast.success('logout success!')
         // 处理登出逻辑，例如清除用户信息、调用API等
     };
 

@@ -21,7 +21,7 @@ const formSchema = z.object({
 
 function UserLogin(){
     const router = useRouter()
-    const { data, isLoading, execute } = useHttp<z.infer<typeof formSchema>, userDetails>()
+    const { isLoading, execute } = useHttp<z.infer<typeof formSchema>, userDetails>()
 
     const { login } = useAuth()
 
@@ -36,14 +36,13 @@ function UserLogin(){
         if(response?.access_token){
             login(response?.result)
             window.localStorage.setItem('access_token', response?.access_token || '')
-            router.push('/backend/Editor')
+            router.push('/backend')
         }
     }
 
     return (<div className="w-full h-full bg-blue-100 flex flex-col items-center justify-center">
         <Form { ...form }>
             <form onSubmit={ form.handleSubmit(onSubmit) } className="space-y-8 bg-white p-10 rounded shadow">
-                { JSON.stringify(data) }
                 <FormField
                     control={ form.control }
                     name="email"

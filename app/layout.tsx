@@ -19,6 +19,7 @@ export default function RootLayout({
     <title>博泰移民</title>
     <ToastProvider/>
     <NavProvider>
+
         { children }
     </NavProvider>
     </body>

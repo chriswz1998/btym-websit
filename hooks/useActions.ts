@@ -1,9 +1,11 @@
 import { useState, useCallback } from 'react';
+import { useRouter } from 'next/navigation'
 
 const useHttp = <IT, OT>() => {
     const [ data, setData ] = useState<OT | null>(null);
     const [ isLoading, setIsLoading ] = useState(false);
     const [ error, setError ] = useState<string | null>(null);
+    const router = useRouter()
 
     const execute = useCallback(async(url: string, method = 'GET', body?: IT) => {
         setIsLoading(true);
@@ -18,15 +20,18 @@ const useHttp = <IT, OT>() => {
                 }, body: body ? JSON.stringify(body) : null, signal
             });
 
-            console.log(response)
-            // url:http://localhost:3100/auth/me
-                if(response.ok){
-                    const jsonData = await response.json();
-                    setData(jsonData);
-                    return jsonData;
-                }
+            const jsonData = await response.json();
+            if(jsonData.statusCode && jsonData.statusCode === 401){
+                router.push('/backend/userLogin')
+                return // 返回登陆页面/backend/userLogin/
+            }
+            if(jsonData){
+                setData(jsonData);
+                return jsonData;
+            }
+            setError('is api error')
         } catch(err) {
-            setError(err instanceof Error ? err.message : String(err));
+            setError('is api error')
         } finally {
             setIsLoading(false);
         }
