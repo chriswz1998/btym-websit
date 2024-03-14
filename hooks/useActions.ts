@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation'
 
 const useHttp = <IT, OT>() => {
@@ -7,38 +7,47 @@ const useHttp = <IT, OT>() => {
     const [ error, setError ] = useState<string | null>(null);
     const router = useRouter()
 
-    const execute = useCallback(async(url: string, method = 'GET', body?: IT) => {
+    const execute = useCallback(async(url: string, method = 'GET', body?: any, headers?: HeadersInit) => {
         setIsLoading(true);
         setError(null);
-        const controller = new AbortController();
-        const signal = controller.signal;
         const token = window.localStorage.getItem('access_token');
+
+        const requestHeaders = new Headers(headers);
+        if(token){
+            requestHeaders.append('Authorization', `Bearer ${ token }`);
+        }
+
+        // 如果body是FormData，移除Content-Type头部以让浏览器自己设置
+        if(body instanceof FormData){
+            requestHeaders.delete('Content-Type');
+        } else {
+            // 只有当body不是FormData时才设置Content-Type为application/json
+            requestHeaders.append('Content-Type', 'application/json');
+            body = JSON.stringify(body);
+        }
+
         try{
             const response = await fetch(`${ process.env.NEXT_PUBLIC_REQUEST_URL }/api/${ url }`, {
-                method, headers: {
-                    'Content-Type': 'application/json', ...(token ? { 'Authorization': `Bearer ${ token }` } : null)
-                }, body: body ? JSON.stringify(body) : null, signal
+                method, headers: requestHeaders, body: body
             });
+            const contentType = response.headers.get('Content-Type');
+            if(contentType && contentType.includes('application/json')){
+                const jsonData = await response.json();
 
-            const jsonData = await response.json();
-            if(jsonData.statusCode && jsonData.statusCode === 401){
-                router.push('/backend/userLogin')
-                return // 返回登陆页面/backend/userLogin/
-            }
-            if(jsonData){
+                if(jsonData.statusCode && jsonData.statusCode === 401){
+                    router.push('/backend/userLogin')
+                    return // 返回登陆页面/backend/userLogin/
+                }
                 setData(jsonData);
                 return jsonData;
+            } else {
+                return await response.text();
             }
-            setError('is api error')
         } catch(err) {
             setError('is api error')
         } finally {
             setIsLoading(false);
         }
-
-        return () => {
-            controller.abort();
-        };
     }, []);
 
     return { data, isLoading, error, execute };

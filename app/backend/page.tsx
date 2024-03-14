@@ -8,16 +8,14 @@ import EditOther from '@/app/backend/(dashboard)/Editor/EditOther/page'
 
 export default function BackendPages(){
     const [ showOnePage, setShowOnePage ] = useState('firstPage')
-    return (<div className="w-full h-full p-10">
-        <div className="max-w-7xl mx-auto space-y-4">
+    return (<div className="w-full h-full">
+        <div className="max-w-7xl mx-auto space-y-4 p-5">
             <div className="flex items-center border p-5 space-x-4 rounded">
                 <span>请选择要编辑的模块:</span>
                 <ModelSelectBar setShowOnePage={ setShowOnePage }/>
             </div>
-            <div className={ 'w-full h-full' }>
                 { showOnePage === 'firstPage' ? <EditFirstPage/> : showOnePage === 'aboutUs' ? <EditAboutUs/> :
                     <EditOther/> }
-            </div>
 
         </div>
     </div>)
