@@ -6,14 +6,13 @@ import { z } from 'zod'
 
 import { Button } from '@/components/ui/button'
 import {
-    Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage
+    Form, FormControl, FormDescription, FormField, FormItem, FormMessage
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { SelectNavData } from '@/app/backend/_components/select-nav-data'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import * as React from 'react'
 import { Upload } from '@/app/backend/_components/Upload'
-import { useState } from 'react'
 
 const FormSchema = z.object({
     background_img_url: z.string().optional(), banner: z.object({

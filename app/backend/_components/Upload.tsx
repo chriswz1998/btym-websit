@@ -34,7 +34,7 @@ export const Upload = forwardRef<HTMLDivElement, UploadProps>((props, ref) => {
         }
     };
 
-    return (<div>
+    return (<div ref={ ref }>
         <Input
             type="file"
             placeholder="上传文件"
