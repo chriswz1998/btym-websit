@@ -12,9 +12,11 @@ import { Input } from '@/components/ui/input'
 import { SelectNavData } from '@/app/backend/_components/select-nav-data'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import * as React from 'react'
+import { Upload } from '@/app/backend/_components/Upload'
+import { useState } from 'react'
 
 const FormSchema = z.object({
-    banner: z.object({
+    background_img_url: z.string().optional(), banner: z.object({
         title: z.string().min(1, 'Title is required'), subtitle: z.string().optional(), // 使二级标题可选
         description: z.string().optional(), link: z.string().optional()
     })
@@ -23,7 +25,7 @@ const FormSchema = z.object({
 export default function ChangeBannerLinkCard(){
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema), defaultValues: {
-            banner: {
+            background_img_url: '', banner: {
                 title: '', subtitle: '', description: '', link: ''
             }
         }
@@ -40,6 +42,16 @@ export default function ChangeBannerLinkCard(){
         <CardContent>
             <Form { ...form }>
                 <form onSubmit={ form.handleSubmit(onSubmit) } className="w-full space-y-2">
+                    <FormField
+                        control={ form.control }
+                        name="background_img_url"
+                        render={ ({ field }) => (<FormItem>
+                            <FormControl>
+                                <Upload { ...field }/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>) }
+                    />
                     <FormField
                         control={ form.control }
                         name="banner.title"

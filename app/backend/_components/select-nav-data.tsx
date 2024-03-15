@@ -32,7 +32,7 @@ export const SelectNavData = forwardRef<HTMLDivElement, SelectNavDataProps>((pro
             props.onChange(selectedLink);
         }
     }
-    return (<div className={ 'w-full space-y-2' }>
+    return (<div className={ 'w-full space-y-2' } ref={ ref }>
         <Select onValueChange={ (param) => sectionSelected(param) } disabled={ isLoading }>
             <SelectTrigger className="w-full">
                 <SelectValue placeholder="请选择导航栏项目"/>

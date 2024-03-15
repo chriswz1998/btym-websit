@@ -1,3 +1,14 @@
+export const banner_resources = {
+    background_img_url: '', banner_items: [ {
+        id: 1, title: '', subtitle: '', description: '', link: ''
+    }, {
+        id: 2, title: '', subtitle: '', description: '', link: ''
+    }, {
+        id: 3, title: '', subtitle: '', description: '', link: ''
+    } ]
+}
+
+
 export const how_item_res = [ {
     url: '/Alberta.webp', href: '/employer', text: 'Alberta'
 }, {
