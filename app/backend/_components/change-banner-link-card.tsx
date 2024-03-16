@@ -15,7 +15,7 @@ import * as React from 'react'
 import { Upload } from '@/app/backend/_components/Upload'
 
 const FormSchema = z.object({
-    background_img_url: z.string().optional(), banner: z.object({
+    background_img_url: z.string().optional(), banner_data: z.object({
         title: z.string().min(1, 'Title is required'), subtitle: z.string().optional(), // 使二级标题可选
         description: z.string().optional(), link: z.string().optional()
     })
@@ -24,7 +24,7 @@ const FormSchema = z.object({
 export default function ChangeBannerLinkCard(){
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema), defaultValues: {
-            background_img_url: '', banner: {
+            background_img_url: '', banner_data: {
                 title: '', subtitle: '', description: '', link: ''
             }
         }
@@ -53,7 +53,7 @@ export default function ChangeBannerLinkCard(){
                     />
                     <FormField
                         control={ form.control }
-                        name="banner.title"
+                        name="banner_data.title"
                         render={ ({ field }) => (<FormItem>
                             <FormControl>
                                 <Input placeholder="shadcn" { ...field } />
@@ -64,7 +64,7 @@ export default function ChangeBannerLinkCard(){
                     />
                     <FormField
                         control={ form.control }
-                        name="banner.subtitle"
+                        name="banner_data.subtitle"
                         render={ ({ field }) => (<FormItem>
                             <FormControl>
                                 <Input placeholder="shadcn" { ...field } />
@@ -75,7 +75,7 @@ export default function ChangeBannerLinkCard(){
                     />
                     <FormField
                         control={ form.control }
-                        name="banner.description"
+                        name="banner_data.description"
                         render={ ({ field }) => (<FormItem>
                             <FormControl>
                                 <Input placeholder="shadcn" { ...field } />
@@ -87,7 +87,7 @@ export default function ChangeBannerLinkCard(){
 
                     <FormField
                         control={ form.control }
-                        name="banner.link"
+                        name="banner_data.link"
                         render={ ({ field }) => (<FormItem>
                             <SelectNavData { ...field }/>
                             <FormDescription>

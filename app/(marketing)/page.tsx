@@ -7,24 +7,36 @@ import { Hot_project_item } from '@/app/(marketing)/_components/hot_project_item
 import { how_item_res } from '@/lib/publicResuces'
 import Link from 'next/link'
 import { DialogCoverFrom } from '@/components/dialog'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Carousels } from '@/app/(marketing)/_components/carousel';
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import Footer from '@/components/footer';
+import useHttp from '@/hooks/useActions'
+import { Banner } from '@/lib/model'
 
 export default function MarketingPage(){
-    // if (isLoading) {
-    //     return (
-    //         <div className={'w-full h-full bg-mask-color5 flex flex-col justify-center items-center'}>
-    //             <h1 className={'text-white font-bold text-3xl'}>将要访问博泰移民，请稍后...</h1>
-    //             <Image src={'/logo.png'} alt={''} width={300} height={100}/>
-    //         </div>
-    //     )
-    // }
+    const [ banner, setBanner ] = useState<Banner>()
+    const { isLoading, execute } = useHttp<null, Banner>()
+
+    const getDate = async() => {
+        const [ res ] = await execute('firstPage/banner', 'GET')
+        setBanner(res)
+        console.log(res.backgroundImgUrl)
+    }
+    useEffect(() => {
+        getDate()
+    }, [])
+
+    if(isLoading){
+        return (<div className={ 'w-full h-full bg-mask-color5 flex flex-col justify-center items-center' }>
+            <h1 className={ 'text-white font-bold text-3xl' }>将要访问博泰移民，请稍后...</h1>
+            <Image src={ '/logo.png' } alt={ '' } width={ 300 } height={ 100 }/>
+        </div>)
+    }
 
     return (<div>
         <Navbar/>
-        <Carousels/>
+        <Carousels banner={ banner }/>
         <div className={ 'flex items-center flex-wrap py-5' }>
             <div className="flex items-center bg-mask-color/10 rounded-lg p-5 md:mx-auto space-x-4">
                 <Image src={ '/icon131-1.svg' } alt={ '' } height={ 30 } width={ 30 }/>
