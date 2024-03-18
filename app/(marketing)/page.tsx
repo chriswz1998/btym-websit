@@ -19,9 +19,9 @@ export default function MarketingPage(){
     const { isLoading, execute } = useHttp<null, Banner>()
 
     const getDate = async() => {
-        const [ res ] = await execute('firstPage/banner', 'GET')
+        const response = await execute('firstPage/banner', 'GET') as unknown as [ Banner ];
+        const [ res ] = response;
         setBanner(res)
-        console.log(res.backgroundImgUrl)
     }
     useEffect(() => {
         getDate()

@@ -45,6 +45,10 @@ export interface userDetails{
     result: Users
 }
 
+export interface BannerResult{
+    Banner: Banner
+}
+
 export interface Banner{
     backgroundImgUrl: string
     bannerData: BannerData[]

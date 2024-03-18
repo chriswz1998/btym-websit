@@ -10,7 +10,7 @@ interface UploadProps{
 
 // eslint-disable-next-line react/display-name
 export const Upload = forwardRef<HTMLDivElement, UploadProps>((props, ref) => {
-    const { execute } = useHttp()
+    const { execute } = useHttp<any, string>()
 
 
     const handleFileChange = async(event: ChangeEvent<HTMLInputElement>) => {

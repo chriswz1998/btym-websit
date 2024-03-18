@@ -23,7 +23,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         if(token){
             const fetchUser = async() => {
                 try{
-                    const userData = await execute('auth/me', 'GET')
+                    const userData = await execute('auth/me', 'GET') as Users
                     if(userData){
                         setUser(userData);
                         toast.success('User information has been refreshed!')

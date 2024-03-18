@@ -32,10 +32,10 @@ function UserLogin(){
     });
 
     const onSubmit = async(values: z.infer<typeof formSchema>) => {
-        const response = await execute('auth/signIn', 'POST', values)
-        if(response?.access_token){
-            login(response?.result)
-            window.localStorage.setItem('access_token', response?.access_token || '')
+        const { access_token, result } = await execute('auth/signIn', 'POST', values) as userDetails
+        if(access_token){
+            login(result)
+            window.localStorage.setItem('access_token', access_token || '')
             router.push('/backend')
         }
     }
