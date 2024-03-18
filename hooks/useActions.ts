@@ -29,17 +29,17 @@ const useHttp = <IT, OT>() => {
         try{
             const response = await fetch(`${ process.env.NEXT_PUBLIC_REQUEST_URL }/api/${ url }`, {
                 method, headers: requestHeaders, body: body
-            });
+            })
             const contentType = response.headers.get('Content-Type');
             if(contentType && contentType.includes('application/json')){
-                const jsonData = await response.json();
+                const jsonData = await response.json()
 
                 if(jsonData.statusCode && jsonData.statusCode === 401){
                     router.push('/backend/userLogin')
                     return // 返回登陆页面/backend/userLogin/
                 }
                 setData(jsonData);
-                return jsonData;
+                return jsonData as OT
             } else {
                 return await response.text();
             }
