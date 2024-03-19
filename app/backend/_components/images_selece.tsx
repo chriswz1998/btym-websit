@@ -33,9 +33,8 @@ export const Images_select = forwardRef<HTMLDivElement, image_select_Props>((pro
     }, [])
     return (<div ref={ ref }>
         <Dialog open={ dialogOpen }>
-            <DialogTrigger asChild>
-                <Image src={ imageUrl || props.url } alt={ '/' } width={ 400 } height={ 100 }
-                       onClick={ () => setDialogOpen(true) }/>
+            <DialogTrigger asChild onClick={ () => setDialogOpen(!dialogOpen) }>
+                <Image src={ imageUrl || props.url } alt={ '/' } width={ 400 } height={ 100 }/>
             </DialogTrigger>
             <DialogContent className="max-w-7xl">
                 <DialogHeader>
@@ -52,7 +51,7 @@ export const Images_select = forwardRef<HTMLDivElement, image_select_Props>((pro
                 </div>
                 <DialogFooter className="sm:justify-start">
                     <DialogClose asChild>
-                        <Button type="button" variant="secondary">
+                        <Button type="button" variant="secondary" onClick={ () => setDialogOpen(false) }>
                             关闭
                         </Button>
                     </DialogClose>

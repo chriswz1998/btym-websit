@@ -12,7 +12,6 @@ import { Input } from '@/components/ui/input'
 import { SelectNavData } from '@/app/backend/_components/select-nav-data'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import * as React from 'react'
-import { Upload } from '@/app/backend/_components/Upload'
 import useHttp from '@/hooks/useActions'
 import { useEffect, useState } from 'react'
 import { Banner } from '@/lib/model'
@@ -60,7 +59,7 @@ export default function ChangeBannerLinkCard(){
     return (<div>
         { isLoading ? '加载中' : (<Card className="w-full h-auto">
             <CardHeader>
-                <CardTitle>修改首页Banner标题与链接</CardTitle>
+                <CardTitle>Banner</CardTitle>
             </CardHeader>
             <CardContent>
                 <Form { ...form }>

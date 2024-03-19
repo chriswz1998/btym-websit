@@ -5,6 +5,7 @@ const DynamicEditor = dynamic(() => import('../../../../../components/editors'),
 import { useState } from 'react';
 import useHttp from '@/hooks/useActions';
 import { SelectNavData } from '@/app/backend/_components/select-nav-data'
+import { Upload } from '@/app/backend/_components/Upload'
 
 
 function EditOther(){
@@ -18,12 +19,13 @@ function EditOther(){
         console.log(value)
     }
 
-    const submit = async() => {
-        console.log(postResult)
+    const submit = async(value: string) => {
+        console.log(value)
     }
 
     return (<div className={ 'w-full h-full bg-amber-300 flex flex-col items-center justify-center' }>
         <div>
+            <Upload onChange={ submit }/>
             <SelectNavData onChange={ linkOnchange }/>
             <DynamicEditor onHtmlChange={ handleEditorHtmlChange }/>
         </div>

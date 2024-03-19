@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { Navbar } from '@/components/navbar'
 import { Hot_project_item } from '@/app/(marketing)/_components/hot_project_item'
-import { how_item_res } from '@/lib/publicResuces'
 import Link from 'next/link'
 import { DialogCoverFrom } from '@/components/dialog'
 import React, { useEffect, useState } from 'react'
@@ -12,16 +11,19 @@ import { Carousels } from '@/app/(marketing)/_components/carousel';
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import Footer from '@/components/footer';
 import useHttp from '@/hooks/useActions'
-import { Banner } from '@/lib/model'
+import { Banner, CarouselDto } from '@/lib/model'
 
 export default function MarketingPage(){
     const [ banner, setBanner ] = useState<Banner>()
+    const [ carousel, setCarousel ] = useState<CarouselDto[]>()
     const { isLoading, execute } = useHttp<null, Banner>()
 
     const getDate = async() => {
         const response = await execute('firstPage/banner', 'GET') as unknown as [ Banner ];
+        const carousel = await execute('carousel', 'GET') as unknown as CarouselDto[];
         const [ res ] = response;
         setBanner(res)
+        setCarousel(carousel)
     }
     useEffect(() => {
         getDate()
@@ -63,8 +65,8 @@ export default function MarketingPage(){
             className="w-4/5 mx-auto my-10"
         >
             <CarouselContent>
-                { how_item_res.map((item, index) => {
-                    return (<Hot_project_item url={ item.url } href={ item.href } text={ item.text } key={ index }/>)
+                { carousel?.map((item, index) => {
+                    return (<Hot_project_item url={ item.url } href={ item.link } text={ item.text } key={ index }/>)
                 }) }
             </CarouselContent>
             <CarouselPrevious/>
