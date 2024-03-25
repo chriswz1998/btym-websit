@@ -96,7 +96,7 @@ export const Navbar = () => {
                                     <span className="text-white">{ section.name }</span>
                                     <ChevronDown className="text-white"/>
                                 </HoverCardTrigger>
-                                <HoverCardContent className="w-full grid grid-cols-4 gap-4">
+                                <HoverCardContent className="w-full max-w-7xl flex flex-wrap">
                                     { section.subSections.map((subSection, subIndex) => (
                                         <div key={ subIndex } className={ 'text-black space-y-4 p-5' }>
                                             <div className="flex space-x-4">
