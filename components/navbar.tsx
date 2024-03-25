@@ -20,7 +20,7 @@ export const Navbar = () => {
     const route = useRouter()
 
     const { data } = useNav();
-    const jump = ({ subSectionLinks_id, link }: SubSectionLink) => {
+    const jump = ({ link }: SubSectionLink) => {
         route.push(link)
     }
 
