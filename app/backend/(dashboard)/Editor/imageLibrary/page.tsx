@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Trash2 } from 'lucide-react'
 import toast from 'react-hot-toast'
 
-export function ImageLibrary(){
+function ImageLibrary(){
     const { execute, isLoading } = useHttp<null, { id: number, url: string }[]>()
     const [ res, setRes ] = useState<{ id: number, url: string }[]>()
 
@@ -54,3 +54,5 @@ export function ImageLibrary(){
         </div>
     </div>)
 }
+
+export default ImageLibrary

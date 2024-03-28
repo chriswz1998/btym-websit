@@ -5,11 +5,6 @@ const DynamicEditor = dynamic(() => import('../../../../../components/editors'),
 import { useState } from 'react';
 import useHttp from '@/hooks/useActions';
 import { SelectNavData } from '@/app/backend/_components/select-nav-data'
-import ImageUpload from '@/app/backend/_components/Upload'
-
-import {
-    Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle
-} from '@/components/ui/card'
 
 function EditOther(){
     const [ editorHtml, setEditorHtml ] = useState('');

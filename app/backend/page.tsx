@@ -5,7 +5,7 @@ import EditFirstPage from '@/app/backend/(dashboard)/Editor/firstPage/page'
 import { useState } from 'react'
 import EditAboutUs from '@/app/backend/(dashboard)/Editor/aboutUs/page'
 import EditOther from '@/app/backend/(dashboard)/Editor/EditOther/page'
-import { ImageLibrary } from '@/app/backend/(dashboard)/Editor/imageLibrary/page'
+import ImageLibrary from '@/app/backend/(dashboard)/Editor/imageLibrary/page'
 
 export default function BackendPages(){
     const [ showOnePage, setShowOnePage ] = useState('firstPage')
