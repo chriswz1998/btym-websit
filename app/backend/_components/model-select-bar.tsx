@@ -13,5 +13,8 @@ export function ModelSelectBar({ setShowOnePage }: { setShowOnePage: (value: str
         <MenubarMenu>
             <MenubarTrigger onClick={ () => setShowOnePage('EditOther') }>其他</MenubarTrigger>
         </MenubarMenu>
+        <MenubarMenu>
+            <MenubarTrigger onClick={ () => setShowOnePage('imageLibrary') }>图片库</MenubarTrigger>
+        </MenubarMenu>
     </Menubar>)
 }

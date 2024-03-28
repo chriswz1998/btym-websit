@@ -8,7 +8,7 @@ import useHttp from '@/hooks/useActions'
 
 export default function ChangeCarousel(){
     const [ carousel, setCarousel ] = useState<CarouselDto[]>()
-    const { isLoading, execute } = useHttp<null, CarouselDto[]>()
+    const { execute } = useHttp<null, CarouselDto[]>()
 
     const getDate = async() => {
         const carousel = await execute('carousel', 'GET') as unknown as CarouselDto[];
@@ -26,7 +26,6 @@ export default function ChangeCarousel(){
             { carousel?.map((item, index) => {
                 return (<ChangeCarouselItems key={ index } defaultData={ item }/>)
             }) }
-
         </CardContent>
     </Card>)
 }
